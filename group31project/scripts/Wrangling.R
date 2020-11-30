@@ -4,46 +4,48 @@ library(readr)
 
 options(scipen = 999) # remove the scientific notation
 
-setwd("~/GitHub/dfsba_group31_project/group31project/data")
+setwd("~/GitHub/dfsba_group31_project/group31project/data") # set the working directory path
 
 #https://twitchtracker.com/statistics
 
 data1 <- read_delim("Twitch.csv", ";", escape_double = FALSE, 
                    col_names = FALSE, trim_ws = TRUE)
 
-TwitchData <- data1 %>% 
-  rename(date = X1, "Avg. concur. viewers" = X2, "Avg. concur. channels" = X3, Time_watched = X4, "Active streamers" = X5, Hours_streamed = X6) %>% 
-  mutate(date = mdy(date), Time_watched = parse_number(Time_watched)) %>%
-  mutate(day = NULL, "Viewers per streamer" = Time_watched*1000000/Hours_streamed)
 
-TwitchData4 <- data1 %>% 
-  rename(date = X1, Avg_concur_viewers = X2, Avg_concur_channels = X3, Hours_watched = X4, Active_streamers = X5, Hours_streamed = X6) %>% 
-  mutate(date = mdy(date), Hours_watched = parse_number(Hours_watched))%>%
+TwitchData <- data1 %>%
+  rename(Date = X1, Avg_concur_viewers = X2, Avg_concur_channels = X3, Hours_watched = X4, Active_streamers = X5, Hours_streamed = X6) %>% 
+  mutate(Date = mdy(Date), Hours_watched = parse_number(Hours_watched))%>%
   mutate(Viewers_per_streamer = Hours_watched*1000000/Hours_streamed)
 
-(vizu_1_Hours_watched <- TwitchData4 %>% 
-                        ggplot(aes(x = date, y = Hours_watched)) +
-                        geom_col())
+vizu_1_Avg_concur_viewers <- TwitchData %>% 
+    ggplot(aes(x = Date, y = Avg_concur_viewers)) +
+    geom_col()
+vizu_1_Avg_concur_viewers
 
-(vizu_1_Avg_concur_viewers <- TwitchData4 %>% 
-  ggplot(aes(x = date, y = Avg_concur_viewers)) +
-  geom_col())
+vizu_1_Avg_concur_channels <- TwitchData %>% 
+    ggplot(aes(x = Date, y = Avg_concur_channels)) +
+    geom_col()
+vizu_1_Avg_concur_channels
 
-(vizu_1_Avg_concur_channels <- TwitchData4 %>% 
-  ggplot(aes(x = date, y = Avg_concur_channels)) +
-  geom_col())
+vizu_1_Hours_watched <- TwitchData %>% 
+                        ggplot(aes(x = Date, y = Hours_watched)) +
+                        geom_col()
+vizu_1_Hours_watched
 
-(vizu_1_Active_streamers <- TwitchData4 %>% 
-  ggplot(aes(x = date, y = Active_streamers)) +
-  geom_col())
+vizu_1_Active_streamers <- TwitchData %>% 
+  ggplot(aes(x = Date, y = Active_streamers)) +
+  geom_col()
+vizu_1_Active_streamers
 
-(vizu_1_Hours_streamed <- TwitchData4 %>% 
-  ggplot(aes(x = date, y = Hours_streamed)) +
-  geom_col())
+vizu_1_Hours_streamed <- TwitchData %>% 
+  ggplot(aes(x = Date, y = Hours_streamed)) +
+  geom_col()
+vizu_1_Hours_streamed
 
-(vizu_1_Viewers_per_streamer <- TwitchData4 %>% 
-  ggplot(aes(x = date, y = Viewers_per_streamer)) +
-  geom_col())
+vizu_1_Viewers_per_streamer <- TwitchData %>% 
+  ggplot(aes(x = Date, y = Viewers_per_streamer)) +
+  geom_col()
+vizu_1_Viewers_per_streamer
 
 #https://platform.newzoo.com/companies/public-revenues
 
