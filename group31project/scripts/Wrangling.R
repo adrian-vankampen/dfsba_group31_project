@@ -11,7 +11,6 @@ setwd("~/GitHub/dfsba_group31_project/group31project/data") # set the working di
 data1 <- read_delim("Twitch.csv", ";", escape_double = FALSE, 
                    col_names = FALSE, trim_ws = TRUE)
 
-
 TwitchData <- data1 %>%
   rename(Date = X1, Avg_concur_viewers = X2, Avg_concur_channels = X3, Hours_watched = X4, Active_streamers = X5, Hours_streamed = X6) %>% 
   mutate(Date = mdy(Date), Hours_watched = parse_number(Hours_watched))%>%
@@ -53,22 +52,22 @@ data2 <- read_delim("NZ_CompaniesPublicRevenues2.csv", ";", escape_double = FALS
                     col_names = FALSE, trim_ws = TRUE)
 
 CompaniesPublicRevenues <- data2 %>%
-  rename("Company name" = X1, "Region of HQ" = X2, Q1 = X3, Q2 = X4, Q3 = X5, Q4 = X6, Q1b = X7, Q2b = X8) %>%
-  mutate(Q1 = parse_number(Q1), Q2 = parse_number(Q2), 
-         Q3 = parse_number(Q3), Q4 = parse_number(Q4), 
-         Q1b = parse_number(Q1b), Q2b = parse_number(Q2b)) %>%
-  mutate(Q1 = ifelse(Q1 < 10 , Q1*1000, Q1), 
-         Q2 = ifelse(Q2 < 10 , Q2*1000, Q2), 
-         Q3 = ifelse(Q3 < 10 , Q3*1000, Q3), 
-         Q4 = ifelse(Q4 < 10 , Q4*1000, Q4),
-         Q1b = ifelse(Q1b < 10 , Q1b*1000, Q1b),
-         Q2b = ifelse(Q2b < 10 , Q2b*1000, Q2b)) %>%
-  mutate(First_semester_of_2019 = Q1 + Q2, 
-         Second_semester_of_2019 = Q3 + Q4, 
-         Total_in_2019 = Q1 + Q2 + Q3 + Q4, 
-         First_semester_in_2020 = Q1b + Q2b) %>%
-  mutate(Q1_grate = 100*(Q1b - Q1)/Q1, 
-         Q2_grate = 100*(Q2b - Q2)/Q2, 
+  rename(Company_name = X1, Region_of_HQ = X2, Q1_2019 = X3, Q2_2019 = X4, Q3_2019 = X5, Q4_2019 = X6, Q1_2020 = X7, Q2_2020 = X8) %>%
+  mutate(Q1_2019 = parse_number(Q1_2019), Q2_2019 = parse_number(Q2_2019), 
+         Q3_2019 = parse_number(Q3_2019), Q4_2019 = parse_number(Q4_2019), 
+         Q1_2020 = parse_number(Q1_2020), Q2_2020 = parse_number(Q2_2020)) %>%
+  mutate(Q1_2019 = ifelse(Q1_2019 < 10 , Q1_2019*1000, Q1_2019), 
+         Q2_2019 = ifelse(Q2_2019 < 10 , Q2_2019*1000, Q2_2019), 
+         Q3_2019 = ifelse(Q3_2019 < 10 , Q3_2019*1000, Q3_2019), 
+         Q4_2019 = ifelse(Q4_2019 < 10 , Q4_2019*1000, Q4_2019),
+         Q1_2020 = ifelse(Q1_2020 < 10 , Q1_2020*1000, Q1_2020),
+         Q2_2020 = ifelse(Q2_2020 < 10 , Q2_2020*1000, Q2_2020)) %>%
+  mutate(First_semester_of_2019 = Q1_2019 + Q2_2020, 
+         Second_semester_of_2019 = Q3_2019 + Q4_2019, 
+         Total_in_2019 = Q1_2019 + Q2_2019 + Q3_2019 + Q4_2019, 
+         First_semester_in_2020 = Q1_2020 + Q2_2020) %>%
+  mutate(Q1_grate = 100*(Q1_2020 - Q1_2019)/Q1_2019, 
+         Q2_grate = 100*(Q2_2020 - Q2_2019)/Q2_2019, 
          Semester2_grate = 100*(Second_semester_of_2019 - First_semester_of_2019)/First_semester_of_2019,
          Semester3_grate = 100*(First_semester_in_2020 - Second_semester_of_2019)/Second_semester_of_2019,
          First_semester_grate = 100*(First_semester_in_2020 - First_semester_of_2019)/First_semester_of_2019)
