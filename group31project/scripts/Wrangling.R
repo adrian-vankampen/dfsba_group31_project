@@ -7,6 +7,7 @@ library(tidyverse)
 library(lubridate)
 library(readr)
 library(kableExtra)
+library(naniar)
 
 setwd("data")
 
@@ -20,15 +21,31 @@ data1 <- read_delim("Twitch.csv", ";", escape_double = FALSE,
 
 # Data cleaning
 
+
 TwitchData <- data1 %>%
+  # set a name for each variable
   rename(Date = X1, Avg_concur_viewers = X2, 
          Avg_concur_channels = X3, Hours_watched = X4, 
          Active_streamers = X5, Hours_streamed = X6) %>%
+  # modify some variable
+  mutate(Date = mdy(Date), 
+         Hours_watched = parse_number(Hours_watched)) %>%
+  # Replace value with NA
+  replace_with_na(replace = list(Active_streamers = "n/a")) %>%
+  mutate(Viewers_per_streamer = Hours_watched*1000000/Hours_streamed) %>%
+  # Convert the column from character to double
+  mutate(Active_streamers = parse_number(Active_streamers))
+
+TwitchData2 <- data1 %>%
+  # set a name for each variable
+  rename(Date = X1, Avg_concur_viewers = X2, 
+         Avg_concur_channels = X3, Hours_watched = X4, 
+         Active_streamers = X5, Hours_streamed = X6) %>%
+  # modify some variable
   mutate(Date = mdy(Date), 
          Hours_watched = parse_number(Hours_watched)) %>%
   mutate(Viewers_per_streamer = Hours_watched*1000000/Hours_streamed)
-
-TwitchData %>% kbl()
+  
 
 # ------------------------------------------------------------------------------
 

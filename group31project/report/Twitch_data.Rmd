@@ -1,16 +1,58 @@
----
-title: "Twitch_EDA"
-author: "Allan & Adrian"
-date: "01/12/2020"
-output: html_document
----
+## EDA for Twitch data-set
 
+These data comes from the website : [Twitchtracker](https://twitchtracker.com/statistics)
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 source(here::here("scripts/setup.R"))
 ```
 
-```{r setup, include=FALSE}
+Let's first load the dataset :
+
+```{r}
 data1 <- read_delim(file = here::here("data/Twitch.csv"), ";", escape_double = FALSE, col_names = FALSE, trim_ws = TRUE)
 
+data1 %>% 
+   kbl(caption = "Twitch statistics") %>%  
+   kable_paper(full_width = F) %>% 
+   scroll_box(width = "100%", height = "300px")
 ```
+<p>&nbsp;</p>
+As we can see, the dataset is not ready to be processed, we first need to clean it.
+
+```{r}
+TwitchData <- data1 %>%
+  # set a name for each variable
+  rename(Date = X1, Avg_concur_viewers = X2, 
+         Avg_concur_channels = X3, Hours_watched = X4, 
+         Active_streamers = X5, Hours_streamed = X6) %>%
+  # modify the format of certain variable
+  mutate(Date = mdy(Date), 
+         Hours_watched = parse_number(Hours_watched)) %>%
+  # remove the day in the date (the value was defined by default)
+  separate(Date, into = c("year", "month", "day")) %>%
+  mutate(day = NULL) %>%
+  unite(Date, year, month, sep = "-") %>%
+  # Replace value with NA (in our dataframe, n/a are considered as character)
+  replace_with_na(replace = list(Active_streamers = "n/a")) %>%
+  mutate(Viewers_per_streamer = Hours_watched*1000000/Hours_streamed) %>%
+  # Convert the column from character to double
+  mutate(Active_streamers = parse_number(Active_streamers))
+
+TwitchData %>% 
+   kbl(caption = "Twitch statistics") %>%  
+   kable_paper(full_width = F) %>% 
+   scroll_box(width = "100%", height = "300px")
+```
+<p>&nbsp;</p>
+The data are now clean and we can create some plot that will show useful information. 
+We can see that these data consist of 99 observations of 7 attributes.
+
+Here is a description of each attribute :
+   
+- `Date` : month in which the data apply
+- `Avg_concur_viewers` : Number of viewers connected in the same time in average 
+- `Avg_concur_channels` : Number of channels connected in the same time in average 
+- `Hours_watched` (in million) : Total number of hours watched per month
+- `Whole weight` (grams) : whole abalone
+- `Shucked weight` (grams) : weight of meat
+- `Viscera weight` (grams) : gut weight (after bleeding)
