@@ -1,6 +1,6 @@
 ---
-title: "The evolution of the esports industry"
-author: "Mivelaz, Allan and van Kampen, Adrian"
+title: "The Evolution of the Esports Industry"
+author: "Mivelaz, Allan & van Kampen, Adrian"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: html_document
 ---
