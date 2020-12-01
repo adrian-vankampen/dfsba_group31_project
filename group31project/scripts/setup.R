@@ -5,7 +5,7 @@
 # load the required packages
 packages <- c(
   "here", # for the project's organization
-  "tidyverse", "lubridate", # for wrangling
+  "tidyverse", "lubridate", "readr", # for wrangling
   "ggrepel", "gghighlight", "patchwork", "maps", "scales", # for plotting
   "knitr", "kableExtra", "bookdown", "rmarkdown" # for the report
 )
