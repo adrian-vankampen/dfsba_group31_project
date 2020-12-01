@@ -20,6 +20,7 @@ Our project aims to show the trends in the esports industry. To do so, we will c
 Twitchtracker.com
 https://esportsobserver.com
 https://www.mckinsey.com/business-functions/marketing-and-sales/our-insights/e-sports-and-the-next-frontier-of-brand-sponsorships#
+kaggle.com
 
 Des trucs stylés mais truc compliquée pour nous
 
