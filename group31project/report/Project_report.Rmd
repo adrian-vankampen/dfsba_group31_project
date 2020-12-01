@@ -1,0 +1,12 @@
+---
+title: "Project - Report"
+author: "Mivelaz, Allan and van Kampen, Adrian"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: html_document
+---
+
+```{r child = 'Twitch_data.Rmd'}
+```
+
+```{r child = 'esports_earnings_data1.Rmd'}
+```
