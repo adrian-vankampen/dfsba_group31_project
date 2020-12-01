@@ -3,7 +3,7 @@
 # ==============================================================================
 #
 
-source("scripts/EE_Build_fct.R")
+source(file = here::here("scripts/Functions.R"))
 
 # For info about the "build_df" function, see the corresponding script.
 # 
@@ -35,6 +35,19 @@ df.team_earnings <- build_df(method = methods_list$topteamsearning,
 
 write.csv(df.team_earnings, "data/EsportsEarnings/EE_teams_earnings.csv")
 
+# 
+# ------------------------------------------------------------------------------
+# TEAM EARNINGS
+# ------------------------------------------------------------------------------
+
+# CAUTION: will take more than ... lots of seconds to compute
+
+df.players_earnings1 <- build_df(method = methods_list$topplayersearning,
+                             offset = 50000)
+
+# Save the resulting data-frame in a csv file to access it in other parts of the project.
+
+write.csv(df.players_earnings, "~data/EsportsEarnings/EE_players_earnings.csv")
 
 # ------------------------------------------------------------------------------
 # TOTAL PRIZE MONEY BY GAME
