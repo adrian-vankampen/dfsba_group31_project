@@ -1,22 +1,23 @@
----
-title: "esports_earnings_data1"
-author: "Adrian"
-date: "01/12/2020"
-output: html_document
----
+## Esports Earnings
+### Data gathering
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r, echo = FALSE, message = FALSE, include=FALSE}
+source(here::here("scripts/setup.R"))
 ```
 
-## R Markdown
+We accessed data about Esports Earnings through tournaments on the website <www.esportsearnings.com> (which we abbreviate by "EE").
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see [google](<http://rmarkdown.rstudio.com>).
+This website provides a rather complete API to gather data in convenient *.csv* files, through multiple *methods*. Due to website limitations (and to prevent excessive traffic on their side), we are only able to get a dataset (max. 100 rows) every second at most.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+Therefore, we built a **build_df** function that automates the process of making API requests and builds complete datasets, 100 rows at a time, for several different methods. This function can be found in the "scripts/Functions.R" script.
 
-```{r cars}
-summary(cars)
+Using this, we gathered several datasets:
+
+
+```{r}
+tournaments <- read_csv(file = here::here("data/EsportsEarnings.com/EE_tournaments.csv"))
+
+tournaments %>% kable_head(caption = "EE_tournaments.csv contains most registered e-sports tournaments since 1996")
 ```
 
 ## Including Plots
