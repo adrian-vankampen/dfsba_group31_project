@@ -53,6 +53,45 @@ Here is a description of each attribute :
 - `Avg_concur_viewers` : Number of viewers connected in the same time in average 
 - `Avg_concur_channels` : Number of channels connected in the same time in average 
 - `Hours_watched` (in million) : Total number of hours watched per month
-- `Whole weight` (grams) : whole abalone
-- `Shucked weight` (grams) : weight of meat
-- `Viscera weight` (grams) : gut weight (after bleeding)
+- `Active_streamers` (grams) : Total number of active channels
+- `Hours_streamed` : Total number of hours streamed per month
+- `Viewers_per_streamer` : Average number of viewers per streamer per month
+
+
+Here the graph for each variable 
+
+```{r}
+o_Avg_concur_viewers <- TwitchData %>% 
+    ggplot(aes(x = Date, y = Avg_concur_viewers)) +
+    geom_col() +
+    ylab("Average concurent viewers")
+o_Avg_concur_viewers
+
+o_Avg_concur_channels <- TwitchData %>% 
+    ggplot(aes(x = Date, y = Avg_concur_channels)) +
+    geom_col() +
+    ylab("Average concurent channels")
+
+o_Avg_concur_channels
+
+o_Hours_watched <- TwitchData %>% 
+    ggplot(aes(x = Date, y = Hours_watched)) +
+    geom_col(mapping = NULL) +
+    ylab("Average concurent viewers")
+o_Hours_watched
+
+o_Active_streamers <- TwitchData %>% 
+  ggplot(aes(x = Date, y = Active_streamers)) +
+  geom_col(na.rm = TRUE)
+o_Active_streamers
+
+o_Hours_streamed <- TwitchData %>% 
+  ggplot(aes(x = Date, y = Hours_streamed)) +
+  geom_col()
+o_Hours_streamed
+
+o_Viewers_per_streamer <- TwitchData %>% 
+  ggplot(aes(x = Date, y = Viewers_per_streamer)) +
+  geom_col()
+o_Viewers_per_streamer
+```
