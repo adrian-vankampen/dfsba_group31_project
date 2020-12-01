@@ -5,8 +5,30 @@ date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: html_document
 ---
 
+## Overview and Motivation:
+Having both an interest in competitive video-games, we have watched and followed major esports events and teams in the past. From humble independent beginnings, the sector has become a
+multi-million dollar industry in a few years, with large companies (including out of the sector, such as
+Louis-Vuitton) starting to sponsor teams and whole events more and more frequently, and prize-pools
+for tournaments ever-increasing.
+Regular sports have become saturated, with tournaments having a well-established fan base and
+sponsors, but not growing very much. E-sports, on the other hand, is a rising sector with regular
+growth in viewership and hence a very interesting market to invest early on from a sponsor's point-ofview.
 Esports, standing for electronic sports, is a growing phenomenon. 
 Our project aims to show the trends in the esports industry. To do so, we will compare some data to see how it has evolved over the past few years.
+
+## Related Work:
+Twitchtracker.com
+https://esportsobserver.com
+https://www.mckinsey.com/business-functions/marketing-and-sales/our-insights/e-sports-and-the-next-frontier-of-brand-sponsorships#
+
+Des trucs stylés mais truc compliquée pour nous
+
+
+## Initial Questions:
+- Showing the growing popularity of the platform Twitch 
+- Repérer les jeux/équipes rising pour une potentielle visibilité marketing ou un truc comme ça.
+- NewZoo investment et sanité des plus grosses entreprise.
+- Quel est le potentiel de l'esports, son avenir long terme via les 3 derniers points.
 
 ```{r child = 'Twitch_data.Rmd'}
 ```

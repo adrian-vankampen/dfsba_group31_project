@@ -72,13 +72,13 @@ o_Avg_concur_channels
 
 o_Hours_watched <- TwitchData %>% 
     ggplot(aes(x = Date, y = Hours_watched)) +
-    geom_col(mapping = NULL) +
+    geom_col() +
     ylab("Average concurent viewers")
 o_Hours_watched
 
 o_Active_streamers <- TwitchData %>% 
   ggplot(aes(x = Date, y = Active_streamers)) +
-  geom_col(na.rm = TRUE)
+  geom_col()
 o_Active_streamers
 
 o_Hours_streamed <- TwitchData %>% 
