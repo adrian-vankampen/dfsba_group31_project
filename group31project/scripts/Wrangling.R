@@ -23,7 +23,7 @@ TwitchData <- data1 %>%
          Avg_concur_channels = X3, Hours_watched = X4, 
          Active_streamers = X5, Hours_streamed = X6) %>%
   mutate(Date = mdy(Date), 
-         Hours_watched = parse_number(Hours_watched))%>%
+         Hours_watched = parse_number(Hours_watched)) %>%
   mutate(Viewers_per_streamer = Hours_watched*1000000/Hours_streamed)
 
 # Remove the scientific notation
