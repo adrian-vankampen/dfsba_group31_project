@@ -9,8 +9,6 @@ library(readr)
 library(kableExtra)
 library(naniar)
 
-setwd("data")
-
 # General Statistics of the Twitch platform
 
 
@@ -27,14 +25,16 @@ TwitchData <- data1 %>%
   rename(Date = X1, Avg_concur_viewers = X2, 
          Avg_concur_channels = X3, Hours_watched = X4, 
          Active_streamers = X5, Hours_streamed = X6) %>%
-  # modify some variable
+  # modify the format of certain variable
   mutate(Date = mdy(Date), 
          Hours_watched = parse_number(Hours_watched)) %>%
-  # Replace value with NA
+  # Replace value with NA (in our dataframe, n/a are considered as character)
   replace_with_na(replace = list(Active_streamers = "n/a")) %>%
   mutate(Viewers_per_streamer = Hours_watched*1000000/Hours_streamed) %>%
   # Convert the column from character to double
   mutate(Active_streamers = parse_number(Active_streamers))
+
+write.csv(TwitchData, "data/TwitchData.csv")
 
 # ------------------------------------------------------------------------------
 
@@ -118,7 +118,7 @@ data4 <- read_delim("NZ_CompaniesInvestmentscsv2.csv", ";", escape_double = FALS
 
 CompaniesInvestments <- data3 %>% full_join(data4) %>%
   rename(Date = X1, "Investment type" = X2, Sectors = X3, Emptycolumn = X4, Investee = X5, Amount = X6) %>%
-  separate(Date, into = c("Day", "Month", "Year")) %>%
+  mutate(Date = dmy(Date)) %>%
   mutate(Emptycolumn = NULL, Sectors = str_replace_all(Sectors, ",.", ", "))
 
 mutate(Emptycolumn = NULL, 

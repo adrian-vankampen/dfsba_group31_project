@@ -34,5 +34,8 @@ Des trucs stylés mais truc compliquée pour nous
 ```{r child = 'Twitch_data.Rmd'}
 ```
 
+```{r child = 'New_zoo_data.Rmd'}
+```
+
 ```{r child = 'esports_earnings_data1.Rmd'}
 ```
