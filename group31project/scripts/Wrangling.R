@@ -6,8 +6,9 @@
 library(tidyverse)
 library(lubridate)
 library(readr)
+library(kableExtra)
 
-setwd("~/GitHub/dfsba_group31_project/group31project/data")
+setwd("data")
 
 # General Statistics of the Twitch platform
 
@@ -26,8 +27,7 @@ TwitchData <- data1 %>%
          Hours_watched = parse_number(Hours_watched)) %>%
   mutate(Viewers_per_streamer = Hours_watched*1000000/Hours_streamed)
 
-# Remove the scientific notation
-options(scipen = 999) 
+TwitchData %>% kbl()
 
 # ------------------------------------------------------------------------------
 
@@ -93,6 +93,15 @@ CompaniesPublicRevenues <- data2 %>%
          Semester2_grate = 100*(Second_semester_of_2019 - First_semester_of_2019)/First_semester_of_2019,
          Semester3_grate = 100*(First_semester_in_2020 - Second_semester_of_2019)/Second_semester_of_2019,
          First_semester_grate = 100*(First_semester_in_2020 - First_semester_of_2019)/First_semester_of_2019)
+
+
+CompaniesPublicRevenues %>% kbl() %>%  kable_classic() %>%
+  add_header_above(c(" " = 1, "Group 1" = 2, "Group 2" = 2, "Group 3" = 2))
+
+
+kbl(CompaniesPublicRevenues) %>%
+  kable_classic() %>%
+  add_header_above(c(" " = 2, "2019" = 4, "2020" = 2, "Other" = 9))
 
 #https://platform.newzoo.com/companies/investments
 
