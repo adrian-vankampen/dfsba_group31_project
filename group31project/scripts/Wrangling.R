@@ -12,6 +12,7 @@ setwd("data")
 
 # General Statistics of the Twitch platform
 
+
 data1 <- read_delim("Twitch.csv", ";", escape_double = FALSE, 
                    col_names = FALSE, trim_ws = TRUE)
 
