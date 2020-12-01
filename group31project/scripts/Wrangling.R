@@ -11,9 +11,8 @@ library(naniar)
 
 # General Statistics of the Twitch platform
 
-
-data1 <- read_delim("Twitch.csv", ";", escape_double = FALSE, 
-                   col_names = FALSE, trim_ws = TRUE)
+data1 <- read_delim(file = here::here("data/Twitch.csv"), ";", 
+                    escape_double = FALSE, col_names = FALSE, trim_ws = TRUE)
 
 # ------------------------------------------------------------------------------
 
@@ -33,6 +32,8 @@ TwitchData <- data1 %>%
   mutate(Viewers_per_streamer = Hours_watched*1000000/Hours_streamed) %>%
   # Convert the column from character to double
   mutate(Active_streamers = parse_number(Active_streamers))
+
+typeof(TwitchData$Date)
 
 write.csv(TwitchData, "data/TwitchData.csv")
 

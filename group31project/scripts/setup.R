@@ -21,7 +21,8 @@ options(
   str = strOptions(strict.width = "cut"),
   width = 69,
   tibble.width = 69,
-  cli.unicode = FALSE
+  cli.unicode = FALSE,
+  scipen = 999
 )
 
 # ggplot options
