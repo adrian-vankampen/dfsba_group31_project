@@ -1,12 +1,12 @@
 ---
-title: "The evolution of the esport industry over the years"
+title: "The evolution of the esports industry"
 author: "Mivelaz, Allan and van Kampen, Adrian"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: html_document
 ---
 
 Esports, standing for electronic sports, is a growing phenomenon. 
-Our project aims to show the trends in the esport industry. To do so, we will compare some data to see how it has evolve over the past few years.
+Our project aims to show the trends in the esports industry. To do so, we will compare some data to see how it has evolved over the past few years.
 
 ```{r child = 'Twitch_data.Rmd'}
 ```

@@ -28,10 +28,6 @@ TwitchData <- data1 %>%
   # modify the format of certain variable
   mutate(Date = mdy(Date), 
          Hours_watched = parse_number(Hours_watched)) %>%
-  # remove the day in the date (the value was defined by default)
-  separate(Date, into = c("year", "month", "day")) %>%
-  mutate(day = NULL) %>%
-  unite(Date, year, month, sep = "-") %>%
   # Replace value with NA (in our dataframe, n/a are considered as character)
   replace_with_na(replace = list(Active_streamers = "n/a")) %>%
   mutate(Viewers_per_streamer = Hours_watched*1000000/Hours_streamed) %>%
