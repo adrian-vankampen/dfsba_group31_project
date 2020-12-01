@@ -36,17 +36,6 @@ TwitchData <- data1 %>%
   # Convert the column from character to double
   mutate(Active_streamers = parse_number(Active_streamers))
 
-TwitchData2 <- data1 %>%
-  # set a name for each variable
-  rename(Date = X1, Avg_concur_viewers = X2, 
-         Avg_concur_channels = X3, Hours_watched = X4, 
-         Active_streamers = X5, Hours_streamed = X6) %>%
-  # modify some variable
-  mutate(Date = mdy(Date), 
-         Hours_watched = parse_number(Hours_watched)) %>%
-  mutate(Viewers_per_streamer = Hours_watched*1000000/Hours_streamed)
-  
-
 # ------------------------------------------------------------------------------
 
 #Visualization
@@ -83,7 +72,7 @@ o_Hours_streamed
 
 o_Viewers_per_streamer <- TwitchData %>% 
   ggplot(aes(x = Date, y = Viewers_per_streamer)) +
-  geom_col()
+  geom_col(mapping = NULL)
 o_Viewers_per_streamer
 
 #https://platform.newzoo.com/companies/public-revenues
