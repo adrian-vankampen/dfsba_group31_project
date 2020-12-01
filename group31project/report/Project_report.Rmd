@@ -17,19 +17,20 @@ Esports, standing for electronic sports, is a growing phenomenon.
 Our project aims to show the trends in the esports industry. To do so, we will compare some data to see how it has evolved over the past few years.
 
 ## Related Work:
-Twitchtracker.com
-https://esportsobserver.com
-https://www.mckinsey.com/business-functions/marketing-and-sales/our-insights/e-sports-and-the-next-frontier-of-brand-sponsorships#
-kaggle.com
+Many report/data/statistics are available on our subject. Here are some link that has inspired us.
+- Twitchtracker.com
+- https://esportsobserver.com
+- https://www.mckinsey.com/business-functions/marketing-and-sales/our-insights/e-sports-and-the-next-frontier-of-brand-sponsorships#
+- kaggle.com
 
-Des trucs stylés mais truc compliquée pour nous
-
+Although these links contain very extensive studies that we will unfortunately not be able to reproduce, we will try to do our best to show an overview of this industry.
 
 ## Initial Questions:
-- Showing the growing popularity of the platform Twitch 
-- Repérer les jeux/équipes rising pour une potentielle visibilité marketing ou un truc comme ça.
-- NewZoo investment et sanité des plus grosses entreprise.
-- Quel est le potentiel de l'esports, son avenir long terme via les 3 derniers points.
+- Show the growing popularity of the platform Twitch 
+- Identify rising games/teams for potential marketing visibility.
+- Compare the income of top companies in a period to see the potential of the industry.
+- Determine the factors that influence the amount of money invested 
+- Put all this information together to see the long term orientation of the industry
 
 ```{r child = 'Twitch_data.Rmd'}
 ```
