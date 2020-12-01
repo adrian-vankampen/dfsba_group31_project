@@ -1,0 +1,481 @@
+"","id","GameName","TotalUSDPrize","TotalTournaments","TotalPlayers"
+"1",711,"Call of Duty: Black Ops Cold War",243600,10,82
+"2",655,"Trackmania (2020)",56043.72,41,79
+"3",152,"StarCraft: Brood War",8376408.43,586,680
+"4",151,"StarCraft II",34243237.96,5962,2084
+"5",393,"Diabotical",85281.54,45,205
+"6",179,"Age of Empires II",1572957.5,597,973
+"7",507,"Clash of Clans",1272136.87,18,178
+"8",534,"Fortnite",99349617.41,672,4453
+"9",696,"Fall Guys",284273.83,5,240
+"10",164,"League of Legends",81643219.72,2481,7152
+"11",646,"VALORANT",1579398.6,269,1821
+"12",245,"Counter-Strike: Global Offensive",103836476.59,5334,13168
+"13",702,"Among Us",66000,6,10
+"14",352,"CrossFire",6497845.02,308,629
+"15",547,"Chess.com",937790.94,170,616
+"16",231,"Dota 2",228227224.02,1461,3876
+"17",555,"FIFA Online 4",729240,5,102
+"18",709,"Kirby Fighters 2",222.86,1,4
+"19",558,"Super Smash Bros. Ultimate",1337764.9,1209,1890
+"20",569,"RaceRoom Racing Experience",144863.7,20,143
+"21",469,"Rivals of Aether",38462.11,17,46
+"22",204,"Super Smash Bros. Melee",3212402.51,2611,1881
+"23",648,"Call of Duty: Warzone",2567488.97,99,579
+"24",661,"Artifact 2.0",221.2,5,5
+"25",409,"Rocket League",9172179.32,1090,1096
+"26",710,"Smash Remix",299.06,1,4
+"27",566,"Apex Legends",4528141.69,249,1166
+"28",532,"iRacing.com",1450129.43,105,823
+"29",348,"Live for Speed",11599.14,9,22
+"30",699,"Dead By Daylight",60000,9,35
+"31",650,"Lichess",1161196.92,85,275
+"32",708,"Spellbreak",50000,1,42
+"33",549,"Call of Duty: Black Ops 4",6731938.95,68,380
+"34",560,"Lethal League Blaze",5343.92,11,25
+"35",447,"Paladins",2174458.6,70,568
+"36",654,"Tetr.io",2718.1,10,13
+"37",553,"Assetto Corsa",338474.4,36,125
+"38",638,"WarCraft III: Reforged",354595.29,65,80
+"39",328,"Hearthstone",23651978.24,901,2431
+"40",504,"PLAYERUNKNOWN’S BATTLEGROUNDS",24591303.57,301,2822
+"41",272,"TrackMania 2: Stadium",198363.85,281,345
+"42",526,"rFactor 2",1224920.26,43,196
+"43",529,"Arena of Valor",15228710.62,51,558
+"44",426,"Overwatch",26049333.28,743,3494
+"45",376,"Xonotic",5489.65,25,133
+"46",707,"F1 2020",1947,1,19
+"47",629,"Gran Turismo Sport",27511,7,75
+"48",177,"Age of Empires III",68113.85,76,106
+"49",659,"Assetto Corsa Competizione",5338,13,10
+"50",406,"Tekken 7",1687721.25,235,425
+"51",628,"Tetris",16026.38,7,27
+"52",371,"Heroes of the Storm",18188482.65,475,1253
+"53",514,"Puyo Puyo Tetris",3422.84,16,31
+"54",577,"Forza Motorsport 7",820200,12,124
+"55",626,"Call of Duty: Modern Warfare",6617284.5,45,257
+"56",592,"Teamfight Tactics",819313.65,15,159
+"57",695,"Beat Aim",430,6,12
+"58",254,"ShootMania Storm",262090.69,43,108
+"59",559,"Minecraft",429539.15,20,84
+"60",499,"Quake Champions",2409118.25,239,250
+"61",487,"Gwent",841757.17,110,320
+"62",601,"Puyo Puyo Champions",2482.3,5,14
+"63",672,"Eternal Fighter Zero",1311.6,2,7
+"64",697,"Cultris II",190.95,1,3
+"65",335,"Team Fortress 2",718078.81,197,1364
+"66",456,"BlazBlue: Central Fiction",78879.26,38,86
+"67",637,"Fantasy Strike",3860,3,18
+"68",666,"Touhou Hisoutensoku ~ Choudokyuu Ginyoru no Nazo o Oe",1555.01,3,12
+"69",673,"Fight of Animals",580.68,3,7
+"70",649,"chess24",1084696.09,9,60
+"71",662,"NASCAR Heat 4",200500,5,34
+"72",663,"Hyper Scape",299000,4,260
+"73",446,"Vampire Savior",9185.95,18,32
+"74",615,"Samurai Shodown V Special",590.57,5,15
+"75",540,"Age of Empires Online",2668,7,16
+"76",160,"QuakeWorld",103251.7,15,47
+"77",262,"Doom II: Hell on Earth",4680,6,11
+"78",675,"JoJo's Bizarre Adventure: Heritage for the Future",284.99,2,5
+"79",664,"Jstris",225,1,8
+"80",693,"Breakers Revenge",16,1,3
+"81",605,"Garou: Mark of the Wolves",658.71,4,13
+"82",443,"Brawlhalla",1159994.09,387,497
+"83",440,"Dengeki Bunko: Fighting Climax Ignition",2852.8,10,31
+"84",656,"Playchess.com",32866.58,9,116
+"85",552,"Artifact",119168.54,166,275
+"86",464,"Clash Royale",3363348.27,51,290
+"87",698,"Rocket Arena",1e+05,3,24
+"88",595,"Gears 5",1223000,18,140
+"89",568,"Soul Calibur VI",109895.21,49,101
+"90",554,"PLAYERUNKNOWN'S BATTLEGROUNDS Mobile",3839853.07,40,1081
+"91",598,"Free Fire",1006392.23,14,291
+"92",172,"TrackMania Nations Forever",167386.65,73,109
+"93",657,"Trackmania Turbo",679.41,2,6
+"94",439,"Rainbow Six Siege",12214525.74,228,1552
+"95",621,"FIFA 20",1813713.72,54,275
+"96",613,"Acceleration of SUGURI 2",310,2,6
+"97",667,"Akatsuki Blitzkampf",20,1,3
+"98",508,"ARMS",18248.09,82,95
+"99",668,"Asuka 120% LimitOver BURNING Fest.",10,1,3
+"100",570,"Dead or Alive 6",64232.54,18,63
+"101",670,"Digimon Rumble Arena",70,1,3
+"102",581,"Fighting EX Layer",1642.96,7,16
+"103",461,"Koihime Enbu",1665,6,13
+"104",677,"Maiden & Spell",200,1,3
+"105",194,"Marvel vs. Capcom 2",39060,28,60
+"106",606,"Million Arthur: Arcana Blood",7430,3,9
+"107",678,"Naruto: Gekitou Ninja Taisen! 4",200,1,3
+"108",506,"Pokkén Tournament DX",20275.4,26,43
+"109",680,"Power Instinct: Matrimelee",50,1,3
+"110",614,"Power Rangers: Battle for the Grid",1390,4,11
+"111",682,"Project Plus",20,1,3
+"112",580,"Sailor Moon S",3201.19,11,18
+"113",689,"SLAYERS FOR HIRE",500,1,8
+"114",690,"Speedrunners",50,1,3
+"115",691,"Panel Attack",40,1,3
+"116",676,"The Last Blade 2",20,1,3
+"117",692,"Twinkle Star Sprites",100,1,3
+"118",640,"Under Night In-Birth Exe:Late[cl-r]",1050,2,7
+"119",330,"Super Smash Bros.",68082.81,123,234
+"120",587,"Windjammers",4172.16,11,32
+"121",557,"Old School Runescape",422504.2,22,66
+"122",460,"Catherine",1545,7,11
+"123",669,"Def Jam: Fight for NY",170,1,3
+"124",671,"Duck Game",250,1,3
+"125",339,"Ultra Street Fighter IV",816713.46,229,231
+"126",495,"Guilty Gear Xrd REV 2",116634.7,49,101
+"127",674,"HYPERFIGHT",50,1,3
+"128",333,"Killer Instinct (2013)",224466.96,53,128
+"129",679,"Pocket Rumble",60,1,3
+"130",685,"Samurai Shodown III",30,1,3
+"131",686,"Schwarzerblitz",100,1,3
+"132",687,"Shrek SuperSlam",50,1,3
+"133",688,"Slap City",300,1,3
+"134",167,"Street Fighter III: 3rd Strike",49378.86,35,83
+"135",441,"King of Fighters XIV",72902.09,37,90
+"136",616,"Them's Fightin' Herds",580,4,10
+"137",618,"Umineko: Golden Fantasia",140,2,6
+"138",665,"Internet Chess Club",10000,1,6
+"139",597,"Arcana Heart 3: Love Max Six Stars!!!!!",570,4,8
+"140",612,"Kill la Kill the Game: IF",920,4,12
+"141",562,"Mario Tennis Aces",61.3,2,6
+"142",458,"Melty Blood: Actress Again Current Code",8587.76,18,48
+"143",683,"Punch Planet",300,1,3
+"144",684,"Roof Rage",50,1,3
+"145",459,"Skullgirls 2nd Encore",18321,12,34
+"146",644,"Legends of Runeterra",118481.03,5,30
+"147",653,"Prophecy",13000,4,27
+"148",630,"Farming Simulator 19",158361.3,12,84
+"149",387,"Unreal Tournament (2016)",5084.97,8,82
+"150",647,"Escape from Tarkov",84600,3,127
+"151",374,"Super Smash Bros. for Wii U",1511976.47,1022,1264
+"152",205,"Super Smash Bros. Brawl",246715.83,344,499
+"153",642,"Street Fighter V: Champion Edition",33628.66,2,10
+"154",564,"Shadowverse",3211177.09,42,239
+"155",586,"Brawl Stars",94950,10,51
+"156",583,"Mortal Kombat 11",392602.33,37,158
+"157",588,"Dota Underlords",26024.18,36,62
+"158",567,"Magic: The Gathering Arena",6012000,38,241
+"159",541,"Dragon Ball FighterZ",337985.4,73,159
+"160",536,"Street Fighter V: Arcade Edition",2017135.95,100,229
+"161",511,"Under Night In-Birth EXE: Late[st]",46553.33,34,98
+"162",442,"King of Fighters 2002 Unlimited Match",760,2,6
+"163",241,"King of Fighters XIII",44724.28,43,107
+"164",641,"Magical Drop III",130,1,3
+"165",593,"Samurai Shodown (2019)",68009.91,15,58
+"166",594,"Mario Kart 8 Deluxe",1754.44,4,30
+"167",509,"Splatoon 2",10055,7,13
+"168",166,"Super Street Fighter II Turbo",23678.05,44,104
+"169",158,"WarCraft III",5811479.73,1335,558
+"170",548,"BlazBlue: Cross Tag Battle",82800.03,31,89
+"171",195,"Capcom vs. SNK 2",24186.79,19,36
+"172",470,"Marvel vs. Capcom: Infinite",42482.12,19,49
+"173",599,"Mystery Game Tournament",10995,8,56
+"174",334,"Guilty Gear XX Accent Core Plus R",4640,19,61
+"175",249,"Ultimate Marvel vs. Capcom 3",116733.16,169,190
+"176",510,"Age of Empires",190075.61,95,246
+"177",633,"Dirt Rally 2.0",10000,2,5
+"178",634,"UNO",20000,2,16
+"179",610,"F1 2019",538047.38,2,25
+"180",603,"Ring of Elysium",70000,4,9
+"181",636,"Shovel Knight Showdown",60,1,3
+"182",627,"TEPPEN",456721.47,1,12
+"183",694,"Multigaming",148384.33,3,19
+"184",528,"Battalion 1944",185654.67,21,114
+"185",632,"GRID (2019)",218.75,1,3
+"186",155,"Halo 3",2158079.4,41,210
+"187",156,"Halo: Reach",822089.97,29,101
+"188",489,"Attack on Titan Tribute Game",108650,15,21
+"189",165,"World of WarCraft",4957837.61,118,413
+"190",589,"Auto Chess",1076322.28,6,72
+"191",623,"WWE 2K20",50000,2,20
+"192",385,"Street Fighter Alpha 2",1390,8,17
+"193",635,"Big Buck Hunter Arcade",76200,1,3
+"194",187,"Tekken 5: Dark Resurrection",12180,5,18
+"195",341,"Virtua Fighter 5 Final Showdown",573.77,6,28
+"196",331,"Project M",205292.09,335,560
+"197",561,"Project Cars 2",66150,22,37
+"198",389,"Persona 4 Arena Ultimax",18828.16,19,58
+"199",625,"Asphalt 9: Legends",51520,2,5
+"200",622,"Borderlands 3",50000,1,16
+"201",434,"Street Fighter V",2202726.43,120,233
+"202",704,"Call of Duty: Blackout",611608.35,18,175
+"203",556,"FIFA 19",3242642.34,48,303
+"204",520,"Yu-Gi-Oh! Duel Links",48746.72,219,328
+"205",486,"Naruto Shippuden: Ultimate Ninja Storm 4",4550,5,7
+"206",457,"Aquapazza: Aquaplus Dream Match",245,2,5
+"207",608,"Hokuto no Ken",145,1,3
+"208",420,"Nitroplus Blasterz: Heroines Infinite Duel",1994,4,10
+"209",210,"Tatsunoko vs. Capcom: Ultimate All-Stars",1330.81,8,13
+"210",617,"Catherine: Full Body",185,1,3
+"211",604,"Guilty Gear",32,1,3
+"212",619,"Project Justice",165,1,3
+"213",585,"Teenage Mutant Ninja Turtles: Tournament Fighters",820,2,7
+"214",620,"Ultra Fight Da! Kyanta 2",320,1,3
+"215",607,"Fighter's History Dynamite",195,1,3
+"216",161,"Quake II",140179.5,10,32
+"217",494,"Injustice 2",835742.83,37,81
+"218",652,"Mordhau",16623,3,40
+"219",624,"Sea of Thieves",1e+05,4,67
+"220",602,"King of Fighters 98",7945.57,3,7
+"221",645,"Pro Evolution Soccer 2019",216000,2,25
+"222",705,"Stardew Valley",54250,2,56
+"223",571,"Guns of Boom",198750,21,8
+"224",582,"Splitgate: Arena Warfare",50000,2,64
+"225",197,"Soul Calibur II",4790,7,15
+"226",584,"Street Fighter EX2 Plus",350,2,5
+"227",213,"Street Fighter X Tekken",84090.64,93,115
+"228",545,"Magic: The Gathering Online",1218000,10,130
+"229",496,"Wolfenstein: Enemy Territory",140963.24,18,152
+"230",590,"Warparty",1000,1,4
+"231",572,"NHL 19",22566.67,8,10
+"232",452,"Gears of War 4",3087285,41,135
+"233",573,"Madden NFL 19",125000,3,5
+"234",359,"TrackMania 2: Canyon",22098.74,36,21
+"235",701,"Sekiro: Shadows Die Twice",19596,1,20
+"236",600,"Company of Heroes 2",8561.22,6,11
+"237",703,"The Division 2",27250,2,40
+"238",226,"Counter-Strike: Source",3117222.29,333,1502
+"239",502,"Hand of the Gods",94434.2,36,48
+"240",448,"Mortal Kombat XL",129203.79,17,50
+"241",191,"Virtua Fighter 5",39830,7,14
+"242",522,"Black Squad",8480.72,17,57
+"243",391,"Mortal Kombat X",523532.42,62,100
+"244",596,"Super Mario Party",220,1,4
+"245",565,"Creative Destruction",1e+05,1,8
+"246",525,"osu!",23100,7,971
+"247",518,"FIFA 18",2233697.69,48,238
+"248",423,"Halo 5: Guardians",7071480.97,75,233
+"249",346,"Point Blank",699167.75,32,297
+"250",351,"SMITE",8640112.75,95,522
+"251",579,"F1 2018",2e+05,1,21
+"252",345,"World of Tanks",3656496.59,50,403
+"253",490,"Call of Duty: World War II",4559271,64,266
+"254",517,"World of Tanks Blitz",63330,6,14
+"255",611,"SNK Heroines: Tag Team Frenzy",430,1,3
+"256",274,"Battlefield 4",245766.46,145,204
+"257",530,"Warface",109555,2,32
+"258",388,"Dead or Alive 5: Last Round",8163.82,19,45
+"259",353,"Street Fighter Alpha 3",300,4,15
+"260",550,"Pro Evolution Soccer 2018",250000,3,20
+"261",538,"NBA 2K18",1e+06,4,91
+"262",157,"Quake Live",682294.04,410,213
+"263",546,"Realm Royale",263000,9,47
+"264",178,"Age of Mythology",52360,6,22
+"265",542,"NHL 18",102700,6,20
+"266",473,"Critical Ops",12606.41,3,4
+"267",419,"H1Z1",2067122,13,119
+"268",453,"Battlerite",65173.45,75,86
+"269",503,"Pokémon VGC",211500,24,170
+"270",211,"Mortal Kombat 9",136891.67,26,67
+"271",340,"Soul Calibur II HD Online",945.41,5,29
+"272",240,"Soul Calibur V",60008.54,26,78
+"273",706,"Radical Heights",120000,2,12
+"274",404,"Reflex",2158.4,7,21
+"275",523,"Faeria",4100,5,12
+"276",535,"Zula",1e+05,1,20
+"277",368,"FIFA Online 3",1434341.9,9,89
+"278",242,"Heroes of Newerth",2915206.56,371,813
+"279",379,"Warsow",183,1,2
+"280",519,"Madden NFL 2018",279676.62,3,40
+"281",344,"Divekick",5840,11,27
+"282",516,"Power Rangers: Legacy Wars",4178.55,1,2
+"283",268,"Call of Duty 2",66828.51,17,41
+"284",455,"Call of Duty: Infinite Warfare",4156205.06,80,341
+"285",369,"Call of Duty: Modern Warfare 2",112860.64,18,59
+"286",437,"Pokkén Tournament",77016.66,25,62
+"287",405,"Blade & Soul",409355.52,5,51
+"288",462,"Arcana Heart 3: LOVE MAX!!!!!",410,2,6
+"289",512,"Chaos Code: New Sign of Catastrophe",140,1,3
+"290",513,"Gundam Versus",280,1,6
+"291",465,"FIFA 17",1482612.63,48,156
+"292",492,"Doom (2016)",7000,1,6
+"293",493,"Rage",5000,1,3
+"294",491,"The Elder Scrolls: Legends",5000,1,3
+"295",482,"Project Cars",67908.21,113,50
+"296",501,"Heavy Metal Machines",12339.33,1,35
+"297",449,"Vainglory",797421.19,35,247
+"298",578,"Forza Motorsport 6",172600,9,43
+"299",451,"Pro Evolution Soccer 2017",514697.71,16,39
+"300",438,"Guilty Gear Xrd -REVELATOR-",36437.43,19,61
+"301",475,"Madden NFL 2017",1004000,5,42
+"302",483,"KartRider",567366.35,20,76
+"303",416,"NHL '94",3818.56,8,25
+"304",390,"Under Night In-Birth EXE: Late",6025.76,23,52
+"305",411,"S.K.I.L.L. - Special Force 2",132532.93,21,82
+"306",428,"Tetris Ultimate",221,1,3
+"307",251,"Tekken Tag Tournament 2",125965.7,138,142
+"308",472,"Mad Skills Motocross 2",20163,1,12
+"309",471,"ComPet",2000,1,50
+"310",467,"MOBA Legends",225,1,3
+"311",425,"Call of Duty: Black Ops III",3939783.29,78,419
+"312",463,"Counter-Strike Online",406989.6,12,70
+"313",488,"MechWarrior Online",143490,1,0
+"314",421,"FIFA 16",117828.11,28,61
+"315",450,"Pro Evolution Soccer 2016",27243.84,6,17
+"316",454,"Uncharted 4: A Thief's End",46235.07,1,5
+"317",343,"Skullgirls Encore",9155.4,13,37
+"318",505,"Gears of War: Ultimate Edition",170000,3,39
+"319",381,"Guild Wars 2",476005.5,57,152
+"320",476,"Madden NFL 2016",50000,1,8
+"321",244,"Bloodline Champions",41905.32,12,43
+"322",413,"BlazBlue: Chronophantasma Extend",4918.77,11,28
+"323",196,"Marvel vs. Capcom 3",22343.62,12,38
+"324",375,"Guilty Gear Xrd -SIGN-",37445.66,38,80
+"325",432,"Metal Gear Online",8000,8,37
+"326",433,"Grey Goo",36400,5,18
+"327",260,"Injustice: Gods Among Us",35176.89,117,101
+"328",415,"Splatoon",1390,4,3
+"329",364,"Call of Duty: Advanced Warfare",2608808.93,404,783
+"330",208,"Super Street Fighter IV Arcade Edition",343878.08,202,153
+"331",422,"Shards of War",1029.21,1,20
+"332",417,"Dengeki Bunko: Fighting Climax",60,1,3
+"333",418,"Rising Thunder",1000,1,3
+"334",407,"Evolve",131509.05,33,110
+"335",362,"FIFA 15",144373.99,352,169
+"336",384,"Halo 2 Anniversary",468705.05,20,97
+"337",382,"Gears of War 3",7255.81,4,13
+"338",383,"NHL 15",3157.16,3,3
+"339",257,"Call of Duty: Black Ops 2",1467139.25,53,184
+"340",498,"Pro Evolution Soccer 2015",26544.76,1,3
+"341",424,"Legend of Glory",472.66,1,0
+"342",360,"Ultimate Mortal Kombat 3",150,2,6
+"343",394,"Battlefield Hardline",13463.28,1,20
+"344",332,"BlazBlue: Chronophantasma",37020.58,15,63
+"345",264,"Call of Duty 4: Modern Warfare",420331.47,86,422
+"346",658,"Trackmania 2: Valley",779.34,2,6
+"347",209,"Melty Blood: Actress Again",0,2,10
+"348",273,"Call of Duty: Ghosts",1594185.25,76,199
+"349",367,"NBA 2K Online",NA,NA,NA
+"350",363,"Just Dance 2014",0,1,3
+"351",269,"Dead or Alive 5 Ultimate",0,7,37
+"352",271,"FIFA 14",96347.81,69,57
+"353",256,"Halo 4",430748.76,19,66
+"354",162,"Counter-Strike",13524629.57,996,4139
+"355",497,"Pro Evolution Soccer 2014",29410.25,1,4
+"356",252,"Persona 4 Arena",6336.63,11,42
+"357",329,"NHL 14",3023.96,3,6
+"358",700,"rFactor",15083.56,4,51
+"359",163,"Defense of the Ancients",857420.65,94,468
+"360",255,"FIFA 13",458427.82,62,53
+"361",206,"Street Fighter IV",7938.22,12,41
+"362",429,"Dragon Ball Z: Budokai 3",204.06,1,3
+"363",370,"Turbo Racing League",1e+06,9,16
+"364",342,"Skullgirls",300,1,3
+"365",261,"BlazBlue: Continuum Shift Extend",0,1,3
+"366",253,"Dead or Alive 5",0,2,4
+"367",248,"Battlefield 3",25407.46,7,5
+"368",259,"Unreal Tournament 3",104977.82,4,7
+"369",275,"Madden NFL 2013",4e+05,1,8
+"370",276,"NHL 13",70000,1,1
+"371",207,"Super Street Fighter II Turbo HD Remix",16360,8,29
+"372",250,"FIFA 12",54431.52,66,53
+"373",243,"Call of Duty: Black Ops",375793.48,23,118
+"374",258,"Call of Duty: Modern Warfare 3",1160815.66,45,209
+"375",214,"Gears of War",252195.57,18,33
+"376",189,"Tekken 6",119874.64,30,59
+"377",212,"BlazBlue: Continuum Shift II",24591.01,5,14
+"378",378,"Forza Motorsport 4",132.37,1,2
+"379",377,"NHL 12",702.93,2,6
+"380",215,"FIFA 11",93983.77,78,72
+"381",266,"Rainbow Six: Vegas 2",79000,8,0
+"382",230,"Super Street Fighter IV",20877.3,16,40
+"383",198,"Soul Calibur IV",100260,3,4
+"384",431,"Arcana Heart 3",1000,1,4
+"385",336,"Trackmania United Forever",NA,NA,NA
+"386",485,"Special Force",130250,3,0
+"387",361,"Mortal Kombat vs. DC Universe",0,1,3
+"388",216,"FIFA 10",117026.71,48,64
+"389",354,"Day of Defeat: Source",14068.57,8,50
+"390",372,"Carom 3D",60500,4,11
+"391",380,"Forza Motorsport 3",11000,2,3
+"392",398,"Enemy Territory: Quake Wars",60923.12,4,27
+"393",403,"Guitar Hero 5",10500,1,3
+"394",232,"Need for Speed: Shift",10500,1,3
+"395",225,"Warhammer 40,000: Dawn of War",79816.5,3,7
+"396",386,"Capcom vs. SNK",140,2,6
+"397",217,"FIFA 09",121618.34,19,52
+"398",338,"Pro Evolution Soccer 2009",1395.97,2,5
+"399",263,"Gears of War 2",135000,5,0
+"400",159,"Quake III Arena",1137832.19,100,243
+"401",234,"Pro Evolution Soccer 3",25000,2,8
+"402",373,"Red Stone",58000,2,12
+"403",521,"Asphalt 4",29500,2,5
+"404",575,"Wise Star 2",12000,1,3
+"405",430,"BlazBlue: Calamity Trigger",35,1,3
+"406",203,"Guilty Gear XX Accent Core Plus",0,1,3
+"407",202,"Guilty Gear XX Accent Core",10365,4,33
+"408",427,"King of Fighters XI",25,1,3
+"409",181,"Project Gotham Racing 4",25208.46,4,5
+"410",218,"FIFA 08",207129.94,17,68
+"411",176,"Command & Conquer 3",53086.67,8,9
+"412",347,"World in Conflict",293338.23,11,38
+"413",277,"Need for Speed: ProStreet",32208.46,3,12
+"414",480,"Madden NFL 2009",1e+05,1,1
+"415",410,"Guitar Hero III: Legends of Rock",19000,2,8
+"416",183,"Unreal Tournament 2003",147473.91,14,33
+"417",192,"Dead or Alive 4",497745.31,13,45
+"418",270,"Forza Motorsport 2",222000,2,17
+"419",180,"Project Gotham Racing 3",297286.85,10,33
+"420",357,"Battlefield 2",91715.22,12,0
+"421",396,"Crysis",11340.95,2,0
+"422",397,"Supreme Commander: Forged Alliance",1290.01,1,0
+"423",337,"Pro Evolution Soccer 2008",2084.15,3,6
+"424",366,"F.E.A.R.",178000,5,20
+"425",233,"TrackMania Nations",93381.66,8,18
+"426",219,"FIFA 07",237812.23,13,42
+"427",355,"Battlefield 2142",18546.14,4,0
+"428",169,"Quake 4",556678.51,52,100
+"429",154,"Halo 2",1489362.47,71,119
+"430",265,"Rainbow Six: Vegas",176400.77,7,137
+"431",660,"Trackmania United",1027.5,1,3
+"432",479,"Madden NFL 2008",1e+05,1,1
+"433",267,"Shadowrun",24000,3,0
+"434",173,"Need for Speed Carbon",36322.58,4,12
+"435",237,"Pro Evolution Soccer 6",20216.82,2,5
+"436",201,"Guilty Gear XX Slash",10250,2,6
+"437",401,"S.T.A.L.K.E.R.: Shadow of Chernobyl",4901.26,1,0
+"438",400,"Supreme Commander",4901.26,1,0
+"439",399,"Rise of Nations: Rise of Legends",69600,1,8
+"440",478,"Madden NFL 2007",1e+05,1,1
+"441",220,"FIFA 06",112464.53,12,23
+"442",466,"Ghost Recon Advanced Warfighter",24000,2,0
+"443",174,"Need for Speed: Most Wanted",35694.54,7,18
+"444",184,"Unreal Tournament 2004",133969.33,12,41
+"445",168,"Hyper Street Fighter II",10250,1,8
+"446",186,"Tekken 5",10250,9,10
+"447",392,"Day of Defeat",50300,3,37
+"448",238,"Gran Turismo 4",44000,2,5
+"449",236,"Pro Evolution Soccer 5",32000,1,4
+"450",477,"Madden NFL 2006",1e+05,1,1
+"451",221,"FIFA 05",57728.01,8,5
+"452",239,"Painkiller",1015000,13,48
+"453",193,"Dead or Alive Ultimate",30000,1,3
+"454",175,"Need for Speed: Underground 2",35629.48,3,8
+"455",235,"Pro Evolution Soccer 4",40550.64,2,11
+"456",356,"Call of Duty",50629.77,3,51
+"457",200,"Guilty Gear XX #Reload",0,1,3
+"458",188,"Tekken Tag Tournament",0,4,7
+"459",170,"Doom 3",257748.16,4,14
+"460",153,"Halo: Combat Evolved",299281,39,114
+"461",228,"Project Gotham Racing 2",35000,2,4
+"462",171,"Counter-Strike: Condition Zero",162150.6,3,111
+"463",408,"Gran Turismo 3: A-Spec",3250,2,4
+"464",222,"FIFA 04",40000,3,3
+"465",227,"Need for Speed: Underground",35000,1,3
+"466",199,"Guilty Gear XX",0,2,5
+"467",185,"Tekken 4",12500,4,4
+"468",190,"Virtua Fighter 4: Evolution",0,3,6
+"469",412,"Madden NFL 2004",1500,1,3
+"470",223,"FIFA 03",54066.44,3,10
+"471",247,"Return to Castle Wolfenstein",67424.3,3,30
+"472",358,"NASCAR Thunder 2003",5933.5,1,0
+"473",349,"Star Wars Jedi Knight II: Jedi Outcast",7679.25,1,0
+"474",350,"NASCAR Thunder 2002",7679.25,1,0
+"475",224,"FIFA 2002 World Cup",43000,1,8
+"476",182,"Unreal Tournament",89000,5,14
+"477",246,"Aliens versus Predator 2",40000,1,1
+"478",229,"FIFA 2001",46000,2,9
+"479",414,"FIFA 2000",50000,1,4
+"480",365,"Descent 3",50000,1,1
