@@ -3,51 +3,76 @@
 # ==============================================================================
 #
 # This script aims to clean the NZ data-set and give an overview of it.
+# It is composed of two data-sets : one regarding the income and the other about investment.
 
 library(tidyverse)
 library(lubridate)
 library(readr)
 library(kableExtra)
-library(naniar)
 
-data2 <- read_delim(file = here::here("data/NZ_CompaniesPublicRevenues2.csv"), ";", escape_double = FALSE, col_names = FALSE, trim_ws = TRUE)
+# Income of the 25 largest video game companies
 
+data1 <- read_delim(file = here::here("data/NZ_CompaniesPublicRevenues2.csv"), ";", escape_double = FALSE, col_names = FALSE, trim_ws = TRUE)
 
-CompaniesPublicRevenues <- data2 %>%
-  rename(Company_name = X1, Region_of_HQ = X2, Q1_2019 = X3, Q2_2019 = X4, Q3_2019 = X5, Q4_2019 = X6, Q1_2020 = X7, Q2_2020 = X8) %>%
-  mutate(Q1_2019 = parse_number(Q1_2019), Q2_2019 = parse_number(Q2_2019), 
-         Q3_2019 = parse_number(Q3_2019), Q4_2019 = parse_number(Q4_2019), 
+# ------------------------------------------------------------------------------
+
+# Data cleaning
+
+CompaniesPublicRevenues <- data1 %>%
+  # set a name for each variable
+  rename(Company_name = X1, Region_of_HQ = X2, Q1 = X3, 
+         Q2 = X4, Q3 = X5, Q4 = X6, 
+         Q1_2020 = X7, Q2_2020 = X8) %>%
+  # modify the format of certain variable   
+  mutate(Q1 = parse_number(Q1), Q2 = parse_number(Q2),
+         Q3 = parse_number(Q3), Q4 = parse_number(Q4),
          Q1_2020 = parse_number(Q1_2020), Q2_2020 = parse_number(Q2_2020)) %>%
-  mutate(Q1_2019 = ifelse(Q1_2019 < 10 , Q1_2019*1000, Q1_2019), 
-         Q2_2019 = ifelse(Q2_2019 < 10 , Q2_2019*1000, Q2_2019), 
-         Q3_2019 = ifelse(Q3_2019 < 10 , Q3_2019*1000, Q3_2019), 
-         Q4_2019 = ifelse(Q4_2019 < 10 , Q4_2019*1000, Q4_2019),
+  # put every variable in the same unit
+  mutate(Q1 = ifelse(Q1 < 10 , Q1*1000, Q1), 
+         Q2 = ifelse(Q2 < 10 , Q2*1000, Q2), 
+         Q3 = ifelse(Q3 < 10 , Q3*1000, Q3), 
+         Q4 = ifelse(Q4 < 10 , Q4*1000, Q4),
          Q1_2020 = ifelse(Q1_2020 < 10 , Q1_2020*1000, Q1_2020),
          Q2_2020 = ifelse(Q2_2020 < 10 , Q2_2020*1000, Q2_2020)) %>%
-  mutate(First_semester_of_2019 = Q1_2019 + Q2_2020, 
-         Second_semester_of_2019 = Q3_2019 + Q4_2019, 
-         Total_in_2019 = Q1_2019 + Q2_2019 + Q3_2019 + Q4_2019, 
-         First_semester_in_2020 = Q1_2020 + Q2_2020) %>%
-  mutate(Q1_grate = 100*(Q1_2020 - Q1_2019)/Q1_2019, 
-         Q2_grate = 100*(Q2_2020 - Q2_2019)/Q2_2019, 
-         Semester2_grate = 100*(Second_semester_of_2019 - First_semester_of_2019)/First_semester_of_2019,
-         Semester3_grate = 100*(First_semester_in_2020 - Second_semester_of_2019)/Second_semester_of_2019,
-         First_semester_grate = 100*(First_semester_in_2020 - First_semester_of_2019)/First_semester_of_2019)
+  # compute total and growth
+  mutate(Total_2019 = Q1 + Q2 + Q3 + Q4, .after = Q4) %>%
+  mutate(Total_2020 = Q1_2020 + Q2_2020, .after = Q2_2020) %>%
+  mutate(Q1_grate = 100*(Q1_2020 - Q1)/Q1, .after = Q1_2020) %>% 
+  mutate(Q2_grate = 100*(Q2_2020 - Q2)/Q2, .after = Q2_2020)
 
+# ------------------------------------------------------------------------------
 
-CompaniesPublicRevenues %>% kbl() %>%  kable_classic() %>%
-  add_header_above(c(" " = 1, "Group 1" = 2, "Group 2" = 2, "Group 3" = 2))
+# Data overview 
 
+CompaniesPublicRevenues %>%
+  rename("Q1 " = Q1_2020, "Q2 " = Q2_2020, "Full year" = Total_2019, 
+         "YoY growth (%)" = Q1_grate,"Half year " = Total_2020, 
+         "YoY growth (%) " = Q2_grate) %>%
+  kbl(caption = "Game revenu per company") %>%
+  kable_paper(full_width = F) %>% 
+  add_header_above(c(" " = 2, "2019" = 5, "2020" = 5)) %>%
+  scroll_box(width = "100%", height = "300px")
 
-kbl(CompaniesPublicRevenues) %>%
-  kable_classic() %>%
-  add_header_above(c(" " = 2, "2019" = 4, "2020" = 2, "Other" = 9))
+# ------------------------------------------------------------------------------
+
+# Visualization
+
+# ------------------------------------------------------------------------------
+# Total income in 2019 per company
+# ------------------------------------------------------------------------------
+
+CompaniesPublicRevenues %>%
+  ggplot(aes(x = reorder(Company_name, Total_2019), y = Total_2019)) +
+  geom_col() +
+  xlab("Company name") +
+  ylab("Total games revenue in 2019") +
+  coord_flip()
 
 #https://platform.newzoo.com/companies/investments
 
-data3 <- read_delim("NZ_CompaniesInvestmentscsv1.csv", ";", escape_double = FALSE, col_names = FALSE, trim_ws = TRUE)
+data3 <- read_delim(file = here::here("data/NZ_CompaniesInvestmentscsv1.csv"), ";", escape_double = FALSE, col_names = FALSE, trim_ws = TRUE)
 
-data4 <- read_delim("NZ_CompaniesInvestmentscsv2.csv", ";", escape_double = FALSE, col_names = FALSE, trim_ws = TRUE)
+data4 <- read_delim(file = here::here("data/NZ_CompaniesInvestmentscsv2.csv"), ";", escape_double = FALSE, col_names = FALSE, trim_ws = TRUE)
 
 CompaniesInvestments <- data3 %>% full_join(data4) %>%
   rename(Date = X1, "Investment type" = X2, Sectors = X3, Emptycolumn = X4, Investee = X5, Amount = X6) %>%
@@ -58,8 +83,9 @@ mutate(Emptycolumn = NULL,
        Amount = parse_number(str_replace_all(Amount, c("K" = "000", "M" = "0000", "\\$" = ""))),
        Sectors = str_replace_all(Sectors, ",.", ", "))
 
-#kaggle
-data5 <- read.csv("Esport_Earnings.csv")
-data6 <- read.csv("GeneralEsportData.csv")
-data7 <- read.csv("HistoricalEsportData.csv")
-data8 <- read.csv("Managerial_and_Decision_Economics_2013_Video_Games_Dataset.csv")
+
+
+
+
+
+

@@ -19,7 +19,6 @@ data1 <- read_delim(file = here::here("data/Twitch.csv"), ";",
 
 # Data cleaning
 
-
 TwitchData <- data1 %>%
   # set a name for each variable
   rename(Date = X1, Avg_concur_viewers = X2, 
@@ -33,6 +32,15 @@ TwitchData <- data1 %>%
   mutate(Viewers_per_streamer = Hours_watched*1000000/Hours_streamed) %>%
   # Convert the column from character to double
   mutate(Active_streamers = parse_number(Active_streamers))
+
+# ------------------------------------------------------------------------------
+
+# Data overview
+
+TwitchData %>% 
+  kbl(caption = "Twitch statistics") %>%  
+  kable_paper(full_width = F) %>% 
+  scroll_box(width = "100%", height = "300px")
 
 # ------------------------------------------------------------------------------
 
