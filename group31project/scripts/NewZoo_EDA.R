@@ -1,80 +1,11 @@
 # ==============================================================================
-# EDA for twitchtracker.com (Twitch) data-set
+# EDA for newzoo.com (NZ) data-sets
 # ==============================================================================
+#
+# This script aims to clean the NZ data-set and give an overview of it.
 
 
-library(tidyverse)
-library(lubridate)
-library(readr)
-library(kableExtra)
-library(naniar)
 
-# General Statistics of the Twitch platform
-
-data1 <- read_delim(file = here::here("data/Twitch.csv"), ";", 
-                    escape_double = FALSE, col_names = FALSE, trim_ws = TRUE)
-
-# ------------------------------------------------------------------------------
-
-# Data cleaning
-
-
-TwitchData <- data1 %>%
-  # set a name for each variable
-  rename(Date = X1, Avg_concur_viewers = X2, 
-         Avg_concur_channels = X3, Hours_watched = X4, 
-         Active_streamers = X5, Hours_streamed = X6) %>%
-  # modify the format of certain variable
-  mutate(Date = mdy(Date), 
-         Hours_watched = parse_number(Hours_watched)) %>%
-  # Replace value with NA (in our dataframe, n/a are considered as character)
-  replace_with_na(replace = list(Active_streamers = "n/a")) %>%
-  mutate(Viewers_per_streamer = Hours_watched*1000000/Hours_streamed) %>%
-  # Convert the column from character to double
-  mutate(Active_streamers = parse_number(Active_streamers))
-
-typeof(TwitchData$Date)
-
-write.csv(TwitchData, "data/TwitchData.csv")
-
-# ------------------------------------------------------------------------------
-
-#Visualization
-
-o_Avg_concur_viewers <- TwitchData %>% 
-    ggplot(aes(x = Date, y = Avg_concur_viewers)) +
-    geom_col() +
-    ylab("Average concurent viewers")
-o_Avg_concur_viewers
-
-
-o_Avg_concur_channels <- TwitchData %>% 
-    ggplot(aes(x = Date, y = Avg_concur_channels)) +
-    geom_col() +
-    ylab("Average concurent channels")
-
-o_Avg_concur_channels
-
-o_Hours_watched <- TwitchData %>% 
-    ggplot(aes(x = Date, y = Hours_watched)) +
-    geom_col() +
-    ylab("Average concurent viewers")
-o_Hours_watched
-
-o_Active_streamers <- TwitchData %>% 
-  ggplot(aes(x = Date, y = Active_streamers)) +
-  geom_col(na.rm = TRUE)
-o_Active_streamers
-
-o_Hours_streamed <- TwitchData %>% 
-  ggplot(aes(x = Date, y = Hours_streamed)) +
-  geom_col()
-o_Hours_streamed
-
-o_Viewers_per_streamer <- TwitchData %>% 
-  ggplot(aes(x = Date, y = Viewers_per_streamer)) +
-  geom_col(mapping = NULL)
-o_Viewers_per_streamer
 
 #https://platform.newzoo.com/companies/public-revenues
 
@@ -123,8 +54,8 @@ CompaniesInvestments <- data3 %>% full_join(data4) %>%
   mutate(Emptycolumn = NULL, Sectors = str_replace_all(Sectors, ",.", ", "))
 
 mutate(Emptycolumn = NULL, 
-         Amount = parse_number(str_replace_all(Amount, c("K" = "000", "M" = "0000", "\\$" = ""))),
-         Sectors = str_replace_all(Sectors, ",.", ", "))
+       Amount = parse_number(str_replace_all(Amount, c("K" = "000", "M" = "0000", "\\$" = ""))),
+       Sectors = str_replace_all(Sectors, ",.", ", "))
 
 #kaggle
 data5 <- read.csv("Esport_Earnings.csv")
