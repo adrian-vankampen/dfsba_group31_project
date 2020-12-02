@@ -1,16 +1,17 @@
 # ==============================================================================
-# EDA for newzoo.com (NZ) data-sets
+# EDA for platform.newzoo.com (NZ) data-sets
 # ==============================================================================
 #
 # This script aims to clean the NZ data-set and give an overview of it.
 
+library(tidyverse)
+library(lubridate)
+library(readr)
+library(kableExtra)
+library(naniar)
 
+data2 <- read_delim(file = here::here("data/NZ_CompaniesPublicRevenues2.csv"), ";", escape_double = FALSE, col_names = FALSE, trim_ws = TRUE)
 
-
-#https://platform.newzoo.com/companies/public-revenues
-
-data2 <- read_delim("NZ_CompaniesPublicRevenues2.csv", ";", escape_double = FALSE,
-                    col_names = FALSE, trim_ws = TRUE)
 
 CompaniesPublicRevenues <- data2 %>%
   rename(Company_name = X1, Region_of_HQ = X2, Q1_2019 = X3, Q2_2019 = X4, Q3_2019 = X5, Q4_2019 = X6, Q1_2020 = X7, Q2_2020 = X8) %>%

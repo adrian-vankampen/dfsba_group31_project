@@ -29,7 +29,7 @@ Since finding data about private investments are hardly possible to get for free
 ```{r child = 'Twitch_data.Rmd'}
 ```
 
-```{r child = 'New_zoo_data.Rmd'}
+```{r child = 'NewZoo_data.Rmd'}
 ```
 
 ```{r child = 'esports_earnings_data1.Rmd'}
