@@ -1,0 +1,36 @@
+---
+title: "The Evolution of the Esports Industry"
+author: "Mivelaz, Allan & van Kampen, Adrian"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: html_document
+---
+
+## Overview and Motivation:
+The video game industry has been growing since the beginning of the millennium. From the basement of teenagers' and geeks, it has become a wide-spread industry, with multi-million dollar games being released every year.
+
+Similarly, so-called "E-sports" have also grown, from underground friendly tournaments to international competitions that attract millions of viewers, online and in large arenas, and pay off prizes ranging to many millions of dollars to the winner teams. As with traditional sports, this popularity is also a major business opportunity for brands that wish to get visibility to a wide audience. Starting with gaming- and electronics-related brands such as peripherals manufacturers and software developers, the virtual billboards are more and more populated by major *external* brands such as beverages, clothing and many more sectors, who begin to understand that this industry is truly booming.
+
+In this projects, we want to give some insights about the major trends in the e-sports and gaming industry which, to the uninitiated, can seem daunting, with many different games being broadcasted, tight-knit communities having their own codes, and often unusual and innovative business models adopted by teams and individual professional players.
+
+## Related Work:
+- [TwitchTracker](https://www.twitchtracker.com) offer a few audience and user's statistics about [Twitch.tv](https://www.twitch.tv), one of the major video-games' streaming platform, which we wanted to recreate by our own means.
+- [Kaggle](https://www.kaggle.com/) has a few nice data-sets about e-sports that use [EsportsEarnings.com](http://www.esportsearnings.com) as a source.
+- [Esportsobserver.com](https://esportsobserver.com) and [McKinsey](https://www.mckinsey.com/business-functions/marketing-and-sales/our-insights/e-sports-and-the-next-frontier-of-brand-sponsorships#) also regularly publish articles about the marketing's potential of E-sports.
+
+Since finding data about private investments are hardly possible to get for free (even following our numerous direct inquiries to parties of interest), we are limiting our analysis to freely available data.
+
+## Initial Questions:
+- Showing the growing popularity of the platform [Twitch.tv](tps://www.twitch.tv). 
+- Identify rising games/teams for potential marketing visibility.
+- Compare the income of top companies in a period to see the potential of the industry.
+- Determine the factors that influence the amount of money invested.
+- Put all this information together to see the long term orientation of the industry.
+
+```{r child = 'Twitch_data.Rmd'}
+```
+
+```{r child = 'New_zoo_data.Rmd'}
+```
+
+```{r child = 'esports_earnings_data1.Rmd'}
+```
