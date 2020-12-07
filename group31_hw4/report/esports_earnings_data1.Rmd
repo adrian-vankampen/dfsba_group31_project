@@ -191,22 +191,3 @@ o_teams %>%
 ```
 
 <p>&nbsp;</p>
-
-## Tournaments by game
-
-We would like to learn a bit more about the life-cycle of games in the competitive arena. For that, let's observe the frequency of tournaments for different games:
-
-```{r}
-tourn_bygame <- tournaments1 %>%
-  filter(GameId %in% o_tourn$GameId[1:6]) %>%
-  group_by(Month_Yr = floor_date(EndDate, "month"), GameId) %>%
-  summarize(number= n())
-
-game_ev_tourn <- tourn_bygame %>%
-  ggplot(aes(x=Month_Yr, y=number)) +
-  geom_line() +
-  facet_wrap(GameId)
-
-game_ev_tourn
-```
-----------------------

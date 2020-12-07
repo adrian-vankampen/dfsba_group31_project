@@ -46,3 +46,58 @@ tourn_money <- monthly_tourn %>%
   xlab("Month")
 
 tourn_money
+
+
+
+# ==============================================================================
+
+
+o_tourn <- games %>%
+  select(GameId, GameName, TotalTournaments) %>%
+  arrange(desc(TotalTournaments)) %>%
+  filter(TotalTournaments > quantile(TotalTournaments, p=0.90, na.rm=TRUE))
+
+facetnb <- 4
+
+tourn_bygame <- tournaments1 %>%
+  filter(GameId %in% o_tourn$GameId[1:facetnb]) %>%
+  group_by(Month_Yr = floor_date(EndDate, "month"), GameId) %>%
+  summarize(number= n())
+
+game_ev_tourn <- tourn_bygame %>%
+  ggplot(aes(x=Month_Yr, y=number)) +
+  geom_line() +
+  xlab("") +
+  ylab("Tournaments per month") +
+  facet_wrap(tourn_bygame$GameId)
+
+game_ev_tourn
+
+# ==============================================================================
+
+o_prizes <- games %>%
+  select(GameId, GameName, TotalUSDPrize) %>%
+  filter(TotalUSDPrize > quantile(TotalUSDPrize, p=0.90, na.rm=TRUE)) %>%
+  arrange(desc(TotalUSDPrize))
+
+tourn_bygame2 <- tournaments1 %>%
+  filter(GameId %in% o_prizes$GameId[1:9]) %>%
+  group_by(Month_Yr = floor_date(EndDate, "month"), GameId) %>%
+  summarize(prize = sum(TotalUSDPrize))
+
+game_ev_prize <- tourn_bygame2 %>%
+  ggplot(aes(x=Month_Yr, y=prize/1000000)) +
+  geom_line() +
+  xlab("") +
+  ylab("Prizes per month (in mio USD)") +
+  facet_trelliscope(tourn_bygame2$GameId, 
+                    as_plotly = TRUE)
+
+game_ev_prize
+
+# ==============================================================================
+#
+# We would like to see the evolution of players' participation in tournaments.
+# This information is trickier to find though. For that, we could lookup a selection of tournaments and count the number of players
+
+print(games$GameName[games$GameId %in% tourn_bygame2$GameId])
