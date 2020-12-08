@@ -99,3 +99,4 @@ CompaniesInvestments %>%
   kbl(caption = "Ammount of different investmen") %>%
   kable_paper(full_width = F) %>% 
   scroll_box(width = "100%", height = "300px")
+
