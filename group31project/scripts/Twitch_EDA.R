@@ -9,6 +9,7 @@ library(lubridate)
 library(readr)
 library(kableExtra)
 library(naniar)
+library(questionr)
 
 # General Statistics of the Twitch platform
 
@@ -41,6 +42,9 @@ TwitchData %>%
   kbl(caption = "Twitch statistics") %>%  
   kable_paper(full_width = F) %>% 
   scroll_box(width = "100%", height = "300px")
+
+# NA's overview
+freq.na(TwitchData)
 
 # ------------------------------------------------------------------------------
 
@@ -99,3 +103,5 @@ TwitchData %>%
   ggplot(aes(x = Date, y = Viewers_per_streamer)) +
   geom_col(mapping = NULL) +
   ylab("Average concurent viewers")
+
+
