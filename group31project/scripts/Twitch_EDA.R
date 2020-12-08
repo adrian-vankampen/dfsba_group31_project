@@ -109,12 +109,9 @@ TwitchData %>%
 
 # ------------------------------------------------------------------------------
 
-bf <- TwitchData %>% separate(Date, into = c("year", "month", "day")) %>%
-  mutate(day = NULL) %>% 
-  unite(Date, year, month, sep = "-") %>% 
-  arrange(Date) %>% mutate(ID = 1:99)
-bf$ID <- seq.int(nrow(bf))
+# Dynamic plot
 
+# Create function to set the frame 
 
 accumulate_by <- function(dat, var) {
   var <- lazyeval::f_eval(var, dat)
@@ -125,13 +122,18 @@ accumulate_by <- function(dat, var) {
   dplyr::bind_rows(dats)
 }
 
-bf <- bf %>%
+
+# Arrange the actual data-set
+
+bf <- TwitchData %>% separate(Date, into = c("year", "month", "day")) %>%
+  mutate(day = NULL) %>% 
+  unite(Date, year, month, sep = "-") %>% 
+  arrange(Date) %>% mutate(ID = 1:99) %>% 
   accumulate_by(~ID)
 
-p <- ggplot(bf, aes(ID, Hours_streamed, frame = frame)) +
-  geom_line()
-
-fig <- ggplotly(p, height = 400) %>%
+# Build the dynamic plot
+ggplotly(ggplot(bf, aes(ID, Hours_streamed, frame = frame)) +
+                  geom_line(), height = 400) %>%
   layout(
     title = "Hours watched",
     yaxis = list(
@@ -146,15 +148,12 @@ fig <- ggplotly(p, height = 400) %>%
     )
   ) %>% 
   animation_opts(
-    frame = 100, 
+    frame = 20, 
     transition = 0, 
     redraw = FALSE
   ) %>%
   animation_slider(
     currentvalue = list(
       prefix = "Month "
-    )
   )
-
-fig
-
+)
