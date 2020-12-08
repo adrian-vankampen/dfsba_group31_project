@@ -10,6 +10,9 @@ library(readr)
 library(kableExtra)
 library(naniar)
 library(questionr)
+library(quantmod)
+library(plotly)
+
 
 # General Statistics of the Twitch platform
 
@@ -104,4 +107,54 @@ TwitchData %>%
   geom_col(mapping = NULL) +
   ylab("Average concurent viewers")
 
+# ------------------------------------------------------------------------------
+
+bf <- TwitchData %>% separate(Date, into = c("year", "month", "day")) %>%
+  mutate(day = NULL) %>% 
+  unite(Date, year, month, sep = "-") %>% 
+  arrange(Date) %>% mutate(ID = 1:99)
+bf$ID <- seq.int(nrow(bf))
+
+
+accumulate_by <- function(dat, var) {
+  var <- lazyeval::f_eval(var, dat)
+  lvls <- plotly:::getLevels(var)
+  dats <- lapply(seq_along(lvls), function(x) {
+    cbind(dat[var %in% lvls[seq(1, x)], ], frame = lvls[[x]])
+  })
+  dplyr::bind_rows(dats)
+}
+
+bf <- bf %>%
+  accumulate_by(~ID)
+
+p <- ggplot(bf, aes(ID, Hours_streamed, frame = frame)) +
+  geom_line()
+
+fig <- ggplotly(p, height = 400) %>%
+  layout(
+    title = "Hours watched",
+    yaxis = list(
+      title = "Total ammount",
+      zeroline = F,
+      tickprefix = "$"
+    ),
+    xaxis = list(
+      title = "Month",
+      zeroline = F, 
+      showgrid = F
+    )
+  ) %>% 
+  animation_opts(
+    frame = 100, 
+    transition = 0, 
+    redraw = FALSE
+  ) %>%
+  animation_slider(
+    currentvalue = list(
+      prefix = "Month "
+    )
+  )
+
+fig
 
