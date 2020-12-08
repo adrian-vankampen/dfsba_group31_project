@@ -7,6 +7,7 @@
 library(tidyverse)
 library(scales)
 library(lubridate)
+library(plotly)
 
 # We would like to see the evolution of tournament prize pools in time.
 
@@ -57,10 +58,9 @@ o_tourn <- games %>%
   arrange(desc(TotalTournaments)) %>%
   filter(TotalTournaments > quantile(TotalTournaments, p=0.90, na.rm=TRUE))
 
-facetnb <- 4
 
 tourn_bygame <- tournaments1 %>%
-  filter(GameId %in% o_tourn$GameId[1:facetnb]) %>%
+  filter(GameId %in% o_tourn$GameId) %>%
   group_by(Month_Yr = floor_date(EndDate, "month"), GameId) %>%
   summarize(number= n())
 
@@ -90,10 +90,19 @@ game_ev_prize <- tourn_bygame2 %>%
   geom_line() +
   xlab("") +
   ylab("Prizes per month (in mio USD)") +
-  facet_trelliscope(tourn_bygame2$GameId, 
-                    as_plotly = TRUE)
+  facet_wrap(tourn_bygame2$GameId)
 
 game_ev_prize
+
+fig_ev_prize <- plot_ly(
+  type = "bar",
+  x = tourn_bygame2$Month_Yr,
+  y = tourn_bygame2$prize/1000000,
+  text = tourn_bygame2$GameId,
+  hoverinfo = "text"
+)
+
+fig_ev_prize
 
 # ==============================================================================
 #
