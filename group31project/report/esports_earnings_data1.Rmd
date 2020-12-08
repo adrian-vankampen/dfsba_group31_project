@@ -201,7 +201,7 @@ We would like to learn a bit more about the life-cycle of games in the competiti
 facetnb <- 4
 
 tourn_bygame <- tournaments1 %>%
-  filter(GameId %in% o_tourn$GameId[1:facetnb]) %>%
+  filter(GameId %in% o_tourn$GameId) %>%
   group_by(Month_Yr = floor_date(EndDate, "month"), GameId) %>%
   summarize(number= n())
 
