@@ -68,24 +68,34 @@ CompaniesPublicRevenues %>%
   ylab("Total games revenue in 2019") +
   coord_flip()
 
-#https://platform.newzoo.com/companies/investments
+# ------------------------------------------------------------------------------
 
-data3 <- read_delim(file = here::here("data/NZ_CompaniesInvestmentscsv1.csv"), ";", escape_double = FALSE, col_names = FALSE, trim_ws = TRUE)
+# Different investment between 2018 and 2020
 
-data4 <- read_delim(file = here::here("data/NZ_CompaniesInvestmentscsv2.csv"), ";", escape_double = FALSE, col_names = FALSE, trim_ws = TRUE)
 
-CompaniesInvestments <- data3 %>% full_join(data4) %>%
+data3 <- read_delim(file = here::here("data/NZ_CompaniesInvestmentscsv1.csv"), 
+                    ";", escape_double = FALSE, col_names = FALSE, trim_ws = TRUE)
+
+data4 <- read_delim(file = here::here("data/NZ_CompaniesInvestmentscsv2.csv"), 
+                    ";", escape_double = FALSE, col_names = FALSE, trim_ws = TRUE)
+
+# ------------------------------------------------------------------------------
+
+# Data cleaning
+
+CompaniesInvestments <- data3 %>%
+  # combine the 2 data-sets
+  full_join(data4) %>%
+  # set a name for each variable
   rename(Date = X1, "Investment type" = X2, Sectors = X3, Emptycolumn = X4, Investee = X5, Amount = X6) %>%
-  mutate(Date = dmy(Date)) %>%
-  mutate(Emptycolumn = NULL, Sectors = str_replace_all(Sectors, ",.", ", "))
+  # modify the format of certain variable
+  mutate(Date = dmy(Date), Emptycolumn = NULL, Sectors = str_replace_all(Sectors, ",.", ", "))
 
-mutate(Emptycolumn = NULL, 
-       Amount = parse_number(str_replace_all(Amount, c("K" = "000", "M" = "0000", "\\$" = ""))),
-       Sectors = str_replace_all(Sectors, ",.", ", "))
+# ------------------------------------------------------------------------------
 
+# Data overview
 
-
-
-
-
-
+CompaniesInvestments %>% 
+  kbl(caption = "Ammount of different investmen") %>%
+  kable_paper(full_width = F) %>% 
+  scroll_box(width = "100%", height = "300px")
