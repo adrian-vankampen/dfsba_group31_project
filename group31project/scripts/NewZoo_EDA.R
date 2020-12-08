@@ -87,7 +87,8 @@ CompaniesInvestments <- data3 %>%
   # combine the 2 data-sets
   full_join(data4) %>%
   # set a name for each variable
-  rename(Date = X1, "Investment type" = X2, Sectors = X3, Emptycolumn = X4, Investee = X5, Amount = X6) %>%
+  rename(Date = X1, "Investment type" = X2, Sectors = X3, 
+         Emptycolumn = X4, Investee = X5, Amount = X6) %>%
   # modify the format of certain variable
   mutate(Date = dmy(Date), Emptycolumn = NULL, Sectors = str_replace_all(Sectors, ",.", ", "))
 
@@ -99,4 +100,19 @@ CompaniesInvestments %>%
   kbl(caption = "Ammount of different investmen") %>%
   kable_paper(full_width = F) %>% 
   scroll_box(width = "100%", height = "300px")
+
+# ------------------------------------------------------------------------------
+
+# Visualization
+
+numeric_amount <- c()
+for(i in seq_along(CompaniesInvestments$Amount)){
+  x <- parse_number(CompaniesInvestments$Amount[i])*(10 ** (3*as.integer(regexpr(str_sub(CompaniesInvestments$Amount[i], -1 , -1), 'KMB'))))
+  numeric_amount <- c(numeric_amount, x)
+}
+
+Monthly_investment <- CompaniesInvestments %>% 
+  mutate(Amount = numeric_amount, Date = floor_date(Date, "month")) %>% 
+  group_by(Date)
+
 
