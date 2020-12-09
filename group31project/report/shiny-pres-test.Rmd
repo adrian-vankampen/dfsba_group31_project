@@ -9,6 +9,8 @@ runtime: shiny
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 source(here::here("scripts/setup.R"))
+
+library(plotly)
 ```
 
 ## Shiny Presentation
@@ -60,8 +62,8 @@ inputPanel(
               timeFormat="%Y-%m-%d")
 )
 
-renderPlot({
-  tourn_bygame1 %>%
+renderPlotly({
+  mainplot <- tourn_bygame1 %>%
     filter(GameId == o_prizes$GameId[o_prizes$GameName == input$gameName]) %>%
     filter(Month_Yr >= input$dateRange[1]) %>%
     filter(Month_Yr <= input$dateRange[2]) %>%
@@ -79,7 +81,8 @@ renderPlot({
     xlab("") +
     ylab("") +
     xlim(input$dateRange[1], input$dateRange[2])
-  
+
+ggplotly(mainplot)
 })
 ```
 
