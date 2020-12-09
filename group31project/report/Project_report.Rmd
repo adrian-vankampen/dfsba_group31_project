@@ -2,7 +2,11 @@
 title: "The Evolution of the Esports Industry"
 author: "Mivelaz, Allan & van Kampen, Adrian"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
-output: html_document
+output: 
+  prettydoc::html_pretty:
+    theme: hpstr
+    highlight: github
+runtime: shiny
 ---
 
 ## Overview and Motivation:

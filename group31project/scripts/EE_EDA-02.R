@@ -83,14 +83,21 @@ o_prizes <- games %>%
 tourn_bygame2 <- tournaments1 %>%
   filter(GameId %in% o_prizes$GameId[1:9]) %>%
   group_by(Month_Yr = floor_date(EndDate, "month"), GameId) %>%
-  summarize(prize = sum(TotalUSDPrize))
+  summarize(prize = sum(TotalUSDPrize)) %>%
+  mutate(GameId = factor(GameId, 
+                          levels = games$GameId,
+                          labels = games$GameName))
+  # mutate(GameName = games$GameName[games$GameId == tourn_bygame2$GameId])
+
 
 game_ev_prize <- tourn_bygame2 %>%
   ggplot(aes(x=Month_Yr, y=prize/1000000)) +
   geom_line() +
   xlab("") +
   ylab("Prizes per month (in mio USD)") +
-  facet_wrap(tourn_bygame2$GameId)
+  facet_wrap(tourn_bygame2$GameId, labeller = labeller(game.labels))
+
+ggplotly(game_ev_prize)
 
 game_ev_prize
 

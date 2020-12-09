@@ -1,4 +1,10 @@
-
+---
+title: "test_html_pres"
+author: "Adrian"
+date: "09/12/2020"
+output: 
+  rmarkdown::html_document:
+  theme: lumen
 
 ## Esports Earnings
 ### Data gathering
@@ -200,59 +206,20 @@ graph1 <- o_teams %>%
 We would like to learn a bit more about the life-cycle of games in the competitive arena. For that, let's observe the frequency of tournaments for different games:
 
 ```{r}
+facetnb <- 4
 
-tourn_bygame2 <- tournaments %>%
-  left_join(games, by = "GameId") %>%
-  rename(TotalUSDPrize = TotalUSDPrize.x, X = X1.x) %>%
-  select(X:GameId,
-         GameName,
-         TournamentName:TotalUSDPrize) %>%
-  mutate(StartDate = as_date(StartDate),
-         EndDate = as_date(EndDate)) %>%
-  filter(GameId %in% o_prizes$GameId) %>%
+tourn_bygame <- tournaments1 %>%
+  filter(GameId %in% o_tourn$GameId) %>%
   group_by(Month_Yr = floor_date(EndDate, "month"), GameId) %>%
-  summarize(prize = sum(TotalUSDPrize))
+  summarize(number= n())
 
-inputPanel(
-  selectInput(
-    "gameName",
-    label = "Game:",
-    choices = o_prizes$GameName,
-    selected = o_prizes$GameName[1]
-  ),
-  
-  sliderInput(
-    "dateRange",
-    label = "Date range of observations:",
-    min = as.Date("2000-01-01", "%Y-%m-%d"),
-    max = as.Date("2019-12-31", "%Y-%m-%d"),
-    value = c(as.Date("2000-01-01"),
-              as.Date("2019-12-31")),
-    timeFormat = "%Y-%m-%d"
-  )
-)
+game_ev_tourn <- tourn_bygame %>%
+  ggplot(aes(x=Month_Yr, y=number)) +
+  geom_line() +
+  xlab("") +
+  ylab("Tournaments per month") +
+  facet_wrap(tourn_bygame$GameId)
 
-renderPlotly({
-  mainplot <- tourn_bygame2 %>%
-    filter(GameId == o_prizes$GameId[o_prizes$GameName == input$gameName]) %>%
-    filter(Month_Yr >= input$dateRange[1]) %>%
-    filter(Month_Yr <= input$dateRange[2]) %>%
-    ggplot(aes(x = Month_Yr, y = prize)) +
-    geom_line() +
-    ggtitle(paste("Total prize cash won: ",
-                  paste(
-                    format(
-                      round(o_prizes$TotalUSDPrize[o_prizes$GameName == input$gameName] / 1e6, 1),
-                      trim = TRUE,
-                      digits = 6
-                    ), "M"
-                  ),
-                  sep = "")) +
-    xlab("") +
-    ylab("") +
-    xlim(input$dateRange[1], input$dateRange[2])
-  
-  ggplotly(mainplot)
-})
+game_ev_tourn
 ```
 ----------------------
