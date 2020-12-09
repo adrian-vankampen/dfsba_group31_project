@@ -118,7 +118,7 @@ Monthly_investment <- CompaniesInvestments %>%
   mutate(Amount = numeric_amount, Date = floor_date(Date, "month")) %>% 
   group_by(Date) %>% 
   summarize(total = sum(Amount), 
-            number = n_distinct(Amount), 
+            number = sum(Amount > 0), 
             mean = mean(Amount))
 
 o_Monthly_investment <- Monthly_investment %>% 
@@ -134,10 +134,21 @@ investment_type <- CompaniesInvestments %>%
   mutate(Amount = numeric_amount) %>%
   group_by(type) %>%
   summarize(total = sum(Amount), 
-            number = n_distinct(Amount), 
+            number = sum(Amount > 0), 
             mean = mean(Amount)) %>%
   arrange(desc(number))
 
 
-
-
+sector_influence <- CompaniesInvestments %>%
+  mutate(Amount = numeric_amount) %>%
+  separate(Sectors, into = c("s1", "s2", "s3", "s4", "s5"), sep = ",") %>%
+  mutate(s2 = str_replace_all(s2, " ", ""),
+         s3 = str_replace_all(s3, " ", ""),
+         s4 = str_replace_all(s4, " ", ""),
+         s5 = str_replace_all(s5, " ", "")) %>%
+  pivot_longer(c(s1, s2, s3, s4, s5), names_to = "var", values_to = "Sectors") %>%
+  drop_na(Sectors) %>% group_by(Sectors) %>%
+  summarize(number = sum(Amount > 0),
+            total = sum(Amount), 
+            mean = mean(Amount))%>%
+  arrange(desc(number))
