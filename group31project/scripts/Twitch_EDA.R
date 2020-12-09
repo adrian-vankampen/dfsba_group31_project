@@ -30,10 +30,10 @@ TwitchData <- data1 %>%
          Active_streamers = X5, Hours_streamed = X6) %>%
   # modify the format of certain variable
   mutate(Date = mdy(Date), 
-         Hours_watched = parse_number(Hours_watched)) %>%
+         Hours_watched = parse_number(Hours_watched)*1000000) %>%
   # Replace value with NA (in our dataframe, n/a are considered as character)
   replace_with_na(replace = list(Active_streamers = "n/a")) %>%
-  mutate(Viewers_per_streamer = Hours_watched*1000000/Hours_streamed) %>%
+  mutate(Viewers_per_streamer = Hours_watched/Hours_streamed) %>%
   # Convert the column from character to double
   mutate(Active_streamers = parse_number(Active_streamers))
 
@@ -57,37 +57,41 @@ freq.na(TwitchData)
 # AVERAGE CONCURENT VIEWERS
 # ------------------------------------------------------------------------------
 
-TwitchData %>% 
-    ggplot(aes(x = Date, y = Avg_concur_viewers)) +
-    geom_col() +
-    ylab("Average concurent viewers")
+plot_ly(type = "bar",
+        x = TwitchData$Date, 
+        y = TwitchData$Avg_concur_viewers) %>%
+  layout(xaxis = list(title="Date"),
+         title = "Average concurent viewers")
 
 # ------------------------------------------------------------------------------
 # AVERAGE CONCURENT CHANNELS
 # ------------------------------------------------------------------------------
 
-TwitchData %>% 
-    ggplot(aes(x = Date, y = Avg_concur_channels)) +
-    geom_col() +
-    ylab("Average concurent channels")
+plot_ly(type = "bar",
+        x = TwitchData$Date, 
+        y = TwitchData$Avg_concur_channels) %>%
+  layout(xaxis = list(title="Date"),
+         title = "Average concurent channels")
 
 # ------------------------------------------------------------------------------
 # TOTAL NUMBER OF HOURS WATCHED
 # ------------------------------------------------------------------------------
 
-TwitchData %>% 
-    ggplot(aes(x = Date, y = Hours_watched)) +
-    geom_col() +
-    ylab("Hours watched")
+plot_ly(type = "bar",
+        x = TwitchData$Date, 
+        y = TwitchData$Hours_watched) %>%
+  layout(xaxis = list(title="Date"),
+         title = "Total Hours watched")
 
 # ------------------------------------------------------------------------------
 # TOTAL NUMBER OF ACTIVE STREAMERS
 # ------------------------------------------------------------------------------
 
-TwitchData %>% 
-  ggplot(aes(x = Date, y = Active_streamers)) +
-  geom_col(na.rm = TRUE) +
-  ylab("Active streamers")
+plot_ly(type = "bar",
+        x = TwitchData$Date, 
+        y = TwitchData$Active_streamers) %>%
+  layout(xaxis = list(title="Date"),
+         title = "Total number of active streamers")
 
 # ------------------------------------------------------------------------------
 # TOTAL NUMBER OF HOURS STREAMED
@@ -106,6 +110,12 @@ TwitchData %>%
   ggplot(aes(x = Date, y = Viewers_per_streamer)) +
   geom_col(mapping = NULL) +
   ylab("Average concurent viewers")
+
+fig <- plot_ly(TwitchData, x = ~TwitchData$Date, y = ~TwitchData$Hours_watched, name = 'Hours watched', type = 'scatter', mode = 'lines') 
+fig <- fig %>% add_trace(y = ~TwitchData$Hours_streamed, name = 'Hours streamed', type = 'scatter', mode = 'lines') 
+fig <- fig %>% add_trace(y = ~TwitchData$Viewers_per_streamer, name = 'Viewers per streamer', type = 'scatter', mode = 'lines')
+
+fig
 
 # ------------------------------------------------------------------------------
 

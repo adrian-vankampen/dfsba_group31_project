@@ -23,10 +23,11 @@ TwitchData <- data1 %>%
          Active_streamers = X5, Hours_streamed = X6) %>%
   # modify the format of certain variable
   mutate(Date = mdy(Date), 
-         Hours_watched = parse_number(Hours_watched)) %>%
+         Hours_watched = parse_number(Hours_watched)*1000000,
+         Hours_streamed = Hours_streamed*10) %>%
   # Replace value with NA (in our dataframe, n/a are considered as character)
   replace_with_na(replace = list(Active_streamers = "n/a")) %>%
-  mutate(Viewers_per_streamer = Hours_watched*1000000/Hours_streamed) %>%
+  mutate(Viewers_per_streamer = Hours_watched*100000000/Hours_streamed) %>%
   # Convert the column from character to double
   mutate(Active_streamers = parse_number(Active_streamers))
 
@@ -123,6 +124,24 @@ o_Viewers_per_streamer <- TwitchData %>%
   ylab("Viewers per streaner") 
 
 ggplotly(o_Viewers_per_streamer, height = 400)
+
+fig <- plot_ly(TwitchData, x = ~TwitchData$Date, y = ~TwitchData$Hours_watched, name = 'Hours watched', type = 'scatter', mode = 'lines', height = 400) %>%
+  layout(xaxis = list(title="Date"),
+         yaxis = list(title=""),
+         title = "Total number of active streamers",
+         margin = list(b=160), ##bottom margin in pixels
+         annotations = 
+           list(x = 1.5, y = -0.4, #position of text adjust as needed 
+                text = "*For the purposes of the graph, we have chosen to modify the scale of Hours watched and Viewers per streamers to make the plot relevant.", 
+                showarrow = F, xref='paper', yref='paper', 
+                xanchor='right', yanchor='auto', xshift=0, yshift=0,
+                font=list(size = 8, color="black"))
+         )
+  
+fig <- fig %>% add_trace(y = ~TwitchData$Hours_streamed, name = 'Hours streamed', type = 'scatter', mode = 'lines') 
+fig <- fig %>% add_trace(y = ~TwitchData$Viewers_per_streamer, name = 'Viewers per streamer', type = 'scatter', mode = 'lines')
+#  This graph therefore shows the general trends of the variable, the values shown are not relevant. 
+fig
 ```
 ```{r}
 ggplotly(TwitchData %>% 
@@ -169,7 +188,7 @@ fig <- ggplotly(p, height = 400) %>%
     )
   ) %>% 
   animation_opts(
-    frame = 100, 
+    frame = 50, 
     transition = 0, 
     redraw = FALSE
   ) %>%
@@ -181,3 +200,4 @@ fig <- ggplotly(p, height = 400) %>%
 
 fig
 ```
+
