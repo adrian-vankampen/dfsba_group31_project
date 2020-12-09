@@ -140,7 +140,7 @@ investment_type <- CompaniesInvestments %>%
             mean = mean(Amount)) %>%
   arrange(desc(number))
 
-
+# add median, remove total and use mean
 sector_influence <- CompaniesInvestments %>%
   mutate(Amount = numeric_amount) %>%
   separate(Sectors, into = c("s1", "s2", "s3", "s4", "s5"), sep = ",") %>%
@@ -149,9 +149,10 @@ sector_influence <- CompaniesInvestments %>%
          s4 = str_replace(s4, " ", ""),
          s5 = str_replace(s5, " ", "")) %>%
   pivot_longer(c(s1, s2, s3, s4, s5), names_to = "var", values_to = "Sectors") %>%
-  drop_na(Sectors) %>% group_by(Sectors) %>%
+  drop_na(Sectors) %>%
+  group_by(Sectors) %>%
   summarize(number = sum(Amount > 0),
-            "prop (%)" = number/sum(sector_influence$number)*100,
             total = sum(Amount), 
-            mean = mean(Amount)) %>%
+            mean = mean(Amount),
+            median = median(Amount)) %>%
   arrange(desc(total))
