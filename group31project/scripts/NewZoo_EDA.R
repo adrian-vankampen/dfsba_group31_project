@@ -114,6 +114,8 @@ for(i in seq_along(CompaniesInvestments$Amount)){
   numeric_amount <- c(numeric_amount, x)
 }
 
+
+
 Monthly_investment <- CompaniesInvestments %>% 
   mutate(Amount = numeric_amount, Date = floor_date(Date, "month")) %>% 
   group_by(Date) %>% 
@@ -149,9 +151,7 @@ sector_influence <- CompaniesInvestments %>%
   pivot_longer(c(s1, s2, s3, s4, s5), names_to = "var", values_to = "Sectors") %>%
   drop_na(Sectors) %>% group_by(Sectors) %>%
   summarize(number = sum(Amount > 0),
+            "prop (%)" = number/sum(sector_influence$number)*100,
             total = sum(Amount), 
-            mean = mean(Amount),
-            "prop (%)" = number/sum(sector_influence$number)*100)%>%
-  arrange(desc(number))
-
-sum(sector_influence$number)
+            mean = mean(Amount)) %>%
+  arrange(desc(total))
