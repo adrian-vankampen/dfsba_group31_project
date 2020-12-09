@@ -140,7 +140,7 @@ investment_type <- CompaniesInvestments %>%
             mean = mean(Amount)) %>%
   arrange(desc(number))
 
-
+# add median, remove total and use mean
 sector_influence <- CompaniesInvestments %>%
   mutate(Amount = numeric_amount) %>%
   separate(Sectors, into = c("s1", "s2", "s3", "s4", "s5"), sep = ",") %>%
