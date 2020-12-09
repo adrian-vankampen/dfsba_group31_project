@@ -142,13 +142,16 @@ investment_type <- CompaniesInvestments %>%
 sector_influence <- CompaniesInvestments %>%
   mutate(Amount = numeric_amount) %>%
   separate(Sectors, into = c("s1", "s2", "s3", "s4", "s5"), sep = ",") %>%
-  mutate(s2 = str_replace_all(s2, " ", ""),
-         s3 = str_replace_all(s3, " ", ""),
-         s4 = str_replace_all(s4, " ", ""),
-         s5 = str_replace_all(s5, " ", "")) %>%
+  mutate(s2 = str_replace(s2, " ", ""),
+         s3 = str_replace(s3, " ", ""),
+         s4 = str_replace(s4, " ", ""),
+         s5 = str_replace(s5, " ", "")) %>%
   pivot_longer(c(s1, s2, s3, s4, s5), names_to = "var", values_to = "Sectors") %>%
   drop_na(Sectors) %>% group_by(Sectors) %>%
   summarize(number = sum(Amount > 0),
             total = sum(Amount), 
-            mean = mean(Amount))%>%
+            mean = mean(Amount),
+            "prop (%)" = number/sum(sector_influence$number)*100)%>%
   arrange(desc(number))
+
+sum(sector_influence$number)
