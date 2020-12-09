@@ -9,6 +9,7 @@ library(tidyverse)
 library(lubridate)
 library(readr)
 library(kableExtra)
+library(plotly)
 
 # Income of the 25 largest video game companies
 
@@ -105,6 +106,8 @@ CompaniesInvestments %>%
 
 # Visualization
 
+options(scipen = 999)
+
 numeric_amount <- c()
 for(i in seq_along(CompaniesInvestments$Amount)){
   x <- parse_number(CompaniesInvestments$Amount[i])*(10 ** (3*as.integer(regexpr(str_sub(CompaniesInvestments$Amount[i], -1 , -1), 'KMB'))))
@@ -113,6 +116,28 @@ for(i in seq_along(CompaniesInvestments$Amount)){
 
 Monthly_investment <- CompaniesInvestments %>% 
   mutate(Amount = numeric_amount, Date = floor_date(Date, "month")) %>% 
-  group_by(Date)
+  group_by(Date) %>% 
+  summarize(total = sum(Amount), 
+            number = n_distinct(Amount), 
+            mean = mean(Amount))
+
+o_Monthly_investment <- Monthly_investment %>% 
+  ggplot(aes(x = Date, y = total)) +
+  geom_col()+
+  ylab("Monthly investment")
+
+ggplotly(o_Monthly_investment, height = 400)
+
+
+investment_type <- CompaniesInvestments %>%
+  rename(type = "Investment type") %>%
+  mutate(Amount = numeric_amount) %>%
+  group_by(type) %>%
+  summarize(total = sum(Amount), 
+            number = n_distinct(Amount), 
+            mean = mean(Amount)) %>%
+  arrange(desc(number))
+
+
 
 
