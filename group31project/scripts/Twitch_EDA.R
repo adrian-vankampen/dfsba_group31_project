@@ -69,7 +69,8 @@ plot_ly(type = "bar",
 
 plot_ly(type = "bar",
         x = TwitchData$Date, 
-        y = TwitchData$Avg_concur_channels) %>%
+        y = TwitchData$Avg_concur_channels,
+        height = 400) %>%
   layout(xaxis = list(title="Date"),
          title = "Average concurent channels")
 
@@ -173,17 +174,6 @@ fig3 <- plot_ly(TwitchData, x = ~Date,
 fig <- subplot(fig1, fig2, fig3)
 
 fig
-
-library(reshape2)
-
-d <- melt(TwitchData %>% select(Date, Hours_watched, 
-                                Hours_streamed, Viewers_per_streamer), id.vars = "Date")
-
-bla <- ggplot(d, aes(x = Date, y = value)) + 
-  geom_col() + theme_bw() + 
-  facet_wrap(~variable, scales = "free")
-
-bla
 
 # ------------------------------------------------------------------------------
 

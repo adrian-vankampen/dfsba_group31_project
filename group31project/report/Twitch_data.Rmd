@@ -189,7 +189,7 @@ fig <- ggplotly(p, height = 400) %>%
   layout(
     title = "Hours watched",
     yaxis = list(
-      title = "Total ammount",
+      title = "",
       zeroline = F,
       tickprefix = "$"
     ),
