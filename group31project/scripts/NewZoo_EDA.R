@@ -45,7 +45,7 @@ CompaniesPublicRevenues <- data1 %>%
 
 # Data overview 
 
-CompaniesPublicRevenues %>%
+CompRev %>%
   rename("Q1 " = Q1_2020, "Q2 " = Q2_2020, "Full year" = Total_2019, 
          "YoY growth (%)" = Q1_grate,"Half year " = Half_2020, 
          "YoY growth (%) " = Q2_grate) %>%
@@ -100,13 +100,6 @@ for(i in seq_along(data1$X8)){
   numeric_Q2_2020 <- c(numeric_Q2_2020, x)
 }
 
-CompaniesPublicRevenues %>%
-  ggplot(aes(x = reorder(Company_name, Total_2019), y = Total_2019, fill = Company_name)) +
-  geom_col(show.legend = FALSE) +
-  xlab("Company name") +
-  ylab("Total games revenue in 2019") +
-  coord_flip()
-
 # With different colors
 
 CompRev <- data1 %>%
@@ -148,17 +141,15 @@ test <- CompaniesPublicRevenues %>%
          Company_name = factor(CompaniesPublicRevenues$Company_name, 
                                levels = unique(CompaniesPublicRevenues$Company_name)[order(CompaniesPublicRevenues$Q1_grate, decreasing = TRUE)]))
 
-test2 <- test %>%
-  mutate(Q1_grate = paste0(Q1_grate, "%"))
+# Q1 growth rate
+plot1 <- plot_ly(test, x = ~Company_name, y = ~Q1_grate, type = "bar", name = 'YoY growth for Q1 (%)')
 
-pct <- paste0(pct*100, "%")
-pct[grep("0%", pct)] <- ""
+# Q1 growth rate
+plot2 <- plot_ly(test, x = ~Company_name, y = ~Q2_grate, type = "bar", name = 'Yoy growth for Q2 (%)')
 
-plot_ly(test2, x = ~Company_name, y = ~Q1_grate, type = "bar", name = 'SF Zoo')
-plot_ly(test, x = ~Company_name, y = ~Q1_grate, type = "bar", name = 'SF Zoo')
+plot <- subplot(plot1, plot2)
 
-
-
+plot
 # ------------------------------------------------------------------------------
 
 # Different investment between 2018 and 2020
