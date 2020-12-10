@@ -97,25 +97,93 @@ plot_ly(type = "bar",
 # TOTAL NUMBER OF HOURS STREAMED
 # ------------------------------------------------------------------------------
 
-TwitchData %>% 
-  ggplot(aes(x = Date, y = Hours_streamed)) +
-  geom_col() +
-  ylab("Hours streamed")
+plot_ly(type = "bar",
+        x = TwitchData$Date, 
+        y = TwitchData$Hours_streamed) %>%
+  layout(xaxis = list(title="Date"),
+         title = "Total number of hours streamers")
 
 # ------------------------------------------------------------------------------
 # VIEWERS PER STREAMER ON AVERAGE
 # ------------------------------------------------------------------------------
 
-TwitchData %>% 
-  ggplot(aes(x = Date, y = Viewers_per_streamer)) +
-  geom_col(mapping = NULL) +
-  ylab("Average concurent viewers")
+plot_ly(type = "bar",
+        x = TwitchData$Date, 
+        y = TwitchData$Viewers_per_streamer) %>%
+  layout(xaxis = list(title="Date"),
+         title = "Viewers per streamer on average")
 
-fig <- plot_ly(TwitchData, x = ~TwitchData$Date, y = ~TwitchData$Hours_watched, name = 'Hours watched', type = 'scatter', mode = 'lines') 
-fig <- fig %>% add_trace(y = ~TwitchData$Hours_streamed, name = 'Hours streamed', type = 'scatter', mode = 'lines') 
-fig <- fig %>% add_trace(y = ~TwitchData$Viewers_per_streamer, name = 'Viewers per streamer', type = 'scatter', mode = 'lines')
+# ------------------------------------------------------------------------------
+# RATIO BTW WATCHED AND STREAMED
+# ------------------------------------------------------------------------------
+
+# On the same plot
+
+plot_ly(data = TwitchData, x = ~TwitchData$Date, y = ~TwitchData$Hours_watched
+        ,type = "scatter", mode = "lines", width = 800
+        ,name = "Hours watched") %>%
+  add_trace(x = ~TwitchData$Date, y = ~TwitchData$Hours_streamed, yaxis = "y2", name = "Hours streamed") %>%
+  add_trace(x = ~TwitchData$Date, y = ~TwitchData$Viewers_per_streamer, yaxis = "y3", name = "Viewers per steamers")%>%
+  layout(
+    yaxis = list(
+      showline = FALSE, side = "left"
+      ,title = ""
+      , color = "blue"
+    )
+    ,yaxis2 = list(
+      showline = FALSE
+      ,overlaying = "y"
+      ,title = ""
+      , anchor = "free"
+      , color = "orange"
+    )
+    ,yaxis3 = list(
+      showline = FALSE,
+      side = "right",
+      overlaying = "y"
+      ,title = ""
+      , color = "green"
+    )
+    ,xaxis = list(
+      showline = FALSE, zeroline = FALSE, dtick = 0, title = "Date"
+    )
+    ,showlegend = TRUE
+    ,margin = list(
+      pad = 30, b = 90, l = 150, r = 90
+    )
+    ,legend = list(orientation = "v")
+    , title = "Comparaison between watched and streamed"
+  )
+
+# With a facet_wrap
+
+library(plotly)
+fig1 <- plot_ly(TwitchData, x = ~Date, 
+                y = ~Hours_watched) %>%
+  add_lines(name = ~"Hours watched")
+
+fig2 <- plot_ly(TwitchData, x = ~Date,
+                y = ~Hours_streamed) %>%
+        add_lines(name = ~"Hours streamed")
+
+fig3 <- plot_ly(TwitchData, x = ~Date,
+                y = ~Viewers_per_streamer) %>%
+  add_lines(name = ~"Viewers per streamer")
+
+fig <- subplot(fig1, fig2, fig3)
 
 fig
+
+library(reshape2)
+
+d <- melt(TwitchData %>% select(Date, Hours_watched, 
+                                Hours_streamed, Viewers_per_streamer), id.vars = "Date")
+
+bla <- ggplot(d, aes(x = Date, y = value)) + 
+  geom_col() + theme_bw() + 
+  facet_wrap(~variable, scales = "free")
+
+bla
 
 # ------------------------------------------------------------------------------
 
@@ -158,7 +226,7 @@ ggplotly(ggplot(bf, aes(ID, Hours_streamed, frame = frame)) +
     )
   ) %>% 
   animation_opts(
-    frame = 20, 
+    frame = 30, 
     transition = 0, 
     redraw = FALSE
   ) %>%
