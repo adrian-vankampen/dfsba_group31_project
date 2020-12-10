@@ -31,13 +31,13 @@ CompaniesPublicRevenues <- data1 %>%
   # put every variable in the same unit
   mutate(Q1 = ifelse(Q1 < 10 , Q1*1000, Q1), 
          Q2 = ifelse(Q2 < 10 , Q2*1000, Q2), 
-         Q3 = ifelse(Q3 < 10 , Q3*1000, Q3), 
+         Q3 = ifelse(Q3 < 10 , Q3*1000, Q3),
          Q4 = ifelse(Q4 < 10 , Q4*1000, Q4),
          Q1_2020 = ifelse(Q1_2020 < 10 , Q1_2020*1000, Q1_2020),
          Q2_2020 = ifelse(Q2_2020 < 10 , Q2_2020*1000, Q2_2020)) %>%
   # compute total and growth
   mutate(Total_2019 = Q1 + Q2 + Q3 + Q4, .after = Q4) %>%
-  mutate(Total_2020 = Q1_2020 + Q2_2020, .after = Q2_2020) %>%
+  mutate(Half_2020 = Q1_2020 + Q2_2020, .after = Q2_2020) %>%
   mutate(Q1_grate = 100*(Q1_2020 - Q1)/Q1, .after = Q1_2020) %>% 
   mutate(Q2_grate = 100*(Q2_2020 - Q2)/Q2, .after = Q2_2020)
 
@@ -47,7 +47,7 @@ CompaniesPublicRevenues <- data1 %>%
 
 CompaniesPublicRevenues %>%
   rename("Q1 " = Q1_2020, "Q2 " = Q2_2020, "Full year" = Total_2019, 
-         "YoY growth (%)" = Q1_grate,"Half year " = Total_2020, 
+         "YoY growth (%)" = Q1_grate,"Half year " = Half_2020, 
          "YoY growth (%) " = Q2_grate) %>%
   kbl(caption = "Game revenu per company") %>%
   kable_paper(full_width = F) %>% 
@@ -62,12 +62,102 @@ CompaniesPublicRevenues %>%
 # Total income in 2019 per company
 # ------------------------------------------------------------------------------
 
+options(scipen = 999)
+
+numeric_Q1 <- c()
+for(i in seq_along(data1$X3)){
+  x <- parse_number(data1$X3[i])*(10 ** (3*as.integer(regexpr(str_sub(data1$X3[i], -1 , -1), 'KMB'))))
+  numeric_Q1 <- c(numeric_Q1, x)
+}
+
+numeric_Q2 <- c()
+for(i in seq_along(data1$X4)){
+  x <- parse_number(data1$X4[i])*(10 ** (3*as.integer(regexpr(str_sub(data1$X4[i], -1 , -1), 'KMB'))))
+  numeric_Q2 <- c(numeric_Q2, x)
+}
+
+numeric_Q3 <- c()
+for(i in seq_along(data1$X5)){
+  x <- parse_number(data1$X5[i])*(10 ** (3*as.integer(regexpr(str_sub(data1$X5[i], -1 , -1), 'KMB'))))
+  numeric_Q3 <- c(numeric_Q3, x)
+}
+
+numeric_Q4 <- c()
+for(i in seq_along(data1$X6)){
+  x <- parse_number(data1$X6[i])*(10 ** (3*as.integer(regexpr(str_sub(data1$X6[i], -1 , -1), 'KMB'))))
+  numeric_Q4 <- c(numeric_Q4, x)
+}
+
+numeric_Q1_2020 <- c()
+for(i in seq_along(data1$X7)){
+  x <- parse_number(data1$X7[i])*(10 ** (3*as.integer(regexpr(str_sub(data1$X7[i], -1 , -1), 'KMB'))))
+  numeric_Q1_2020 <- c(numeric_Q1_2020, x)
+}
+
+numeric_Q2_2020 <- c()
+for(i in seq_along(data1$X8)){
+  x <- parse_number(data1$X8[i])*(10 ** (3*as.integer(regexpr(str_sub(data1$X8[i], -1 , -1), 'KMB'))))
+  numeric_Q2_2020 <- c(numeric_Q2_2020, x)
+}
+
 CompaniesPublicRevenues %>%
-  ggplot(aes(x = reorder(Company_name, Total_2019), y = Total_2019)) +
-  geom_col() +
+  ggplot(aes(x = reorder(Company_name, Total_2019), y = Total_2019, fill = Company_name)) +
+  geom_col(show.legend = FALSE) +
   xlab("Company name") +
   ylab("Total games revenue in 2019") +
   coord_flip()
+
+# With different colors
+
+CompRev <- data1 %>%
+  # set a name for each variable
+  rename(Company_name = X1, Region_of_HQ = X2, Q1 = X3, 
+         Q2 = X4, Q3 = X5, Q4 = X6, 
+         Q1_2020 = X7, Q2_2020 = X8) %>%
+  # modify the format of certain variable   
+  mutate(Q1 = numeric_Q1, Q2 = numeric_Q2,
+         Q3 = numeric_Q3, Q4 = numeric_Q4,
+         Q1_2020 = numeric_Q1_2020, Q2_2020 = numeric_Q2_2020) %>%
+  # compute total and growth
+  mutate(Total_2019 = Q1 + Q2 + Q3 + Q4, .after = Q4) %>%
+  mutate(Half_2020 = Q1_2020 + Q2_2020, .after = Q2_2020) %>%
+  mutate(Q1_grate = 100*(Q1_2020 - Q1)/Q1, .after = Q1_2020) %>% 
+  mutate(Q2_grate = 100*(Q2_2020 - Q2)/Q2, .after = Q2_2020)
+
+plot_CompRev <- CompaniesPublicRevenues %>%
+  mutate(Company_name = factor(CompaniesPublicRevenues$Company_name, 
+                               levels = unique(CompaniesPublicRevenues$Company_name)[order(CompaniesPublicRevenues$Total_2019, decreasing = FALSE)]))
+
+plot_ly(data = plot_CompRev,
+        x = plot_CompRev$Total_2019,
+        y = ~plot_CompRev$Company_name,
+        color = ~plot_CompRev$Company_name,
+        colors = "Dark2",
+        type = "bar",
+        height = 400) %>% 
+  layout(title = "Sales per city",
+         xaxis = list(title = "City"),
+         showlegend = FALSE)
+
+# ------------------------------------------------------------------------------
+# YoY Revenue growth per company
+# ------------------------------------------------------------------------------
+
+test <- CompaniesPublicRevenues %>%
+  mutate(Q1_grate = (round(Q1_grate, digits = 2)),
+         Company_name = factor(CompaniesPublicRevenues$Company_name, 
+                               levels = unique(CompaniesPublicRevenues$Company_name)[order(CompaniesPublicRevenues$Q1_grate, decreasing = TRUE)]))
+
+test2 <- test %>%
+  mutate(Q1_grate = paste0(Q1_grate, "%"))
+
+pct <- paste0(pct*100, "%")
+pct[grep("0%", pct)] <- ""
+
+plot_ly(test2, x = ~Company_name, y = ~Q1_grate, type = "bar", name = 'SF Zoo')
+plot_ly(test, x = ~Company_name, y = ~Q1_grate, type = "bar", name = 'SF Zoo')
+
+
 
 # ------------------------------------------------------------------------------
 
