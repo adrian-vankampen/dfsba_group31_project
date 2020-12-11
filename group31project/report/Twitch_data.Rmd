@@ -31,6 +31,10 @@ TwitchData <- data1 %>%
   # Convert the column from character to double
   mutate(Active_streamers = parse_number(Active_streamers))
 
+# summary
+
+summary(TwitchData[, -1])
+
 # Data overview
 
 TwitchData %>% 
@@ -38,7 +42,8 @@ TwitchData %>%
    kable_paper(full_width = F) %>% 
    scroll_box(width = "100%", height = "300px")
 
-# test 
+# test
+
 freq.na(TwitchData)
 ```
 <p>&nbsp;</p>
