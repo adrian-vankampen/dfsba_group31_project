@@ -1,1214 +1,1250 @@
-"","TeamId","TeamName","TotalUSDPrize","TotalTournaments"
-"1",102,"Team Liquid",35732474.03,1844
-"2",419,"OG",33943233.59,99
-"3",101,"Evil Geniuses",24263698.79,854
-"4",118,"Fnatic",15729227.88,929
-"5",185,"Virtus.pro",14415574.39,510
-"6",210,"Newbee",14225385.59,231
-"7",169,"Vici Gaming",13084345.79,302
-"8",211,"Team Secret",12076278.72,278
-"9",124,"Invictus Gaming",11669190.1,503
-"10",163,"Natus Vincere",11282585.4,490
-"11",227,"LGD Gaming",10948410.59,145
-"12",212,"Cloud9",9926035.95,760
-"13",145,"SK Telecom T1",9776439.98,328
-"14",507,"Wings Gaming",9745472.22,27
-"15",623,"Paris Saint-Germain Esports",9480579.68,75
-"16",240,"FaZe Clan",9192668.83,363
-"17",466,"Astralis",8353918.81,92
-"18",231,"OpTic Gaming",7903718.96,295
-"19",256,"G2 Esports",7713993.02,427
-"20",216,"Team Envy",6650419.22,356
-"21",196,"Team SoloMid",6580521,618
-"22",112,"SK Gaming",6510141.03,663
-"23",132,"MVP",6227204.8,487
-"24",261,"Alliance",5731542.15,326
-"25",111,"mousesports",5360689.26,955
-"26",144,"Samsung",5306802.8,353
-"27",162,"Ninjas in Pyjamas",5140509.03,328
-"28",207,"Counter Logic Gaming",5077193.95,445
-"29",571,"Lazarus",5028856.38,259
-"30",425,"NRG Esports",4921864.26,329
-"31",343,"Royal Never Give Up",4900886.71,77
-"32",383,"Chaos Esports Club",4865963,82
-"33",814,"Gen.G",4694683.69,64
-"34",561,"TnC Gaming",4447050.32,58
-"35",104,"compLexity Gaming",4428813.23,595
-"36",225,"EHOME",4045181.5,103
-"37",117,"Team Dignitas",3995002.1,606
-"38",300,"CDEC Gaming",3704903.32,52
-"39",317,"Luminosity Gaming",3545357.6,267
-"40",311,"EDward Gaming",3444210.99,107
-"41",24687,"Sentinels",3433250.68,60
-"42",663,"eUnited",3362363.69,192
-"43",787,"100 Thieves",3312155.35,72
-"44",24684,"Cooler Esport",3300164.26,28
-"45",430,"eStar Gaming",3300157.32,54
-"46",382,"Splyce",3299842.51,410
-"47",251,"Vitality",3177144.81,223
-"48",760,"San Francisco Shock",3105000,7
-"49",192,"Gambit Esports",3037287.52,179
-"50",115,"Team Empire",3022325,428
-"51",177,"KT Rolster",2922370.01,219
-"52",181,"Jin Air Green Wings",2761165.77,408
-"53",123,"World Elite",2442343.31,210
-"54",427,"Mineski",2434750.99,82
-"55",184,"Flash Wolves",2386592.34,209
-"56",830,"Ghost Gaming",2326479.7,173
-"57",385,"ENCE eSports",2253556.63,208
-"58",337,"Tempo Storm",2181650.14,412
-"59",283,"COGnitive Gaming",2016138.32,164
-"60",557,"Rogue",1883165.94,194
-"61",221,"MIBR",1853403,98
-"62",848,"Spacestation Gaming",1851020.64,155
-"63",103,"Millenium",1822130.48,562
-"64",676,"Dallas Empire",1797504.47,23
-"65",344,"OMG",1784300.18,65
-"66",195,"Epsilon eSports",1772279.91,242
-"67",285,"Team DK",1769242.38,43
-"68",451,"Echo Fox",1737629.59,337
-"69",209,"HellRaisers",1644304.42,136
-"70",126,"TyLoo",1605327.79,162
-"71",776,"London Spitfire",1591136.5,13
-"72",768,"New York Excelsior",1572618.5,18
-"73",213,"Taipei Assassins",1529565.39,24
-"74",403,"ahq e-Sports Club",1517072.64,87
-"75",141,"CJ Entus",1502458.47,185
-"76",934,"Team Reciprocity",1491429.86,82
-"77",24706,"FunPlus Phoenix",1472633.6,22
-"78",338,"Renegades",1465905.73,178
-"79",850,"LeStream Esport",1431833.11,84
-"80",826,"Rise Nation",1412612.5,80
-"81",763,"Infamous",1344846.01,50
-"82",802,"Top Esports",1336062.17,23
-"83",267,"ROX Gaming",1328260.18,74
-"84",657,"North",1312961.35,84
-"85",131,"Incredible Miracle",1312868.72,166
-"86",919,"Keen Gaming",1283305.59,43
-"87",581,"Russian National Team",1260218.44,26
-"88",172,"Denial Esports",1241411.24,178
-"89",340,"Qiao Gu Reapers",1220408.2,17
-"90",529,"Misfits",1208104.47,175
-"91",468,"Afreeca Freecs",1206132.72,274
-"92",205,"PENTA Sports",1195365.03,263
-"93",24806,"Atlanta Faze",1187500,14
-"94",773,"Philadelphia Fusion",1186278.5,15
-"95",658,"BIG",1168137.52,155
-"96",396,"paiN Gaming",1164349.32,117
-"97",411,"Immortals",1131165.15,118
-"98",766,"Seoul Dynasty",1130000,6
-"99",322,"Team Kinguin",1119008.47,119
-"100",136,"StarTale",1117702.92,159
-"101",24680,"Hero JiuJ",1104361.96,5
-"102",558,"Heroic",1091397.85,73
-"103",548,"Method",1088178.04,111
-"104",234,"Elevate",1081431.98,150
-"105",719,"GamersOrigin",1041248.06,206
-"106",24884,"9z Team",1022730.93,21
-"107",113,"ALTERNATE aTTaX",1019549.85,401
-"108",319,"Vega Squadron",1010673.01,159
-"109",913,"Yoshimoto",1006400,3
-"110",119,"Meet Your Makers",995405.04,267
-"111",494,"Team Spirit",988222.11,123
-"112",193,"Team LDLC.com",973971.85,186
-"113",856,"Vancouver Titans",950000,4
-"114",215,"FlipSid3 Tactics",939555.31,324
-"115",655,"Black Dragons e-Sports",934281.95,48
-"116",740,"AGO Esports",919213.89,108
-"117",963,"FURIA Esports",909945.26,62
-"118",833,"Solary",901293.3,150
-"119",795,"DragonX",899289.63,25
-"120",24703,"DAMWON Gaming",882163.46,12
-"121",916,"JD Gaming",871389.2,15
-"122",194,"Titan eSports",860876.11,75
-"123",805,"AVANGAR",858469.01,69
-"124",621,"Ballistix",855000,10
-"125",241,"Team KaLiBeR",821775.52,49
-"126",365,"Str8 Rippin",821040.45,88
-"127",114,"mTw",811779.48,277
-"128",530,"Team Allegiance",798580.7,64
-"129",24748,"MAD Lions",792306.43,21
-"130",546,"Team expert",787335.85,274
-"131",420,"Space Soldiers",782943.06,78
-"132",24786,"Chicago Huntsmen",782750,11
-"133",843,"Four Angry Men",767227.23,24
-"134",933,"Windigo Gaming",764124.2,104
-"135",342,"Star Horn Royal Club",759830.17,29
-"136",24841,"Buriram United Esports",757062.88,16
-"137",769,"Shanghai Dragons",755000,5
-"138",801,"OGN Entus",745073.68,29
-"139",505,"J Team",722000.01,42
-"140",24690,"Kungarna",716315.89,19
-"141",287,"H2K",713712.74,43
-"142",24898,"Valhalla Vikings",712144.55,6
-"143",153,"ROOT Gaming",710867.69,639
-"144",774,"Los Angeles Gladiators",709605.19,13
-"145",671,"Tricked eSports",702980.84,110
-"146",372,"Panda Global",695411.89,489
-"147",109,"Team Acer",689747.97,571
-"148",242,"Final Boss",667891,43
-"149",168,"mYinsanity",662852.16,470
-"150",142,"Hwaseung OZ",662772.23,44
-"151",846,"Nova eSports",657284.58,33
-"152",301,"TongFu",648617.82,43
-"153",134,"Prime",635241.44,195
-"154",318,"Snake Esports",632602.77,39
-"155",442,"EURONICS Gaming",625290.14,286
-"156",366,"Birmingham Salvo",623465.73,12
-"157",852,"Team Atlantis",618267.52,49
-"158",305,"NaJin e-mFire",616799.21,35
-"159",24667,"Suning",602343.44,10
-"160",954,"forZe",599818.55,89
-"161",861,"Atlanta Reign",596098,9
-"162",501,"GODSENT",586123.64,87
-"163",829,"Winstrike Team",585542.66,44
-"164",447,"STX SouL",582668.98,78
-"165",24797,"TOX Gaming",569000,11
-"166",674,"The Chiefs eSports Club",565204.44,111
-"167",183,"AZUBU",551164.03,46
-"168",518,"Ad Finem",544089.37,13
-"169",525,"Tempest",544085,14
-"170",158,"4Kings",544046.42,114
-"171",362,"DetonatioN",539438.06,68
-"172",770,"Los Angeles Valiant",535000,6
-"173",583,"Korean National Team",532247.1,27
-"174",309,"Mindfreak",525282.89,86
-"175",923,"Eleven Gaming",522100,31
-"176",708,"Team Singularity",518064.56,139
-"177",24833,"London Royal Ravens",517650,10
-"178",849,"Nordavind",515431.65,77
-"179",24781,"Rex Regum Qeon",510845.74,31
-"180",364,"Carbon",505208.84,153
-"181",572,"Gale Force eSports",504565.14,74
-"182",201,"Team 3D",503225,72
-"183",374,"Chicago Chimera",497750,7
-"184",840,"Team Serenity",491431.75,9
-"185",577,"Ting",491240.26,146
-"186",544,"INTZ eSports",488924.09,106
-"187",24734,"Nigma",475124,12
-"188",440,"Illuminar Gaming",471602.53,65
-"189",204,"Moscow Five",469104.79,71
-"190",248,"Team Infused",467091.66,109
-"191",335,"Enemy",462681.45,66
-"192",229,"wisdom Nerve victory",462297.48,67
-"193",536,"Obey Alliance",460283.28,31
-"194",133,"Old Generations",456814.74,77
-"195",24773,"HAVU Gaming",452820.01,52
-"196",744,"Hong Kong Attitude",452296.84,45
-"197",147,"Woongjin Stars",450596.55,47
-"198",331,"Giants Gaming",448669.85,95
-"199",286,"Orange Esports",446394.67,40
-"200",296,"Clan Kapitol",446089.23,37
-"201",265,"Unicorns of Love",441289.48,65
-"202",237,"Fariko",435621.58,8
-"203",825,"Pittsburgh Knights",432963.23,53
-"204",720,"Planet Odd",428371.14,16
-"205",24708,"Talon Esports",426548.29,19
-"206",821,"Griffin",426342.26,18
-"207",732,"RunAway",425848.84,20
-"208",860,"Hangzhou Spark",425000,3
-"209",931,"Triumphant Song Gaming",422644.37,113
-"210",313,"Origen",420582.91,15
-"211",395,"PSISTORM Gaming",419983.17,491
-"212",198,"against All authority",417963.95,195
-"213",789,"KSV eSports",408998.2,14
-"214",107,"FXOpen e-Sports",406442.24,144
-"215",137,"Team SCV Life",402513.32,187
-"216",832,"Team Queso",402405.6,29
-"217",847,"UYU",397342.51,101
-"218",765,"GC Busan",394681.71,18
-"219",135,"SlayerS",383967.89,96
-"220",827,"Red Reserve",383100,34
-"221",948,"Red Bull eSports",382547.68,15
-"222",139,"WeMade FOX",379900.51,87
-"223",413,"eSuba",376982.7,167
-"224",609,"Chinese National Team",376925.36,25
-"225",613,"Lunatic-hai",376129.41,21
-"226",482,"Team Kongdoo",374172.35,34
-"227",24957,"Toronto Ultra",370000,4
-"228",921,"Actoz Stars",366375.5,9
-"229",688,"Florida Mutineers",366000,7
-"230",25049,"OpTic Gaming Los Angeles",360000,5
-"231",24780,"EVOS",356412.94,36
-"232",485,"Longzhu Gaming",355907.81,8
-"233",121,"Radical Online X-tremists",352203.38,180
-"234",462,"exceL eSports",352032.72,72
-"235",713,"Marines Esports",351535.06,15
-"236",349,"Team Celestial",350689.91,29
-"237",24742,"Dragon Phoenix Gaming",350449.13,96
-"238",304,"Team Archon",347056.08,63
-"239",920,"CR4ZY",340073.19,51
-"240",967,"Enigma6 Group",339375,18
-"241",220,"Team Roccat",337909.58,99
-"242",516,"I May",335703.2,5
-"243",817,"FlyToMoon",335161,15
-"244",306,"Nihilum Gaming",333932.42,39
-"245",695,"Vietnamese National Team",332500,8
-"246",928,"Werder Bremen eSports",330838.8,12
-"247",24835,"BOOM Esports",329762.41,35
-"248",481,"Supremacy",325335.57,86
-"249",797,"Rogue Warriors",323524.4,9
-"250",236,"Team Curse",322901.58,140
-"251",823,"Welcome to South Georgo",322800,9
-"252",698,"Team One More",321122.23,9
-"253",421,"Reason Gaming",318181.8,135
-"254",586,"French National Team",316879.45,32
-"255",790,"Sprout",309017.4,37
-"256",218,"Team VeryGames",308996.24,84
-"257",24828,"Infantry Clan",305077.96,12
-"258",918,"Execration",303807.43,22
-"259",24946,"Bazaar Gaming",300325.26,7
-"260",637,"Taiwanese National Team",299325,15
-"261",909,"Team Aster",298218.19,28
-"262",781,"Team QLASH",295447.42,112
-"263",24777,"NASR eSports",293271.03,14
-"264",24787,"Endpoint",289149.04,43
-"265",771,"Boston Uprising",288606,7
-"266",479,"Team Eager",288250,15
-"267",539,"The Imperial",287505.3,50
-"268",24782,"BDS Esport",287192.41,17
-"269",24746,"Geek Fam",285544.33,22
-"270",226,"Rave",285198.43,17
-"271",323,"x6tence",282757.78,86
-"272",24803,"Team Unique",281781.25,33
-"273",24705,"Team Faceless",281033,10
-"274",24743,"Bigetron eSports",280794.58,7
-"275",24945,"King of Gamers Club",279420.93,7
-"276",610,"American National Team",279399.95,20
-"277",664,"FlyQuest",278786.25,23
-"278",638,"Thai National Team",273900,10
-"279",24668,"World Best Gaming",269935.69,9
-"280",120,"ESC Gaming",269572.65,292
-"281",513,"Schalke 04 Esports",266699.22,29
-"282",824,"The Gosu Crew",263015.65,37
-"283",545,"L5",259630,7
-"284",910,"J.Storm",258600,12
-"285",24783,"Wildcard Gaming",258204.75,20
-"286",253,"SG e-sports",257951.55,16
-"287",230,"Pentagram G-Shock",257376.53,18
-"288",143,"MBCGame HERO",257121.26,44
-"289",24707,"DarkZero Esports",256750,9
-"290",200,"Team NoA",256297.62,25
-"291",24958,"New York Subliners",255600,7
-"292",735,"Myztro Gaming",253503.2,85
-"293",347,"CM Storm",253404.17,74
-"294",660,"Bravado Gaming",252172.1,50
-"295",709,"Pantech",251990.64,23
-"296",646,"Escape Gaming",251687.9,11
-"297",24819,"VC Gaming",251280.6,3
-"298",863,"Washington Justice",250000,1
-"299",656,"Tainted Minds",245856.29,74
-"300",24918,"Shoot To Kill",245578.75,21
-"301",197,"Copenhagen Wolves",244670.54,85
-"302",24900,"Become Legends",242330,24
-"303",930,"Chivo SC",239973.64,65
-"304",716,"Isurus Gaming",239075.41,52
-"305",575,"Albus NoX Luna",238702.5,3
-"306",818,"Hanbit Stars",237891.93,34
-"307",579,"German National Team",237642.92,41
-"308",24774,"Riot Squad Esports",235900,12
-"309",405,"Legacy eSports",233304.16,92
-"310",268,"Keyd Stars",229889.54,76
-"311",233,"TCM Gaming",229316.24,106
-"312",543,"RED Canids",228513.1,47
-"313",951,"Team GamerLegion",226013.76,28
-"314",712,"Team NP",224679,9
-"315",808,"Team Gigantti",224542.69,13
-"316",214,"Clan 519",223840,36
-"317",499,"Team Naventic",221569,11
-"318",24950,"Osh-Tekk Warriors",219867,6
-"319",208,"KaBuM! e-Sports",218990.53,32
-"320",224,"Big God",218550.13,2
-"321",775,"Florida Mayhem",212672.5,8
-"322",24839,"Thailand National Player",209815.58,4
-"323",367,"Carolina Core",209000,9
-"324",652,"Greatest Ones",208896.98,30
-"325",584,"Swedish National Team",208723.01,31
-"326",834,"Gentside Esports Club",208138.92,18
-"327",793,"Bilibili Gaming",202383.4,10
-"328",531,"Saigon Jokers",201934.86,25
-"329",24818,"DeToNator",201315.97,29
-"330",730,"Mock-It eSports",201072.83,101
-"331",743,"Kaos Latin Gamers",198769.35,14
-"332",24812,"Made in Thailand",197493.65,49
-"333",408,"X-Team",195470.53,89
-"334",707,"Movistar Riders",195374.61,57
-"335",24784,"Susquehanna Soniqs",194486.11,17
-"336",281,"Bad Monkey Gaming",194102.35,23
-"337",24881,"Crazy Raccoon",193521,15
-"338",736,"Young Miracles",193302,5
-"339",748,"beastcoast",192432.79,59
-"340",414,"Dark Passage",191821.49,29
-"341",675,"Team RivaL",190805.2,13
-"342",453,"Paradigm",190000,4
-"343",24733,"Illuminate",189699.05,12
-"344",582,"Ukranian National Team",188738.18,17
-"345",589,"Canadian National Team",188625,18
-"346",452,"Avant Gaming",186640.73,46
-"347",862,"We Dem Girlz",184834.71,38
-"348",24793,"Team One",184251.31,32
-"349",745,"Lyon Gaming",184012.05,16
-"350",106,"Quantic Gaming",183554.62,105
-"351",780,"Minnesota RØKKR",183500,6
-"352",297,"Empire Arcadia",183244.66,485
-"353",521,"Selfless Gaming",181464.8,93
-"354",24874,"MEGA Esports",178132.37,14
-"355",777,"Luminous Stars",177829.84,10
-"356",661,"M19",176847.4,19
-"357",164,"Axiom eSports",176342.72,109
-"358",24832,"ORDER",175455.44,23
-"359",24722,"CYCLOPS athlete gaming",174015.81,21
-"360",912,"VRS Coanda Simsport",171340.69,12
-"361",966,"Team Heretics",170702.6,24
-"362",24971,"MCES",169970,5
-"363",275,"Prophecy",169940.32,28
-"364",24672,"Vikin.gg",169906.93,23
-"365",922,"Tigers",169171.28,5
-"366",149,"Serious Gaming",167729.16,99
-"367",24813,"Armory Gaming",166106.61,19
-"368",677,"Astral Authority",164000,9
-"369",398,"CNB e-Sports Club",163105.89,55
-"370",24879,"TrainHard eSport",162646.6,20
-"371",127,"Gama Bears",162263.28,26
-"372",228,"HyperGloryTeam",160922.77,9
-"373",700,"Greek National Team",159600,4
-"374",653,"Arma Team",158510,104
-"375",24715,"Team Adroit",156240.3,18
-"376",266,"Planetkey Dynamics",155606.2,135
-"377",416,"Positive Energy",154778.03,8
-"378",949,"Williams Esports",153859.84,19
-"379",24704,"SANDBOX Gaming",153807.9,6
-"380",678,"Scythe Gaming",153705.22,6
-"381",958,"FC Barcelona",152734.86,15
-"382",24716,"Paris Legion",152500,5
-"383",341,"Team King",152173.93,9
-"384",24776,"Raise Your Edge Gaming",151147.41,97
-"385",24902,"Executors One",150000,2
-"386",588,"Finnish National Team",149868.78,20
-"387",762,"Miraculous Youngster",148594.21,7
-"388",24709,"KaiZi Gaming",148585.32,91
-"389",223,"team9",148390.78,15
-"390",962,"SinoDragon",146609.8,5
-"391",262,"Vox Eminor",144519.35,39
-"392",165,"eSTRO",144168.13,34
-"393",24775,"Copenhagen Flames",143789.39,32
-"394",24682,"Veloce Esports",143718.18,14
-"395",739,"PRIDE Gaming",143425.02,84
-"396",389,"Maximum Impact Gaming",143000.29,7
-"397",246,"Team Orbit",141611.99,42
-"398",263,"Frag eXecutors",141281.27,21
-"399",926,"Mkers",140602.5,65
-"400",955,"Quincy Crew",140422,10
-"401",941,"FAV gaming",140099.94,6
-"402",302,"London Conspiracy",139286.29,41
-"403",715,"froyotech",138797.99,42
-"404",764,"Pompa Team",138754.94,55
-"405",24851,"Libalent",137762,4
-"406",734,"Blank Esports",137105.66,8
-"407",174,"Western Wolves",136088.53,57
-"408",312,"Dead Pixels",134260.26,255
-"409",24844,"SJ Gaming",133566.54,31
-"410",483,"Team No Limit",132718.55,9
-"411",24899,"Helsinki REDS",131042.37,8
-"412",783,"Team Aretuza",130156.66,13
-"413",404,"Bangkok Titans",129837.01,22
-"414",24829,"Athletico",129815.28,26
-"415",742,"Fade 2 Karma",128987.34,55
-"416",277,"n!faculty",127207.69,45
-"417",767,"Houston Outlaws",126172,4
-"418",841,"Team Gamer Sensei",125255.28,9
-"419",314,"Karont3 e-Sports Club",124836.17,44
-"420",257,"Team Tinker",124439.09,15
-"421",316,"Beşiktaş e-Sports Club",122459.89,23
-"422",380,"Lemondogs",122243.96,16
-"423",24864,"QConfirm",122099.88,7
-"424",937,"PONOS Sports",121666.67,7
-"425",357,"San Francisco Optx",121500,6
-"426",409,"True eSport",120324.44,192
-"427",682,"Kuala Lumpur Hunters",119837.07,26
-"428",486,"Zenith of Origin",119710.33,80
-"429",24814,"Purple Mood E-Sport",117777.98,17
-"430",587,"Polish National Team",117487.56,20
-"431",24878,"Team MCES",117150,22
-"432",264,"Lions",116405.03,28
-"433",243,"Speed Gaming",116355.64,10
-"434",180,"Cascade",116306.08,186
-"435",24872,"SCARZ",116067.36,23
-"436",219,"iBUYPOWER",115208.84,28
-"437",222,"emuLate!",114555.08,17
-"438",24788,"Lowkey Esports",112714.24,12
-"439",203,"3DMAX",112024.44,51
-"440",608,"British National Team",110840.6,14
-"441",443,"ESC Ever",110031.24,7
-"442",235,"Strictly Business",109630,13
-"443",733,"Pirates of Space",109426.35,11
-"444",373,"LMQ",109112.01,8
-"445",24953,"Divine Vendetta",108706,5
-"446",24825,"Divine Esports",107996.41,8
-"447",125,"PanDarea",107615.42,21
-"448",602,"Danish National Team",107060.17,18
-"449",157,"Wayi Spider",106696.22,50
-"450",642,"OnGameNet SPARKYZ",106588.09,21
-"451",24907,"Nemiga Gaming",106573.56,35
-"452",273,"The Titans",105411.19,12
-"453",842,"4 Clovers & Lepricon",105298.45,8
-"454",489,"The MongolZ",105097.59,22
-"455",639,"Brazilian National Team",104950,9
-"456",956,"Aftermath",103663.03,81
-"457",512,"VfL Wolfsburg",102865.89,36
-"458",839,"Forward Gaming",102510,11
-"459",130,"New Star HoSeo",102207.62,49
-"460",925,"Singapore Sentinels",102112.19,18
-"461",580,"Norweigan National Team",101772.71,14
-"462",24678,"Brave Star Gaming",101624.99,97
-"463",299,"Power Rangers",101372.62,34
-"464",24821,"Genesis",101258,4
-"465",24790,"Absolute",100567.64,12
-"466",599,"Spanish National Team",100390.71,17
-"467",24744,"FDA Hublot Esports Team",1e+05,1
-"468",315,"Invasion eSport",99897.23,125
-"469",726,"OSC Elite",99817.22,147
-"470",24822,"QM Gaming",98702.56,6
-"471",687,"LuxuryWatch",98604.83,13
-"472",24842,"Entity Gaming",98585.78,29
-"473",24789,"Ground Zero Gaming",98585.56,17
-"474",175,"apeX eSports",98456.11,12
-"475",290,"Ocean Gaming",97841.4,51
-"476",927,"PSV eSports",97739.65,13
-"477",508,"LowLandLions",97699.74,67
-"478",914,"Grayhound Gaming",97656.67,15
-"479",650,"Circa eSports",97505.64,85
-"480",666,"Burrito Esports",96739.21,24
-"481",475,"Xenics",96343.91,16
-"482",625,"Ajax Amsterdam eSports",96306.49,23
-"483",138,"ZeNEX",95798.79,46
-"484",24906,"k1ck eSports Club",94934.67,18
-"485",24671,"Northern Gaming",94624.01,27
-"486",392,"Team FeaR",93745.05,13
-"487",24796,"Triumph",93500,29
-"488",188,"Begrip Gaming",93132.67,16
-"489",635,"Australian National Team",93025,11
-"490",965,"ARCY",92840.1,18
-"491",523,"Dream Team",92697.96,28
-"492",24933,"ad hoc gaming",91869.3,32
-"493",24866,"FURY",91603.28,12
-"494",851,"Paris Eternal",91600,3
-"495",24836,"k23",90408.63,26
-"496",938,"GameWith",90166.67,4
-"497",386,"Cats Gaming",89169.97,72
-"498",293,"Noble eSports",88863.18,31
-"499",329,"Team Malaysia",88584.27,9
-"500",24847,"Fighting PandaS",88000,5
-"501",24772,"Swole Patrol",88000,24
-"502",24737,"FATE Esports",87941.1,10
-"503",24801,"Simplicity Esports",87593,10
-"504",24785,"Infinity Esports",87311.55,21
-"505",24720,"Syman Gaming",86874,18
-"506",746,"Team TopDeck",86574.32,8
-"507",644,"iGame.com",86488.02,18
-"508",859,"Guangzhou Charge",86250,3
-"509",503,"Hard Random",85851.35,13
-"510",176,"Exile5",85215.15,86
-"511",24845,"KOVA Esports",85185.26,15
-"512",24745,"Alfa Romeo Racing F1 Esports Team",85000,1
-"513",616,"Project_kr",84790.5,8
-"514",24963,"DefuseKids",84680.98,29
-"515",148,"vVv Gaming",84551.07,19
-"516",591,"Turkish National Team",84079.22,8
-"517",24820,"The Rumblers",84000,4
-"518",520,"Phoenix1",83633.03,52
-"519",592,"Argentinian National Team",82858.56,9
-"520",24713,"Tornado Energy",82594.1,11
-"521",371,"Winterfox",82490.52,67
-"522",598,"Dutch National Team",82238.35,16
-"523",684,"Fable eSports",81868.5,10
-"524",643,"1907 Fenerbahçe Esports",80972.84,8
-"525",612,"Team Skadis Gift",80797.99,10
-"526",759,"Dallas Fuel",80000,3
-"527",779,"Brøndby IF eSport",79770,8
-"528",24795,"PACT",79253.61,25
-"529",690,"Italian National Team",77500,11
-"530",593,"Czech National Team",76383.55,6
-"531",191,"a-Losers",76316.94,20
-"532",946,"McLaren Shadow",76000,2
-"533",24857,"Estral Esports",75250,8
-"534",24815,"Hive",74500,7
-"535",24877,"MnM Gaming",74309.69,32
-"536",24948,"Team Flash",74289.52,3
-"537",761,"GameTV",73257.32,71
-"538",439,"FM eSports",73006.75,29
-"539",24714,"Northern Lights",72850,8
-"540",786,"Clutch Gaming",72812.5,3
-"541",308,"Automatic Reload",71575,5
-"542",24674,"Mazer Gaming",70194.09,10
-"543",457,"Berlin Allianz",70000,2
-"544",24826,"Sunsister",69749.7,14
-"545",25012,"The Peeps",69250,5
-"546",206,"LGB eSports",68457.08,23
-"547",217,"Team Property",67644.03,33
-"548",320,"SBENU",66726.07,32
-"549",274,"EYEBALLERS",66301.88,8
-"550",464,"Team Question Mark",66060.56,4
-"551",434,"AT Gaming",66009.56,65
-"552",454,"Alien Invasion",65878.06,130
-"553",696,"Japanese National Team",65500,8
-"554",330,"VwS Gaming",64345.79,152
-"555",844,"Sigma",63620.13,9
-"556",108,"CheckSix Gaming",63515.24,35
-"557",550,"Most Valuable Gaming",63282.35,74
-"558",799,"Wind and Rain",63238.65,33
-"559",24717,"ATK",62518.13,16
-"560",940,"Mercedes-AMG Petronas Esports",62500,2
-"561",714,"Team Random",62500,1
-"562",723,"Thunderbirds",62500,1
-"563",24702,"Team Redline",62400,7
-"564",24991,"Optimal Ambition",62333.34,3
-"565",339,"Hong Kong Esports",62332.6,9
-"566",711,"Team Zenith",62312.76,9
-"567",24683,"Triple Trouble",62286.7,9
-"568",626,"Manchester City eSports",61650,10
-"569",24893,"Third Impact",61095,13
-"570",129,"For Our Utopia",60175.76,19
-"571",417,"Team Hearthlytics",60010,15
-"572",393,"Team Vulcun",60000,3
-"573",473,"Team Coast",59950,10
-"574",753,"Ronin Esports",59576.2,13
-"575",835,"Oserv Esport",59506.41,9
-"576",788,"Team Catch-Gamer",59263.61,10
-"577",24725,"x3o",59100.8,15
-"578",24903,"M10 Esports",59100,10
-"579",957,"Polar Ace",58913.81,15
-"580",794,"TitanEX1",58132.79,64
-"581",334,"Team Dragon Knights",58000,7
-"582",24861,"mudgolems",57750,3
-"583",24859,"Rated R",57000,6
-"584",524,"AGAiN",56847.13,9
-"585",915,"Omnislash",56822.83,14
-"586",471,"Ocrana",56810.11,10
-"587",352,"Anexis eSports",56625.39,33
-"588",943,"Sauber F1 Esports Team",56000,2
-"589",820,"Winners",55812.77,13
-"590",354,"GamingGear.eu",54909.4,8
-"591",24882,"Raised by Kings",54837.6,5
-"592",24883,"Yeah Gaming",54513.67,23
-"593",857,"Toronto Defiant",54400,3
-"594",606,"Romanian National Team",54375.64,11
-"595",701,"New Zealand National Team",54100,6
-"596",384,"NewRoSoft",53987.44,65
-"597",24843,"Futbolist",53764.12,3
-"598",24670,"Lux Gaming",53325,8
-"599",239,"Spirit of Amiga",53046.44,20
-"600",435,"Young Glory",52965.57,6
-"601",348,"XMG",52604.36,84
-"602",24824,"Global Esports Xsset",52259.38,4
-"603",24955,"DivisionX Gaming",52216.16,7
-"604",24735,"Sharks Esports",52084.92,12
-"605",25018,"sAw",51653.84,13
-"606",668,"Asterion",51530.77,93
-"607",699,"Hong Kong National Team",51500,5
-"608",199,"goodgame",51247.86,18
-"609",597,"Singaporian National Team",51125,7
-"610",683,"Hite SPARKYZ",50818.59,16
-"611",24869,"CERBERUS Esports",50799.88,10
-"612",24901,"Dynamind",50650,2
-"613",24904,"Riddle",50400,2
-"614",24905,"Stratum Esports",50300,2
-"615",406,"3sUP Enterprises",50126.66,13
-"616",819,"Hanwha Life Esports",49868.6,6
-"617",24890,"Cream Esports",49435.45,6
-"618",24830,"CrowCrowd",48812.51,8
-"619",24700,"Nora-Rengo",48760,7
-"620",929,"Pixel 1",48592.1,39
-"621",189,"69°N-28°E",48449.74,6
-"622",614,"Team WinFakt",48266.3,14
-"623",284,"spiXel",48130.12,7
-"624",150,"hoorai",48121.67,13
-"625",831,"Rift Esports",48079.11,3
-"626",159,"Absolute Legends",47434.47,39
-"627",718,"Mysterious Monkeys",46778.9,14
-"628",500,"REUNITED",46362.97,33
-"629",526,"Team X",46000,5
-"630",358,"CLASH Tournaments",45988.3,183
-"631",611,"NGA Club",45335.36,7
-"632",24938,"Wave Esports",45323.18,26
-"633",444,"Unlimited Potential",45312.6,3
-"634",24736,"Radiance",44925.4,14
-"635",24823,"WClick",44600,3
-"636",288,"Temp.no",44475.44,23
-"637",596,"Austrian National Team",44409.12,8
-"638",24676,"AS Monaco Esports",44345.7,14
-"639",537,"Even Matchup Gaming",44044.24,96
-"640",24865,"Xavier Esports",43481.25,10
-"641",333,"Team Impulse",43000,5
-"642",24975,"ELL",42868.2,1
-"643",551,"Team Revolution",42724.5,82
-"644",665,"bbq Olivers",42359.3,6
-"645",190,"Destination-Skyline",41549.71,11
-"646",792,"Golden Guardians",41492.85,4
-"647",24677,"Team Oplon",41199.76,42
-"648",426,"OverGaming",40935.37,22
-"649",24689,"Apex Racing Team",40934.42,6
-"650",24875,"ArkAngel",40800,7
-"651",24944,"303 Esports",40538.75,12
-"652",361,"VGBootCamp",40312.22,114
-"653",605,"Portugese National Team",40238.7,7
-"654",791,"Playing Ducks",40061.31,27
-"655",942,"Toro Rosso Esports Team",40000,1
-"656",944,"University of Illinois at Urbana-Champaign",40000,1
-"657",24794,"Hard Legion Esports",39504.5,10
-"658",278,"Astana Dragons",38823.69,11
-"659",368,"Clan-Mystik",38751.6,19
-"660",156,"Gravitas Gaming",38639.43,17
-"661",25027,"Vision Strikers",38000,2
-"662",502,"Lounge Gaming",37962.07,9
-"663",24679,"Konix eSport",37910.92,23
-"664",594,"Bulgarian National Team",37868.11,8
-"665",252,"Lightning Pandas",37829.32,4
-"666",693,"Belgian National Team",37525,8
-"667",410,"Conquest",37500,5
-"668",326,"Brutality",37446.23,25
-"669",247,"(monkey) Business",37194,2
-"670",397,"Torpedo Gaming",37192.25,14
-"671",615,"DTS Gaming",37050.43,21
-"672",155,"Online Kingdom",36090.5,7
-"673",506,"Team SPACECRAFT",36071.09,39
-"674",271,"GameOnline",35882.37,4
-"675",24996,"Built By Gamers",35633.32,5
-"676",355,"JaX Money Crew",35450,11
-"677",24810,"EUs Finest",35000,3
-"678",559,"Smash Studios",34498.06,223
-"679",24967,"EXO Clan",34431.14,20
-"680",24750,"Trelleborg Team",34335.27,11
-"681",401,"Elite Wolves",34277,8
-"682",295,"Imaginary Gaming",34191.47,43
-"683",24913,"Vexed Gaming",34062.3,16
-"684",24886,"Sector One",33977.6,22
-"685",845,"Team Massive Dragons",33977.53,2
-"686",24919,"Exalty",33874.25,58
-"687",528,"Valencia CF eSports",33714.38,13
-"688",585,"Mexican National Team",33317,9
-"689",654,"Cyclone",33262.22,14
-"690",953,"Demise",32563.41,34
-"691",24934,"Charlotte Phoenix",32200,4
-"692",459,"London Mint",32086.7,5
-"693",816,"O'Gaming",31870.64,44
-"694",260,"No Tidehunter",31777.08,13
-"695",388,"myRevenge",31677.8,33
-"696",24747,"Racing Point F1 Esports",31450,2
-"697",807,"Business associates",31365,9
-"698",289,"UNiTE Gaming",31200,7
-"699",441,"Huma",31178.54,4
-"700",412,"Team LoLPro",30750,10
-"701",24850,"DreamEaters",30541.29,11
-"702",25042,"Ellevens Esports",30500,2
-"703",24834,"NoPing e-sports",30438,6
-"704",636,"Chilean National Team",30000,3
-"705",456,"Mexico City Furia",30000,2
-"706",356,"Melee it on Me",29937.34,156
-"707",24939,"MS Chonburi",29912.83,3
-"708",510,"Epik Gamer",29750,6
-"709",25041,"Avidity Esports",29500,2
-"710",25043,"Canberra Havoc",29500,4
-"711",574,"ANOX",29324.99,10
-"712",24885,"London Esports",29309.09,12
-"713",399,"T Show",29233.11,25
-"714",24894,"Nexus Gaming",28909.46,7
-"715",810,"Team Orcus",28863.8,1
-"716",495,"Team Blacer",27834.95,58
-"717",152,"Eclypsia",27777.57,21
-"718",645,"Boreal eSports",27732.04,53
-"719",519,"Apex Gaming",27500,2
-"720",24860,"FireNIce Esports",27500,3
-"721",24849,"Royal Youth",27487.5,2
-"722",24800,"RBG Esports",27010.36,10
-"723",704,"Swiss National Team",27000,3
-"724",24848,"İstanbul Wild Cats",26752.82,6
-"725",469,"Dallas Venom",26500,4
-"726",24856,"pro100",26083.5,10
-"727",423,"nerdRage",26026.74,22
-"728",25010,"Echo Zulu",25885.7,14
-"729",24669,"Armada Esports",25750.73,71
-"730",474,"Good Game University",25700,2
-"731",622,"Rising Stars Gaming",25560.05,16
-"732",667,"Horde",25476.36,5
-"733",24831,"Rascal Jester",25135.74,9
-"734",270,"WICKED eSports",25005.55,7
-"735",400,"Epiphany Bolt",24940.52,28
-"736",727,"The Muffin Men",24900,8
-"737",25016,"Neon Esports",24810.55,5
-"738",345,"Masters 3",24718,2
-"739",689,"DuSt Gaming",24586.35,116
-"740",359,"Trig Esports",24512.24,11
-"741",418,"Team Meka",24469.24,32
-"742",24909,"SMASH Esports",24000,3
-"743",478,"Fraternitas",23806.91,24
-"744",24993,"XSET",23700,6
-"745",24908,"SKADE",23568.6,10
-"746",24729,"Chicken Fighters",23500,3
-"747",24959,"Los Angeles Guerrillas",23433.33,6
-"748",24921,"Omen Elite",23263.75,5
-"749",911,"Pure Racing Team",23075,3
-"750",702,"Peruvian National Team",23000,4
-"751",259,"Team Admiral",23000,2
-"752",431,"Team Fusion",23000,3
-"753",291,"PotM Bottom",22954,4
-"754",706,"Dark Sided",22930.66,21
-"755",407,"Brave e-Sports",22804.83,12
-"756",238,"JusTus",22780,8
-"757",433,"8th Team",22691.19,13
-"758",24968,"Wygers",22601,5
-"759",694,"Kazakh National Team",22600,4
-"760",24911,"CeX",22580.38,18
-"761",460,"Sydney Underground",22500,2
-"762",721,"Kyoto eSports",22315.7,11
-"763",24712,"Elgiganten Gaming",22312.06,9
-"764",450,"Inspire Esports",22297.9,4
-"765",731,"The Leftovers",22293.99,11
-"766",254,"Exertus eSports",22271.76,23
-"767",298,"Broken Tier",22157.4,59
-"768",351,"Gameburg Team",22140.16,6
-"769",24871,"Sandrock Gaming",22100.95,8
-"770",627,"EarthRoot Gaming",22019.83,31
-"771",24858,"Regal Reserve",22000,3
-"772",24771,"Team Phantasma",21975,8
-"773",167,"IvDgaming",21658.65,28
-"774",445,"Ember",21500,2
-"775",24965,"Beyond Esports",21396.79,12
-"776",649,"2GGaming",21181.14,45
-"777",187,"Team Nv",20524.15,21
-"778",24718,"Project EVERSIO",20411.89,27
-"779",25036,"5men",20411,4
-"780",437,"E-corp Gaming",20265.95,11
-"781",673,"Gold Coin United",20000,2
-"782",947,"Hype Energy eForce India",20000,1
-"783",24969,"Tribe Gaming",20000,3
-"784",24792,"LiViD Gaming",19958.6,3
-"785",477,"IsIMBA",19885.38,55
-"786",24755,"John Deere Gaming",19875.54,10
-"787",600,"Serbian National Team",19620.22,4
-"788",24870,"RCD Espanyol",19578,5
-"789",422,"Ex Nihilo",19551.02,6
-"790",24724,"Cygames Beast",19356.35,2
-"791",24891,"Unsold Stuff Gaming",19275,4
-"792",601,"Philippines National Team",19200,5
-"793",24696,"Hippomaniacs",19032.13,14
-"794",480,"PuLse Gaming",18797.97,2
-"795",363,"Big3",18683.42,7
-"796",24943,"72 Pin Connector",18375,3
-"797",24868,"Victim",18200,3
-"798",24817,"All Rejection Gaming",18194.03,5
-"799",24739,"Fast Racers Forza",18000,2
-"800",517,"No Diggity",18000,2
-"801",25002,"Parallax Gaming",18000,3
-"802",448,"Operation Kino eSports",17838.77,19
-"803",25039,"Rainbow7",17625,2
-"804",24827,"Vendetta",17556.02,3
-"805",116,"Guild of Imbalance",17519.42,25
-"806",737,"iNETKOXTV",17464.1,20
-"807",24719,"Afterthought",17320,4
-"808",250,"Aware Gaming",17114.31,11
-"809",24753,"KRONE eSports",17068.2,9
-"810",24738,"JOTA eSport",17000,1
-"811",350,"Vicious Syndicate Gaming",16925,10
-"812",565,"Seattle Surge",16900,5
-"813",255,"eoLithic",16772.87,3
-"814",811,"Lebanon National Team",16610.22,2
-"815",691,"Israel National Team",16600,3
-"816",24961,"Team Sampi",16494.43,13
-"817",651,"InControl Gaming",16433.36,32
-"818",772,"Netcode Illuminati",16300,5
-"819",705,"Miami Flamingos‏ e-Sports",16183.99,26
-"820",514,"Hyper Youth Gaming",16108,1
-"821",249,"VanQuish",16105.4,9
-"822",935,"PlayerOne Esports",16000,3
-"823",105,"It's Gosu eSports",15915.54,31
-"824",179,"Area 51 Gaming",15800,4
-"825",369,"The Last Resistance",15767.53,4
-"826",387,"EloHell",15643.43,4
-"827",24923,"IziDream",15437.35,2
-"828",541,"Game Talents",15013.4,1
-"829",527,"Brain Power",15000,1
-"830",472,"Odyssey Gaming",15000,2
-"831",455,"Singapore Sword",15000,1
-"832",458,"Stockholm Magnetik",15000,1
-"833",470,"Wuhan Dragon",15000,1
-"834",375,"Arcade eSports",14925.93,13
-"835",24914,"Fierce Esports",14791.57,7
-"836",321,"Control Gaming",14751.68,110
-"837",496,"Team gamed!de",14588.9,9
-"838",803,"DAN Gaming",14528.5,1
-"839",604,"Hungarian National Team",14518.11,5
-"840",540,"Tollenz Lions",14323.49,19
-"841",476,"Sinners Never Sleep",14302.87,4
-"842",465,"Astralis (Finnish)",13837.79,7
-"843",25015,"Signify",13829.29,2
-"844",509,"Romandy Gaming",13695.06,50
-"845",24867,"Kanga Esports",13500,7
-"846",432,"Team Innova",13434.23,11
-"847",630,"EndGameTV",13345.91,47
-"848",429,"Bob Question Mark",13240.19,6
-"849",24723,"Aerowolf",13000,1
-"850",25045,"Omni Nation",13000,1
-"851",24731,"Equinox Gaming",12958.01,16
-"852",25023,"BMW Esports",12900,1
-"853",24917,"Digital Athletics",12900,5
-"854",504,"Rebels Anarchy",12814.95,2
-"855",542,"Team LeiFeng",12802.27,54
-"856",24912,"Radix eSports",12753.81,8
-"857",24985,"Ovation eSports",12750,8
-"858",24698,"Halocline Gaming",12737.84,13
-"859",24876,"Dragons Esports Club",12639.13,4
-"860",415,"Quarter after Midnight",12548.88,36
-"861",24947,"Attack All Around",12522.23,6
-"862",24759,"Ancient Warriors",12475,7
-"863",24752,"Die Landeier",12422.08,10
-"864",24754,"Team GRIMME",12357.89,8
-"865",24926,"Overt",12350,4
-"866",717,"Hammers Esports",12307.27,10
-"867",424,"Fatal Ambition",12282.96,4
-"868",24888,"Game Agents",12018.15,2
-"869",24740,"Virtualdrivers TX3",12000,1
-"870",110,"eSahara",11870.62,19
-"871",822,"Mentality Esports",11840.75,20
-"872",806,"Final-Gaming",11576.18,18
-"873",24942,"Oxygen Esports",11500,2
-"874",533,"ExAequo",11446,4
-"875",272,"Universal Soldiers",11350,4
-"876",24979,"Entropiq",11154.73,8
-"877",24741,"Team Highlands Racing",11000,2
-"878",269,"Vitriolic",10992.91,5
-"879",24854,"Justice Esports",10824.45,3
-"880",25014,"Energy Esports",10764.54,2
-"881",24853,"SYF Gaming",10721.75,9
-"882",24974,"Lucid Dream",10466.08,7
-"883",607,"Belarusian National Team",10382.12,5
-"884",800,"Coalition Gaming",10020.3,17
-"885",945,"Carleton University",10000,1
-"886",595,"Slovakian National Team",9816.1,3
-"887",24732,"Genuine Gaming",9794.55,9
-"888",853,"EXPLOSIVE",9750,2
-"889",24811,"Disrupt Gaming",9500,5
-"890",140,"Air Force ACE",9413.89,10
-"891",728,"Team Iris",9377.5,20
-"892",24778,"Burning Core",9340.2,3
-"893",24932,"mCon esports Rotterdam",9279.21,7
-"894",24855,"Furious Gaming",9250.23,10
-"895",24981,"Mamba Mode Gaming",9050,9
-"896",24695,"Nevermore eSports",8962.05,11
-"897",24756,"SDL eSports",8958.9,3
-"898",151,"starComa",8950.92,2
-"899",24992,"Exeed Esports",8900,5
-"900",679,"Fusion Girls",8873.48,5
-"901",24970,"Global Esports",8865,4
-"902",24791,"Paradox Gaming",8860.97,9
-"903",659,"Keep Gaming",8850.65,6
-"904",24837,"GoSkilla",8796.69,2
-"905",328,"The Steam Co",8660.75,59
-"906",648,"Fly Society",8623.13,21
-"907",25034,"Bren Esports",8500,2
-"908",370,"Professional Skills",8424.84,5
-"909",178,"Pulse Esports",8408.82,15
-"910",703,"Indonesian National Team",8400,2
-"911",24673,"Sinai Village",8356.7,34
-"912",25009,"Dynasty",8356.55,7
-"913",25031,"ESPADA",8337,3
-"914",725,"Red Bulls",8241.45,1
-"915",692,"Malay National Team",8200,2
-"916",24954,"dizLown",8043.58,4
-"917",618,"Colombian National Team",7958.56,2
-"918",566,"Trail Gaming League",7640.33,22
-"919",24749,"Burning-Gamers.de",7593.57,7
-"920",24761,"Team Lindner",7572.31,7
-"921",815,"Mirage",7532.38,4
-"922",697,"Croatian National Team",7525,3
-"923",461,"Rio Sinistro",7500,1
-"924",463,"Seoul Jinhwa",7500,1
-"925",924,"Crack Clan",7486.92,3
-"926",629,"Team Viral",7456.46,28
-"927",24960,"GameWard",7415.62,5
-"928",24984,"Grizi Esport",7400,8
-"929",24892,"Trident Esports",7389.19,8
-"930",722,"Serenity Sports",7336.61,14
-"931",353,"Heimerdinger's Colossi",7285.84,6
-"932",647,"V8 eSports",7250,3
-"933",25032,"SINNERS Esports",7223.86,2
-"934",24779,"Malvinas Gaming",7164.3,7
-"935",24760,"Team HORSCH",7152.77,5
-"936",25046,"Plot Twist",7000,1
-"937",160,"Virus Gaming",6998.62,28
-"938",751,"Balance Gaming",6800.12,24
-"939",538,"Polarity",6500,3
-"940",25026,"JAESA Team Suzuki",6450,1
-"941",25025,"Team Fordzilla",6450,1
-"942",25024,"YAS HEAT",6450,1
-"943",24987,"Granit Gaming",6375,13
-"944",428,"MKZ",6345.52,2
-"945",346,"Assassin Sniper",6308.4,2
-"946",724,"Rhinos Gaming",6289.76,3
-"947",549,"Team Heir",6274.61,38
-"948",24710,"Icelandic National Team",6157.85,2
-"949",960,"Saudi National Team",6100,2
-"950",24798,"Team Mantra",6000,1
-"951",961,"South African National Team",5800,2
-"952",25021,"REJECT",5796.06,3
-"953",24846,"RÄHINÄ eGameStars",5774.13,2
-"954",24941,"Big Frames",5750,8
-"955",25022,"Sengoku Gaming",5701.68,1
-"956",24880,"Team Parallel",5625.8,3
-"957",752,"Team YP",5605.2,11
-"958",24956,"GameHome Esports",5536,3
-"959",24949,"Mythic",5500,4
-"960",24762,"Team Komatsu Forest",5234.05,3
-"961",950,"Haas F1 Esports Team",5000,1
-"962",24767,"Indian National Team",5000,1
-"963",24766,"Irish National Team",5000,1
-"964",24768,"Latvian National Team",5000,1
-"965",24769,"Paraguayan National Team",5000,1
-"966",25044,"Warriors International",5000,1
-"967",738,"INSHOCK",4979.07,7
-"968",24973,"Suomi",4925,2
-"969",391,"Team Lucky Draw",4888.34,10
-"970",490,"True AmBition",4866.01,35
-"971",166,"RattleSnake",4761.1,3
-"972",487,"Redbloods",4672.8,19
-"973",24727,"Dark Origin",4663.01,3
-"974",282,"Templars of Twilight",4519.27,6
-"975",24994,"Cosa Nostra Games",4500,3
-"976",24978,"Kansas City Pioneers",4500,3
-"977",24838,"BOX Gaming",4350,3
-"978",25008,"Brussels Guardians",4326.44,5
-"979",758,"RELAPSE Gaming",4324.41,6
-"980",710,"Laser Kittenz",4300,2
-"981",170,"Clarity Gaming",4295.38,7
-"982",576,"Team Phoenix",4250,3
-"983",484,"I Will Kill You Gaming",4184.62,3
-"984",378,"Awsomniac",4174.28,2
-"985",24816,"Výfuk",4142.8,3
-"986",377,"Benched Gaming",4054.84,5
-"987",554,"Mortality",3975.3,29
-"988",379,"DragonBorns",3965.4,1
-"989",24983,"Enterprise Gaming",3850,6
-"990",24916,"Salamander Gaming",3825,3
-"991",754,"FStep",3773.8,10
-"992",836,"Zerator",3697.09,6
-"993",24751,"Landwirtschaft3.0",3611.37,2
-"994",24764,"Team CLAAS",3597.91,3
-"995",276,"Five Crowns",3502.85,2
-"996",547,"qwerty",3500,2
-"997",936,"Monolith Gaming",3474,3
-"998",24807,"Aera Esport",3391.94,1
-"999",436,"El NeXo",3307.48,9
-"1000",932,"Fursan Esports",3300,4
-"1001",303,"Pandora's Mighty Soldiers",3250,5
-"1002",24896,"Game Fist",3155.69,2
-"1003",813,"Team Invited",3153.43,1
-"1004",782,"Red Coin",3028.8,5
-"1005",24757,"Team AMAZONE",3000.72,3
-"1006",798,"Dynamo Kyiv Esports",3000,2
-"1007",838,"Team Requiem",2922.34,3
-"1008",24887,"Team LEISURE",2869.44,2
-"1009",552,"Team Prismatic",2856.99,21
-"1010",488,"Glacial Gaming",2852.25,15
-"1011",25011,"⁠Team THRLL",2848.88,2
-"1012",24863,"Team SiNister",2847.34,2
-"1013",24929,"Riddle Esports",2844.55,1
-"1014",24675,"Augury Gaming",2801.6,6
-"1015",570,"Lets Play",2787.47,22
-"1016",24699,"orKs Grand Poitiers",2672.46,13
-"1017",122,"Praetoriani",2544.48,11
-"1018",809,"4 Asians Plus 1",2500,1
-"1019",590,"Kyrgyzsian National Team",2500,1
-"1020",603,"Tunesian National Team",2500,1
-"1021",25020,"BlackBird Ignis",2450.6,2
-"1022",640,"Team Oxy",2314,18
-"1023",24964,"Signature Gaming",2305.48,2
-"1024",493,"Haven Esports",2265.43,22
-"1025",24976,"Se7en eSports",2250,2
-"1026",498,"Great British Pounding",2213.61,2
-"1027",532,"Kingsmen",2207.82,7
-"1028",25004,"KV Mechelen",2142.65,2
-"1029",837,"War Legend",2128.81,3
-"1030",24685,"Supersonic Avengers",2115.1,9
-"1031",564,"Olympus Esports",2106.65,20
-"1032",146,"Salade Tomate Oignon",2061.31,1
-"1033",24799,"Nfinite",2000,1
-"1034",24951,"Oryx Esports",2000,1
-"1035",624,"Sporting CP eSports",2000,1
-"1036",24802,"Team Chaotic",2000,1
-"1037",24730,"Team Razer",2000,1
-"1038",24995,"vsBANDITS",2000,1
-"1039",491,"Amino",1987.35,17
-"1040",360,"Grow uP Gaming",1971.37,2
-"1041",128,"WeRRa",1969.74,2
-"1042",25038,"Revolution",1968.89,3
-"1043",24681,"Kings of Urban",1950,11
-"1044",729,"Myth Gaming",1900,3
-"1045",154,"LighT eSports",1870.48,3
-"1046",24691,"Thunder Gaming",1800.05,6
-"1047",24925,"ACE1",1700,4
-"1048",25019,"KPI Gaming",1594.94,1
-"1049",376,"GSI Gaming",1509.61,1
-"1050",24952,"1NE eSports",1500,1
-"1051",24966,"ASMR eSports",1500,1
-"1052",24980,"Morning Light",1500,2
-"1053",244,"Team Saw",1500,1
-"1054",25005,"Aethra Esports",1467.63,1
-"1055",24977,"Big Time Regal Gaming",1447,1
-"1056",390,"Team Innovation",1433.17,4
-"1057",182,"Vile Gaming",1350,2
-"1058",685,"BOT Empire",1322.8,5
-"1059",535,"Synthetik",1303.03,7
-"1060",292,"Rock Solid",1300,2
-"1061",232,"Fuse",1250,1
-"1062",394,"XDG Gaming",1250,1
-"1063",492,"Frequency",1220,7
-"1064",24997,"Rams",1200,1
-"1065",25006,"Team 7AM",1174.1,1
-"1066",24962,"Gaming Privé",1164.1,7
-"1067",619,"SilentSquad",1141.88,9
-"1068",556,"AntiBeat Multigaming",1107.97,2
-"1069",24920,"Team XENEX",1106.45,3
-"1070",24889,"AVENUE eSports",1052.33,2
-"1071",24988,"Team Vikings",1050,2
-"1072",186,"Team Menace.fi",1014.09,8
-"1073",24758,"BEDNAR Team",1005.38,1
-"1074",25051,"OpTic Chicago",1000,1
-"1075",25037,"Paper Rex",1000,1
-"1076",449,"Team Symthic",1000,1
-"1077",202,"Unitary Guerilla Platoon",1000,1
-"1078",25033,"YaLLa Esports",1000,1
-"1079",24701,"eMonkeyz",997.99,3
-"1080",24763,"Alki-Agrar",984.64,1
-"1081",24930,"Honig Gäng",973.94,1
-"1082",24895,"Team of elite guys",972.3,1
-"1083",749,"EMP",959.3,3
-"1084",784,"UX Gaming",950.94,6
-"1085",24986,"OtterWorld eSport",950,3
-"1086",563,"MisaiFix",906.51,8
-"1087",24688,"BOT",898.32,24
-"1088",24873,"Refund Gaming",894.75,3
-"1089",25003,"B4 eSports",886.29,1
-"1090",25007,"RSC Anderlecht Esports",880.58,1
-"1091",24972,"SalzZ",874,2
-"1092",812,"ePunks",800,1
-"1093",662,"Lone Ranger",735.7,6
-"1094",24928,"Triple A Esports",708,1
-"1095",24999,"Athletix eSport",700,2
-"1096",24852,"Inside Games",694.8,2
-"1097",750,"Good Game Labs",694.62,4
-"1098",553,"Team Ascension",659.2,3
-"1099",24915,"Horus Esports",642.51,1
-"1100",757,"Eraiize",621.34,8
-"1101",670,"Black Craft Spirits",600.6,3
-"1102",24805,"Golden Modem Squad",600,2
-"1103",25035,"orKs Grand Poitiers",590,1
-"1104",438,"Team Xcution",586.4,3
-"1105",796,"squad",570.56,3
-"1106",511,"West Ham United",567.55,1
-"1107",24808,"Yunktis",565.32,1
-"1108",804,"For Glory",500,2
-"1109",569,"GamersLeague eSport",487.51,6
-"1110",567,"U4X eSports",469.68,6
-"1111",620,"Degasa",435.73,7
-"1112",555,"Team Tower",400,1
-"1113",568,"Permafrost Gaming",399.62,4
-"1114",381,"SUPA HOT CREW XD",350,1
-"1115",24697,"Hound Esports",337.51,2
-"1116",24936,"Cocktails Dannati",331.06,14
-"1117",24897,"Centaury Event",328.35,11
-"1118",785,"Team EGO",278.07,6
-"1119",681,"GameTyrant",272.2,6
-"1120",24809,"Exillium Esports",258.97,1
-"1121",24728,"Fudoh",250,1
-"1122",25040,"TopHard Esports",250,1
-"1123",631,"Rabbit Deaf e-Sports",223.42,8
-"1124",25000,"Technocracy",217.33,7
-"1125",497,"Ionic.gg",211.96,1
-"1126",24804,"Sage eSports",200,1
-"1127",24982,"Sunflower Gaming",200,1
-"1128",467,"Apocalypse eSports",169.25,4
-"1129",24694,"Joe Gibbs Racing",155,1
-"1130",632,"Defenses Geniuses",151.45,2
-"1131",24940,"Team Immunity",150,1
-"1132",173,"Team Legion",150,1
-"1133",686,"G-Force",145,1
-"1134",617,"Kids Next Door",136,2
-"1135",641,"Geeky Goon Squad",128.13,8
-"1136",24924,"Vikingekrig Esports",125,1
-"1137",578,"KATT5",114.8,2
-"1138",24693,"JR Motorsports",108,1
-"1139",25048,"Arrowgant Combottants",70.2,1
-"1140",573,"BOXR",48.37,1
-"1141",634,"Aptitude E-Sports",28.05,1
-"1142",633,"GuildWars",21.92,1
-"1143",258,"aDversity",0,NA
-"1144",964,"Astral Gaming",0,NA
-"1145",24989,"B4stardos",0,NA
-"1146",24922,"Borowiki",0,NA
-"1147",24927,"BS COMPEITION",0,NA
-"1148",24770,"c0ntact Gaming",0,NA
-"1149",24765,"CCyber Giants",0,NA
-"1150",858,"Chengdu Hunters",0,NA
-"1151",672,"Cocodrilos eSports",0,NA
-"1152",24990,"DC Team",0,NA
-"1153",562,"Degasa",0,NA
-"1154",747,"Edax Pro",0,NA
-"1155",332,"Elements",0,NA
-"1156",24910,"eRow Team",0,NA
-"1157",24726,"eXo eSports",0,NA
-"1158",24665,"ExoTique eSPORT",0,NA
-"1159",24666,"ExoTique eSPORT",0,NA
-"1160",680,"Extreme Dive Gaming",0,1
-"1161",855,"FATEH",0,NA
-"1162",245,"Fearless Under Fire",0,NA
-"1163",161,"Fightline",0,NA
-"1164",25028,"Floodebollerogkokus",0,NA
-"1165",917,"Galatasaray Esports",0,NA
-"1166",336,"Gravity",0,NA
-"1167",24935,"HONORIS",0,NA
-"1168",25052,"Impave Gaming",0,NA
-"1169",522,"KingSurf",0,NA
-"1170",24931,"KurdGamers",0,NA
-"1171",959,"LANGUDAR",0,NA
-"1172",854,"Legion",0,NA
-"1173",534,"Liquid Gaming",0,NA
-"1174",25050,"Los Angeles Thieves",0,NA
-"1175",25029,"MASONIC",0,NA
-"1176",171,"My Intent",0,NA
-"1177",325,"NECKBREAK",0,NA
-"1178",24721,"Nemesis Esports",0,NA
-"1179",778,"NeST Gaming",0,NA
-"1180",24686,"Oasis eSports",0,NA
-"1181",24711,"ObnoxiousGaming",0,NA
-"1182",25001,"Old Man Rock",0,NA
-"1183",25030,"OPAA Gaming",0,NA
-"1184",24937,"PNG Clan",0,NA
-"1185",669,"Potassium eSports",0,NA
-"1186",628,"Primal",0,NA
-"1187",905,"Project Eversio.BO4",0,NA
-"1188",906,"Project Eversio.BO4",0,NA
-"1189",907,"Project Eversio.BO4",0,NA
-"1190",908,"Project Eversio.BO4",0,NA
-"1191",24840,"Purple Moods Esport",0,NA
-"1192",310,"Revenge Gaming",0,NA
-"1193",755,"RockPaperSmashville",0,NA
-"1194",560,"Royalty",0,NA
-"1195",515,"Saint Club",0,NA
-"1196",939,"Sandbox",0,NA
-"1197",828,"SCHWACHKOPF",0,NA
-"1198",280,"se mi puta",0,NA
-"1199",24998,"Spectrum ESC",0,NA
-"1200",25013,"Speed eSports",0,NA
-"1201",741,"Steel Wolf",0,NA
-"1202",952,"Syntic eSports",0,NA
-"1203",324,"Team Elunes",0,NA
-"1204",279,"Team Karma",0,NA
-"1205",327,"Team MxB",0,NA
-"1206",756,"Team Solstice",0,NA
-"1207",25017,"Team TapOnce",0,NA
-"1208",307,"UnWanted",0,NA
-"1209",294,"WARMAKER",0,NA
-"1210",25047,"William Byron Esports",0,NA
-"1211",24692,"Wood Brothers Racing",0,NA
-"1212",24862,"YMCA Esports",0,NA
-"1213",446,"ZTR Gaming",0,NA
+"TeamId","TeamName","TotalUSDPrize","TotalTournaments"
+102,"Team Liquid",35820379.03,1854
+419,"OG",34194733.59,101
+101,"Evil Geniuses",24269698.79,855
+118,"Fnatic",15891208.88,939
+185,"Virtus.pro",14964274.39,515
+210,"Newbee",14225385.59,231
+169,"Vici Gaming",13161309.51,305
+211,"Team Secret",12078078.72,279
+124,"Invictus Gaming",11704690.1,506
+163,"Natus Vincere",11307177.4,491
+227,"LGD Gaming",10948410.59,145
+212,"Cloud9",9989260.95,766
+145,"SK Telecom T1",9805293.78,333
+507,"Wings Gaming",9745472.22,27
+623,"Paris Saint-Germain Esports",9480579.68,75
+240,"FaZe Clan",9228918.83,367
+466,"Astralis",8418918.81,94
+231,"OpTic Gaming",7903718.96,295
+256,"G2 Esports",7759743.02,430
+196,"Team SoloMid",6685921,624
+216,"Team Envy",6665419.22,357
+112,"SK Gaming",6515541.03,664
+132,"MVP",6227204.8,487
+261,"Alliance",5737542.15,327
+111,"mousesports",5420189.26,959
+144,"Samsung",5306802.8,353
+162,"Ninjas in Pyjamas",5229259.03,334
+207,"Counter Logic Gaming",5077193.95,445
+571,"Lazarus",5031313.22,262
+383,"Chaos Esports Club",4935963,84
+425,"NRG Esports",4922364.26,330
+343,"Royal Never Give Up",4900886.71,77
+814,"Gen.G",4694683.69,64
+104,"compLexity Gaming",4471813.23,600
+561,"TnC Gaming",4447050.32,58
+225,"EHOME",4045181.5,103
+117,"Team Dignitas",4010002.1,607
+300,"CDEC Gaming",3704903.32,52
+317,"Luminosity Gaming",3548357.6,268
+311,"EDward Gaming",3456403.73,108
+24687,"Sentinels",3433250.68,60
+663,"eUnited",3362363.69,192
+787,"100 Thieves",3312155.35,72
+24684,"Cooler Esport",3300164.26,28
+430,"eStar Gaming",3300157.32,54
+382,"Splyce",3299842.51,410
+251,"Vitality",3237144.81,224
+192,"Gambit Esports",3127287.52,182
+760,"San Francisco Shock",3105000,7
+115,"Team Empire",3084825,429
+177,"KT Rolster",2922370.01,219
+181,"Jin Air Green Wings",2764915.77,409
+123,"World Elite",2442343.31,210
+427,"Mineski",2434750.99,82
+184,"Flash Wolves",2386592.34,209
+830,"Ghost Gaming",2326479.7,173
+385,"ENCE eSports",2258454.23,212
+337,"Tempo Storm",2181650.14,412
+283,"COGnitive Gaming",2016138.32,164
+848,"Spacestation Gaming",1932400.64,166
+221,"MIBR",1923403,101
+557,"Rogue",1895665.94,195
+103,"Millenium",1822130.48,562
+676,"Dallas Empire",1797504.47,23
+344,"OMG",1784300.18,65
+195,"Epsilon eSports",1772279.91,242
+285,"Team DK",1769242.38,43
+451,"Echo Fox",1737629.59,337
+209,"HellRaisers",1651504.42,138
+126,"TyLoo",1611327.79,164
+776,"London Spitfire",1591136.5,13
+768,"New York Excelsior",1572618.5,18
+213,"Taipei Assassins",1529565.39,24
+403,"ahq e-Sports Club",1517072.64,87
+141,"CJ Entus",1502458.47,185
+934,"Team Reciprocity",1491429.86,82
+338,"Renegades",1481905.73,180
+24706,"FunPlus Phoenix",1478729.97,23
+850,"LeStream Esport",1431833.11,84
+826,"Rise Nation",1412612.5,80
+763,"Infamous",1370946.01,54
+113,"ALTERNATE aTTaX",1355613.15,406
+802,"Top Esports",1336062.17,23
+267,"ROX Gaming",1332698.26,75
+657,"North",1316961.35,86
+131,"Incredible Miracle",1312868.72,166
+919,"Keen Gaming",1283305.59,43
+581,"Russian National Team",1260218.44,26
+172,"Denial Esports",1241411.24,178
+658,"BIG",1232814.12,159
+340,"Qiao Gu Reapers",1220408.2,17
+468,"Afreeca Freecs",1209132.72,275
+529,"Misfits",1208104.47,175
+205,"PENTA Sports",1199115.03,264
+24806,"Atlanta Faze",1187500,14
+773,"Philadelphia Fusion",1186278.5,15
+396,"paiN Gaming",1168349.32,119
+411,"Immortals",1131165.15,118
+766,"Seoul Dynasty",1130000,6
+322,"Team Kinguin",1119008.47,119
+136,"StarTale",1117702.92,159
+558,"Heroic",1111397.85,76
+24680,"Hero JiuJ",1104361.96,5
+548,"Method",1088178.04,111
+234,"Elevate",1081431.98,150
+719,"GamersOrigin",1041248.06,206
+24884,"9z Team",1031730.93,24
+494,"Team Spirit",1016972.11,127
+319,"Vega Squadron",1010673.01,159
+913,"Yoshimoto",1006400,3
+119,"Meet Your Makers",996205.04,268
+193,"Team LDLC.com",980648.35,188
+846,"Nova eSports",962284.58,42
+856,"Vancouver Titans",950000,4
+963,"FURIA Esports",946945.26,64
+215,"FlipSid3 Tactics",939555.31,324
+655,"Black Dragons e-Sports",934281.95,48
+740,"AGO Esports",929105.22,110
+833,"Solary",901293.3,150
+795,"DragonX",899289.63,25
+24703,"DAMWON Gaming",882163.46,12
+916,"JD Gaming",871389.2,15
+194,"Titan eSports",860876.11,75
+805,"AVANGAR",858469.01,69
+621,"Ballistix",855000,10
+24748,"MAD Lions",833556.43,24
+241,"Team KaLiBeR",821775.52,49
+365,"Str8 Rippin",821040.45,88
+114,"mTw",813379.48,278
+530,"Team Allegiance",798580.7,64
+546,"Team expert",787335.85,274
+420,"Space Soldiers",782943.06,78
+24786,"Chicago Huntsmen",782750,11
+843,"Four Angry Men",772227.23,25
+933,"Windigo Gaming",764124.2,104
+342,"Star Horn Royal Club",759830.17,29
+24841,"Buriram United Esports",757062.88,16
+801,"OGN Entus",755073.68,30
+769,"Shanghai Dragons",755000,5
+505,"J Team",722000.01,42
+24690,"Kungarna",716315.89,19
+287,"H2K",713712.74,43
+671,"Tricked eSports",713174.39,112
+24898,"Valhalla Vikings",712144.55,6
+153,"ROOT Gaming",710867.69,639
+774,"Los Angeles Gladiators",709605.19,13
+372,"Panda Global",697411.89,491
+109,"Team Acer",689747.97,571
+242,"Final Boss",667891,43
+168,"mYinsanity",666123.41,472
+142,"Hwaseung OZ",662772.23,44
+301,"TongFu",648617.82,43
+134,"Prime",635241.44,195
+318,"Snake Esports",632602.77,39
+442,"EURONICS Gaming",631665.14,288
+366,"Birmingham Salvo",623465.73,12
+852,"Team Atlantis",618267.52,49
+305,"NaJin e-mFire",616799.21,35
+501,"GODSENT",604168.84,90
+24667,"Suning",602343.44,10
+954,"forZe",600618.55,90
+861,"Atlanta Reign",596098,9
+829,"Winstrike Team",589792.66,46
+447,"STX SouL",582668.98,78
+24797,"TOX Gaming",569000,11
+674,"The Chiefs eSports Club",566204.44,112
+183,"AZUBU",551164.03,46
+518,"Ad Finem",544089.37,13
+525,"Tempest",544085,14
+158,"4Kings",544046.42,114
+362,"DetonatioN",539438.06,68
+770,"Los Angeles Valiant",535000,6
+544,"INTZ eSports",532674.09,112
+583,"Korean National Team",532247.1,27
+309,"Mindfreak",525282.89,86
+923,"Eleven Gaming",522100,31
+931,"Triumphant Song Gaming",520116.82,116
+24833,"London Royal Ravens",519650,11
+849,"Nordavind",518874.45,78
+708,"Team Singularity",518638.36,140
+24781,"Rex Regum Qeon",510845.74,31
+364,"Carbon",505208.84,153
+572,"Gale Force eSports",504565.14,74
+201,"Team 3D",503225,72
+374,"Chicago Chimera",497750,7
+440,"Illuminar Gaming",495327.14,69
+331,"Giants Gaming",495132.05,99
+840,"Team Serenity",491431.75,9
+577,"Ting",491240.26,146
+24734,"Nigma",475124,12
+204,"Moscow Five",469104.79,71
+248,"Team Infused",467091.66,109
+335,"Enemy",462681.45,66
+229,"wisdom Nerve victory",462297.48,67
+536,"Obey Alliance",460283.28,31
+133,"Old Generations",456814.74,77
+24773,"HAVU Gaming",452920.01,53
+744,"Hong Kong Attitude",452296.84,45
+147,"Woongjin Stars",450596.55,47
+825,"Pittsburgh Knights",447963.23,55
+286,"Orange Esports",446394.67,40
+296,"Clan Kapitol",446089.23,37
+265,"Unicorns of Love",445039.48,66
+237,"Fariko",435621.58,8
+720,"Planet Odd",428371.14,16
+24708,"Talon Esports",426548.29,19
+821,"Griffin",426342.26,18
+732,"RunAway",425848.84,20
+860,"Hangzhou Spark",425000,3
+313,"Origen",420582.91,15
+395,"PSISTORM Gaming",419983.17,491
+198,"against All authority",417963.95,195
+832,"Team Queso",416359.62,31
+789,"KSV eSports",408998.2,14
+107,"FXOpen e-Sports",406442.24,144
+847,"UYU",405300.51,102
+24780,"EVOS",404412.94,37
+137,"Team SCV Life",402513.32,187
+765,"GC Busan",394681.71,18
+135,"SlayerS",383967.89,96
+413,"eSuba",383657.25,169
+827,"Red Reserve",383100,34
+948,"Red Bull eSports",382547.68,15
+24782,"BDS Esport",380942.41,19
+139,"WeMade FOX",379900.51,87
+609,"Chinese National Team",376925.36,25
+613,"Lunatic-hai",376129.41,21
+482,"Team Kongdoo",374172.35,34
+24957,"Toronto Ultra",370000,4
+323,"x6tence",367450.77,90
+921,"Actoz Stars",366375.5,9
+688,"Florida Mutineers",366000,7
+25049,"OpTic Gaming Los Angeles",360000,5
+462,"exceL eSports",358344.52,73
+485,"Longzhu Gaming",355907.81,8
+121,"Radical Online X-tremists",352203.38,180
+713,"Marines Esports",351535.06,15
+349,"Team Celestial",350689.91,29
+24742,"Dragon Phoenix Gaming",350449.13,96
+304,"Team Archon",347056.08,63
+797,"Rogue Warriors",346385.8,10
+920,"CR4ZY",341535.19,52
+220,"Team Roccat",340809.58,100
+24828,"Infantry Clan",340077.96,13
+967,"Enigma6 Group",339375,18
+24707,"DarkZero Esports",338000,11
+928,"Werder Bremen eSports",337338.8,14
+516,"I May",335703.2,5
+817,"FlyToMoon",335161,15
+24835,"BOOM Esports",334439.16,36
+306,"Nihilum Gaming",333932.42,39
+695,"Vietnamese National Team",332500,8
+24945,"King of Gamers Club",329420.93,8
+790,"Sprout",328749.05,40
+481,"Supremacy",325335.57,86
+236,"Team Curse",322901.58,140
+823,"Welcome to South Georgo",322800,9
+698,"Team One More",321122.23,9
+421,"Reason Gaming",318181.8,135
+586,"French National Team",316879.45,32
+218,"Team VeryGames",308996.24,84
+24787,"Endpoint",305399.04,45
+918,"Execration",303807.43,22
+24946,"Bazaar Gaming",300325.26,7
+637,"Taiwanese National Team",299325,15
+909,"Team Aster",298218.19,28
+781,"Team QLASH",296947.42,113
+24777,"NASR eSports",294871.03,15
+539,"The Imperial",289505.3,51
+771,"Boston Uprising",288606,7
+479,"Team Eager",288250,15
+24783,"Wildcard Gaming",288204.75,22
+24746,"Geek Fam",285544.33,22
+226,"Rave",285198.43,17
+24803,"Team Unique",282226.1,34
+24705,"Team Faceless",281033,10
+24743,"Bigetron eSports",280794.58,7
+610,"American National Team",279399.95,20
+664,"FlyQuest",278786.25,23
+638,"Thai National Team",277125,11
+24668,"World Best Gaming",269935.69,9
+120,"ESC Gaming",269572.65,292
+513,"Schalke 04 Esports",266699.22,29
+824,"The Gosu Crew",263015.65,37
+545,"L5",259630,7
+910,"J.Storm",258600,12
+253,"SG e-sports",257951.55,16
+230,"Pentagram G-Shock",257376.53,18
+143,"MBCGame HERO",257121.26,44
+200,"Team NoA",256297.62,25
+24918,"Shoot To Kill",255578.75,22
+24958,"New York Subliners",255450,6
+735,"Myztro Gaming",253503.2,85
+347,"CM Storm",253404.17,74
+660,"Bravado Gaming",252172.1,50
+709,"Pantech",251990.64,23
+646,"Escape Gaming",251687.9,11
+24819,"VC Gaming",251280.6,3
+863,"Washington Justice",250000,1
+24793,"Team One",249251.31,37
+656,"Tainted Minds",245856.29,74
+197,"Copenhagen Wolves",244670.54,85
+24784,"Susquehanna Soniqs",244486.11,18
+716,"Isurus Gaming",244325.41,54
+24900,"Become Legends",242330,24
+930,"Chivo SC",239973.64,65
+575,"Albus NoX Luna",238702.5,3
+818,"Hanbit Stars",237891.93,34
+579,"German National Team",237642.92,41
+24774,"Riot Squad Esports",235900,12
+405,"Legacy eSports",233304.16,92
+268,"Keyd Stars",229889.54,76
+543,"RED Canids",229513.1,48
+233,"TCM Gaming",229316.24,106
+951,"Team GamerLegion",226053.76,29
+712,"Team NP",224679,9
+808,"Team Gigantti",224542.69,13
+214,"Clan 519",223840,36
+499,"Team Naventic",221569,11
+24950,"Osh-Tekk Warriors",219867,6
+208,"KaBuM! e-Sports",218990.53,32
+224,"Big God",218550.13,2
+25071,"QueeN Walkers",216250,5
+584,"Swedish National Team",215173.01,32
+707,"Movistar Riders",212677.45,61
+775,"Florida Mayhem",212672.5,8
+24839,"Thailand National Player",209815.58,4
+367,"Carolina Core",209000,9
+652,"Greatest Ones",208896.98,30
+834,"Gentside Esports Club",208138.92,18
+748,"beastcoast",202932.79,61
+793,"Bilibili Gaming",202383.4,10
+24812,"Made in Thailand",201993.65,50
+531,"Saigon Jokers",201934.86,25
+24818,"DeToNator",201315.97,29
+730,"Mock-It eSports",201072.83,101
+743,"Kaos Latin Gamers",198769.35,14
+24722,"CYCLOPS athlete gaming",197215.81,23
+408,"X-Team",195470.53,89
+281,"Bad Monkey Gaming",194102.35,23
+24881,"Crazy Raccoon",193521,15
+736,"Young Miracles",193302,5
+414,"Dark Passage",191821.49,29
+675,"Team RivaL",190805.2,13
+452,"Avant Gaming",190640.73,48
+453,"Paradigm",190000,4
+24733,"Illuminate",189699.05,12
+582,"Ukranian National Team",188738.18,17
+589,"Canadian National Team",188625,18
+955,"Quincy Crew",186422,12
+862,"We Dem Girlz",184834.71,38
+745,"Lyon Gaming",184012.05,16
+106,"Quantic Gaming",183554.62,105
+780,"Minnesota RØKKR",183500,6
+24832,"ORDER",183455.44,25
+297,"Empire Arcadia",183244.66,485
+521,"Selfless Gaming",181464.8,93
+24874,"MEGA Esports",178132.37,14
+966,"Team Heretics",177884.23,26
+777,"Luminous Stars",177829.84,10
+661,"M19",176847.4,19
+164,"Axiom eSports",176342.72,109
+24971,"MCES",174970,6
+912,"VRS Coanda Simsport",171340.69,12
+275,"Prophecy",169940.32,28
+24672,"Vikin.gg",169906.93,23
+922,"Tigers",169171.28,5
+149,"Serious Gaming",167729.16,99
+24813,"Armory Gaming",166106.61,19
+677,"Astral Authority",164000,9
+398,"CNB e-Sports Club",163105.89,55
+24879,"TrainHard eSport",162646.6,20
+127,"Gama Bears",162263.28,26
+228,"HyperGloryTeam",160922.77,9
+700,"Greek National Team",159600,4
+653,"Arma Team",158510,104
+24715,"Team Adroit",156240.3,18
+266,"Planetkey Dynamics",155606.2,135
+416,"Positive Energy",154778.03,8
+949,"Williams Esports",153859.84,19
+24704,"SANDBOX Gaming",153807.9,6
+678,"Scythe Gaming",153705.22,6
+941,"FAV gaming",152899.94,8
+958,"FC Barcelona",152734.86,15
+24716,"Paris Legion",152500,5
+341,"Team King",152173.93,9
+588,"Finnish National Team",152018.78,21
+24776,"Raise Your Edge Gaming",151147.41,97
+24709,"KaiZi Gaming",150085.32,92
+24902,"Executors One",150000,2
+762,"Miraculous Youngster",148594.21,7
+223,"team9",148390.78,15
+24775,"Copenhagen Flames",146660.02,34
+962,"SinoDragon",146609.8,5
+262,"Vox Eminor",144519.35,39
+165,"eSTRO",144168.13,34
+739,"PRIDE Gaming",143960.4,85
+24682,"Veloce Esports",143718.18,14
+389,"Maximum Impact Gaming",143000.29,7
+764,"Pompa Team",142770.29,56
+926,"Mkers",142602.5,66
+246,"Team Orbit",141611.99,42
+263,"Frag eXecutors",141281.27,21
+24844,"SJ Gaming",140221.04,33
+302,"London Conspiracy",139286.29,41
+715,"froyotech",138797.99,42
+24851,"Libalent",137762,4
+734,"Blank Esports",137105.66,8
+174,"Western Wolves",136088.53,57
+312,"Dead Pixels",134260.26,255
+483,"Team No Limit",132718.55,9
+24899,"Helsinki REDS",131792.37,9
+783,"Team Aretuza",130156.66,13
+404,"Bangkok Titans",129837.01,22
+24829,"Athletico",129815.28,26
+742,"Fade 2 Karma",128987.34,55
+277,"n!faculty",127207.69,45
+767,"Houston Outlaws",126172,4
+24907,"Nemiga Gaming",126073.56,38
+841,"Team Gamer Sensei",125255.28,9
+314,"Karont3 e-Sports Club",124836.17,44
+257,"Team Tinker",124439.09,15
+316,"Beşiktaş e-Sports Club",122459.89,23
+380,"Lemondogs",122243.96,16
+24864,"QConfirm",122099.88,7
+937,"PONOS Sports",121666.67,7
+357,"San Francisco Optx",121500,6
+409,"True eSport",120324.44,192
+682,"Kuala Lumpur Hunters",119837.07,26
+486,"Zenith of Origin",119710.33,80
+222,"emuLate!",118230.2,19
+24814,"Purple Mood E-Sport",117777.98,17
+587,"Polish National Team",117487.56,20
+24878,"MCES",117150,22
+264,"Lions",116405.03,28
+243,"Speed Gaming",116355.64,10
+180,"Cascade",116306.08,186
+24872,"SCARZ",116067.36,23
+219,"iBUYPOWER",115208.84,28
+512,"VfL Wolfsburg",113365.89,39
+24788,"Lowkey Esports",112714.24,12
+203,"3DMAX",112024.44,51
+24796,"Triumph",111000,31
+608,"British National Team",110840.6,14
+443,"ESC Ever",110031.24,7
+235,"Strictly Business",109630,13
+733,"Pirates of Space",109426.35,11
+24906,"k1ck eSports Club",109369.6,20
+373,"LMQ",109112.01,8
+24969,"Tribe Gaming",109000,10
+24953,"Divine Vendetta",108706,5
+24825,"Divine Esports",107996.41,8
+125,"PanDarea",107615.42,21
+602,"Danish National Team",107060.17,18
+157,"Wayi Spider",106696.22,50
+642,"OnGameNet SPARKYZ",106588.09,21
+273,"The Titans",105411.19,12
+842,"4 Clovers & Lepricon",105298.45,8
+489,"The MongolZ",105097.59,22
+639,"Brazilian National Team",104950,9
+956,"Aftermath",103663.03,81
+839,"Forward Gaming",102510,11
+130,"New Star HoSeo",102207.62,49
+925,"Singapore Sentinels",102112.19,18
+508,"LowLandLions",101849.34,68
+580,"Norweigan National Team",101772.71,14
+24678,"Brave Star Gaming",101624.99,97
+299,"Power Rangers",101372.62,34
+24821,"Genesis",101258,4
+24790,"Absolute",100567.64,12
+599,"Spanish National Team",100390.71,17
+24744,"FDA Hublot Esports Team",1e+05,1
+315,"Invasion eSport",99897.23,125
+726,"OSC Elite",99817.22,147
+24822,"QM Gaming",98702.56,6
+687,"LuxuryWatch",98604.83,13
+24842,"Entity Gaming",98585.78,29
+24789,"Ground Zero Gaming",98585.56,17
+175,"apeX eSports",98456.11,12
+290,"Ocean Gaming",97841.4,51
+927,"PSV eSports",97739.65,13
+914,"Grayhound Gaming",97656.67,15
+650,"Circa eSports",97505.64,85
+666,"Burrito Esports",96739.21,24
+475,"Xenics",96343.91,16
+24785,"Infinity Esports",96311.55,24
+625,"Ajax Amsterdam eSports",96306.49,23
+24820,"The Rumblers",96000,5
+138,"ZeNEX",95798.79,46
+24857,"Estral Esports",95250,10
+25065,"Vatang",95000,3
+24671,"Northern Gaming",94624.01,27
+24795,"PACT",94484.67,27
+392,"Team FeaR",93745.05,13
+188,"Begrip Gaming",93132.67,16
+635,"Australian National Team",93025,11
+965,"ARCY",92840.1,18
+523,"Dream Team",92697.96,28
+24933,"ad hoc gaming",91869.3,32
+24866,"FURY",91603.28,12
+851,"Paris Eternal",91600,3
+24836,"k23",90408.63,26
+938,"GameWith",90166.67,4
+386,"Cats Gaming",89169.97,72
+293,"Noble eSports",88863.18,31
+329,"Team Malaysia",88584.27,9
+24847,"Fighting PandaS",88000,5
+24772,"Swole Patrol",88000,24
+24737,"FATE Esports",87941.1,10
+24801,"Simplicity Esports",87593,10
+24845,"KOVA Esports",87185.26,16
+24720,"Syman Gaming",86874,18
+746,"Team TopDeck",86574.32,8
+644,"iGame.com",86488.02,18
+859,"Guangzhou Charge",86250,3
+503,"Hard Random",85851.35,13
+176,"Exile5",85215.15,86
+24745,"Alfa Romeo Racing F1 Esports Team",85000,1
+616,"Project_kr",84790.5,8
+24963,"DefuseKids",84680.98,29
+148,"vVv Gaming",84551.07,19
+591,"Turkish National Team",84079.22,8
+520,"Phoenix1",83633.03,52
+592,"Argentinian National Team",82858.56,9
+24713,"Tornado Energy",82594.1,11
+371,"Winterfox",82490.52,67
+643,"1907 Fenerbahçe Esports",82472.84,9
+598,"Dutch National Team",82238.35,16
+684,"Fable eSports",81868.5,10
+612,"Team Skadis Gift",80797.99,10
+759,"Dallas Fuel",80000,3
+779,"Brøndby IF eSport",79770,8
+690,"Italian National Team",77500,11
+593,"Czech National Team",76383.55,6
+191,"a-Losers",76316.94,20
+946,"McLaren Shadow",76000,2
+24750,"Trelleborg Team",75109.31,13
+24877,"MnM Gaming",74883.49,33
+24815,"Hive",74500,7
+24948,"Team Flash",74289.52,3
+761,"GameTV",73257.32,71
+439,"FM eSports",73006.75,29
+24714,"Northern Lights",72850,8
+786,"Clutch Gaming",72812.5,3
+24826,"Sunsister",71749.7,15
+308,"Automatic Reload",71575,5
+24674,"Mazer Gaming",70194.09,10
+457,"Berlin Allianz",70000,2
+25012,"The Peeps",69250,5
+206,"LGB eSports",68457.08,23
+24883,"Yeah Gaming",68013.67,26
+217,"Team Property",67644.03,33
+320,"SBENU",66726.07,32
+24865,"Xavier Esports",66681.25,12
+274,"EYEBALLERS",66301.88,8
+464,"Team Question Mark",66060.56,4
+434,"AT Gaming",66009.56,65
+454,"Alien Invasion",65878.06,130
+696,"Japanese National Team",65500,8
+24890,"Cream Esports",65435.45,7
+24717,"ATK",64768.13,18
+330,"VwS Gaming",64345.79,152
+844,"Sigma",63620.13,9
+108,"CheckSix Gaming",63515.24,35
+550,"Most Valuable Gaming",63452.53,75
+799,"Wind and Rain",63238.65,33
+940,"Mercedes-AMG Petronas Esports",62500,2
+714,"Team Random",62500,1
+723,"Thunderbirds",62500,1
+626,"Manchester City eSports",62400,11
+24702,"Team Redline",62400,7
+24991,"Optimal Ambition",62333.34,3
+339,"Hong Kong Esports",62332.6,9
+711,"Team Zenith",62312.76,9
+24683,"Triple Trouble",62286.7,9
+24893,"Third Impact",61095,13
+129,"For Our Utopia",60175.76,19
+417,"Team Hearthlytics",60010,15
+393,"Team Vulcun",60000,3
+473,"Team Coast",59950,10
+753,"Ronin Esports",59576.2,13
+835,"Oserv Esport",59506.41,9
+788,"Team Catch-Gamer",59263.61,10
+24725,"x3o",59100.8,15
+24903,"M10 Esports",59100,10
+957,"Polar Ace",58913.81,15
+794,"TitanEX1",58132.79,64
+334,"Team Dragon Knights",58000,7
+24861,"mudgolems",57750,3
+24859,"Rated R",57000,6
+524,"AGAiN",56847.13,9
+915,"Omnislash",56822.83,14
+471,"Ocrana",56810.11,10
+25018,"sAw",56653.84,14
+352,"Anexis eSports",56625.39,33
+943,"Sauber F1 Esports Team",56000,2
+820,"Winners",55812.77,13
+25060,"Darkest MuZhan",55000,3
+354,"GamingGear.eu",54909.4,8
+24882,"Raised by Kings",54837.6,5
+239,"Spirit of Amiga",54646.44,21
+857,"Toronto Defiant",54400,3
+606,"Romanian National Team",54375.64,11
+24824,"Global Esports Xsset",54259.38,5
+701,"New Zealand National Team",54100,6
+384,"NewRoSoft",53987.44,65
+24843,"Futbolist",53764.12,3
+24670,"Lux Gaming",53325,8
+435,"Young Glory",52965.57,6
+348,"XMG",52604.36,84
+24955,"DivisionX Gaming",52216.16,7
+24735,"Sharks Esports",52084.92,12
+668,"Asterion",51530.77,93
+699,"Hong Kong National Team",51500,5
+199,"goodgame",51247.86,18
+597,"Singaporian National Team",51125,7
+683,"Hite SPARKYZ",50818.59,16
+24869,"CERBERUS Esports",50799.88,10
+25002,"Parallax Gaming",50666,5
+24901,"Dynamind",50650,2
+24904,"Riddle",50400,2
+24905,"Stratum Esports",50300,2
+406,"3sUP Enterprises",50126.66,13
+819,"Hanwha Life Esports",49868.6,6
+24830,"CrowCrowd",48812.51,8
+24700,"Nora-Rengo",48760,7
+25066,"eleVen Original",48750,4
+929,"Pixel 1",48592.1,39
+189,"69°N-28°E",48449.74,6
+614,"Team WinFakt",48266.3,14
+284,"spiXel",48130.12,7
+150,"hoorai",48121.67,13
+831,"Rift Esports",48079.11,3
+25069,"Ni Chang Dance",47500,2
+159,"Absolute Legends",47434.47,39
+718,"Mysterious Monkeys",46778.9,14
+500,"REUNITED",46362.97,33
+25032,"SINNERS Esports",46055.36,7
+526,"Team X",46000,5
+358,"CLASH Tournaments",45988.3,183
+611,"NGA Club",45335.36,7
+24938,"Wave Esports",45323.18,26
+444,"Unlimited Potential",45312.6,3
+24736,"Radiance",44925.4,14
+24823,"WClick",44600,3
+288,"Temp.no",44475.44,23
+596,"Austrian National Team",44409.12,8
+24676,"AS Monaco Esports",44345.7,14
+537,"Even Matchup Gaming",44044.24,96
+333,"Team Impulse",43000,5
+24975,"ELL",42868.2,1
+551,"Team Revolution",42724.5,82
+665,"bbq Olivers",42359.3,6
+190,"Destination-Skyline",41549.71,11
+792,"Golden Guardians",41492.85,4
+24677,"Team Oplon",41199.76,42
+426,"OverGaming",40935.37,22
+24689,"Apex Racing Team",40934.42,6
+24875,"ArkAngel",40800,7
+24944,"303 Esports",40538.75,12
+361,"VGBootCamp",40312.22,114
+605,"Portugese National Team",40238.7,7
+791,"Playing Ducks",40061.31,27
+942,"Toro Rosso Esports Team",40000,1
+944,"University of Illinois at Urbana-Champaign",40000,1
+156,"Gravitas Gaming",39839.43,18
+24794,"Hard Legion Esports",39504.5,10
+278,"Astana Dragons",38823.69,11
+368,"Clan-Mystik",38751.6,19
+25027,"Vision Strikers",38000,2
+502,"Lounge Gaming",37962.07,9
+24679,"Konix eSport",37910.92,23
+594,"Bulgarian National Team",37868.11,8
+252,"Lightning Pandas",37829.32,4
+693,"Belgian National Team",37525,8
+410,"Conquest",37500,5
+326,"Brutality",37446.23,25
+247,"(monkey) Business",37194,2
+397,"Torpedo Gaming",37192.25,14
+615,"DTS Gaming",37050.43,21
+24942,"Oxygen Esports",36500,4
+155,"Online Kingdom",36090.5,7
+506,"Team SPACECRAFT",36071.09,39
+271,"GameOnline",35882.37,4
+24996,"Built By Gamers",35633.32,5
+355,"JaX Money Crew",35450,11
+24919,"Exalty",35183.35,60
+24967,"EXO Clan",35181.14,21
+24810,"EUs Finest",35000,3
+25079,"H.T Family",35000,1
+24755,"John Deere Gaming",34759.93,12
+559,"Smash Studios",34498.06,223
+401,"Elite Wolves",34277,8
+295,"Imaginary Gaming",34191.47,43
+24913,"Vexed Gaming",34062.3,16
+24886,"Sector One",33977.6,22
+845,"Team Massive Dragons",33977.53,2
+953,"Demise",33813.41,35
+528,"Valencia CF eSports",33714.38,13
+585,"Mexican National Team",33317,9
+654,"Cyclone",33262.22,14
+24894,"Nexus Gaming",32659.46,8
+24934,"Charlotte Phoenix",32200,4
+459,"London Mint",32086.7,5
+816,"O'Gaming",31870.64,44
+260,"No Tidehunter",31777.08,13
+388,"myRevenge",31677.8,33
+25042,"Ellevens Esports",31500,3
+24747,"Racing Point F1 Esports",31450,2
+807,"Business associates",31365,9
+24754,"Team GRIMME",31306.26,9
+289,"UNiTE Gaming",31200,7
+441,"Huma",31178.54,4
+412,"Team LoLPro",30750,10
+24850,"DreamEaters",30541.29,11
+24834,"NoPing e-sports",30438,6
+24908,"SKADE",30318.6,11
+636,"Chilean National Team",30000,3
+456,"Mexico City Furia",30000,2
+356,"Melee it on Me",29937.34,156
+24939,"MS Chonburi",29912.83,3
+510,"Epik Gamer",29750,6
+25041,"Avidity Esports",29500,2
+25043,"Canberra Havoc",29500,4
+574,"ANOX",29324.99,10
+24885,"London Esports",29309.09,12
+399,"T Show",29233.11,25
+810,"Team Orcus",28863.8,1
+24669,"Armada Esports",27872.63,80
+495,"Team Blacer",27834.95,58
+152,"Eclypsia",27777.57,21
+645,"Boreal eSports",27732.04,53
+519,"Apex Gaming",27500,2
+24860,"FireNIce Esports",27500,3
+24849,"Royal Youth",27487.5,2
+24800,"RBG Esports",27010.36,10
+704,"Swiss National Team",27000,3
+24848,"İstanbul Wild Cats",26752.82,6
+469,"Dallas Venom",26500,4
+24856,"pro100",26083.5,10
+423,"nerdRage",26026.74,22
+25010,"Echo Zulu",25885.7,14
+474,"Good Game University",25700,2
+622,"Rising Stars Gaming",25560.05,16
+24753,"KRONE eSports",25320.66,11
+24831,"Rascal Jester",25135.74,9
+270,"WICKED eSports",25005.55,7
+400,"Epiphany Bolt",24940.52,28
+727,"The Muffin Men",24900,8
+24749,"Burning-Gamers.de",24870.67,9
+25016,"Neon Esports",24810.55,5
+345,"Masters 3",24718,2
+689,"DuSt Gaming",24586.35,116
+359,"Trig Esports",24512.24,11
+418,"Team Meka",24469.24,32
+24968,"Wygers",24026,6
+24909,"SMASH Esports",24000,3
+478,"Fraternitas",23806.91,24
+24993,"XSET",23700,6
+24729,"Chicken Fighters",23500,3
+24921,"Omen Elite",23263.75,5
+911,"Pure Racing Team",23075,3
+702,"Peruvian National Team",23000,4
+259,"Team Admiral",23000,2
+431,"Team Fusion",23000,3
+291,"PotM Bottom",22954,4
+706,"Dark Sided",22930.66,21
+407,"Brave e-Sports",22804.83,12
+238,"JusTus",22780,8
+433,"8th Team",22691.19,13
+694,"Kazakh National Team",22600,4
+24911,"CeX",22580.38,18
+460,"Sydney Underground",22500,2
+721,"Kyoto eSports",22315.7,11
+24712,"Elgiganten Gaming",22312.06,9
+450,"Inspire Esports",22297.9,4
+731,"The Leftovers",22293.99,11
+254,"Exertus eSports",22271.76,23
+298,"Broken Tier",22157.4,59
+351,"Gameburg Team",22140.16,6
+24871,"Sandrock Gaming",22100.95,8
+627,"EarthRoot Gaming",22019.83,31
+24858,"Regal Reserve",22000,3
+667,"Horde",21976.36,4
+24771,"Team Phantasma",21975,8
+167,"IvDgaming",21658.65,28
+24718,"Project EVERSIO",21608.33,28
+445,"Ember",21500,2
+24965,"Beyond Esports",21396.79,12
+649,"2GGaming",21181.14,45
+24959,"Los Angeles Guerrillas",20833.33,5
+187,"Team Nv",20524.15,21
+25036,"5men",20411,4
+24917,"Digital Athletics",20400,6
+437,"E-corp Gaming",20265.95,11
+673,"Gold Coin United",20000,2
+947,"Hype Energy eForce India",20000,1
+24792,"LiViD Gaming",19958.6,3
+477,"IsIMBA",19885.38,55
+600,"Serbian National Team",19620.22,4
+24870,"RCD Espanyol",19578,5
+422,"Ex Nihilo",19551.02,6
+24724,"Cygames Beast",19356.35,2
+24891,"Unsold Stuff Gaming",19275,4
+24696,"Hippomaniacs",19257.13,16
+601,"Philippines National Team",19200,5
+480,"PuLse Gaming",18797.97,2
+363,"Big3",18683.42,7
+24943,"72 Pin Connector",18375,3
+24868,"Victim",18200,3
+24817,"All Rejection Gaming",18194.03,5
+24739,"Fast Racers Forza",18000,2
+517,"No Diggity",18000,2
+448,"Operation Kino eSports",17838.77,19
+25039,"Rainbow7",17625,2
+24827,"Vendetta",17556.02,3
+116,"Guild of Imbalance",17519.42,25
+24979,"Entropiq",17469.43,12
+737,"iNETKOXTV",17464.1,20
+25031,"ESPADA",17337,4
+24719,"Afterthought",17320,4
+250,"Aware Gaming",17114.31,11
+24738,"JOTA eSport",17000,1
+350,"Vicious Syndicate Gaming",16925,10
+565,"Seattle Surge",16900,5
+255,"eoLithic",16772.87,3
+24731,"Equinox Gaming",16634.33,17
+811,"Lebanon National Team",16610.22,2
+691,"Israel National Team",16600,3
+24961,"Team Sampi",16494.43,13
+651,"InControl Gaming",16433.36,32
+772,"Netcode Illuminati",16300,5
+705,"Miami Flamingos‏ e-Sports",16183.99,26
+514,"Hyper Youth Gaming",16108,1
+249,"VanQuish",16105.4,9
+25085,"GUTS Gaming",16000,2
+935,"PlayerOne Esports",16000,3
+105,"It's Gosu eSports",15915.54,31
+179,"Area 51 Gaming",15800,4
+369,"The Last Resistance",15767.53,4
+387,"EloHell",15643.43,4
+24923,"IziDream",15437.35,2
+24761,"Team Lindner",15106.95,9
+541,"Game Talents",15013.4,1
+527,"Brain Power",15000,1
+472,"Odyssey Gaming",15000,2
+455,"Singapore Sword",15000,1
+458,"Stockholm Magnetik",15000,1
+470,"Wuhan Dragon",15000,1
+375,"Arcade eSports",14925.93,13
+24914,"Fierce Esports",14791.57,7
+321,"Control Gaming",14751.68,110
+496,"Team gamed!de",14588.9,9
+803,"DAN Gaming",14528.5,1
+604,"Hungarian National Team",14518.11,5
+540,"Tollenz Lions",14323.49,19
+24759,"Ancient Warriors",14310.62,8
+476,"Sinners Never Sleep",14302.87,4
+24752,"Die Landeier",14257.7,11
+25084,"Timbers Esports",14000,2
+465,"Astralis (Finnish)",13837.79,7
+25015,"Signify",13829.29,2
+509,"Romandy Gaming",13695.06,50
+24867,"Kanga Esports",13500,7
+432,"Team Innova",13434.23,11
+630,"EndGameTV",13345.91,47
+24760,"Team HORSCH",13251.78,6
+429,"Bob Question Mark",13240.19,6
+24723,"Aerowolf",13000,1
+25045,"Omni Nation",13000,1
+25023,"BMW Esports",12900,1
+504,"Rebels Anarchy",12814.95,2
+542,"Team LeiFeng",12802.27,54
+24912,"Radix eSports",12753.81,8
+24985,"Ovation eSports",12750,8
+24698,"Halocline Gaming",12737.84,13
+24876,"Dragons Esports Club",12639.13,4
+415,"Quarter after Midnight",12548.88,36
+24947,"Attack All Around",12522.23,6
+24926,"Overt",12350,4
+717,"Hammers Esports",12307.27,10
+424,"Fatal Ambition",12282.96,4
+24888,"Game Agents",12018.15,2
+24740,"Virtualdrivers TX3",12000,1
+110,"eSahara",11870.62,19
+822,"Mentality Esports",11840.75,20
+806,"Final-Gaming",11576.18,18
+25014,"Energy Esports",11514.54,3
+24949,"Mythic",11500,7
+24929,"Riddle Esports",11451.55,2
+533,"ExAequo",11446,4
+272,"Universal Soldiers",11350,4
+25086,"MercenarieZ",11250,2
+25087,"Union Gaming",11250,2
+24741,"Team Highlands Racing",11000,2
+269,"Vitriolic",10992.91,5
+24854,"Justice Esports",10824.45,3
+24853,"SYF Gaming",10721.75,9
+24974,"Lucid Dream",10466.08,7
+607,"Belarusian National Team",10382.12,5
+24816,"Výfuk",10241.81,4
+800,"Coalition Gaming",10020.3,17
+24855,"Furious Gaming",10000.23,11
+945,"Carleton University",10000,1
+595,"Slovakian National Team",9816.1,3
+24732,"Genuine Gaming",9794.55,9
+853,"EXPLOSIVE",9750,2
+24811,"Disrupt Gaming",9500,5
+140,"Air Force ACE",9413.89,10
+728,"Team Iris",9377.5,20
+24778,"Burning Core",9340.2,3
+24932,"mCon esports Rotterdam",9279.21,7
+24970,"Global Esports",9134.4,5
+24673,"Sinai Village",9106.7,35
+24981,"Mamba Mode Gaming",9050,9
+24695,"Nevermore eSports",8962.05,11
+24756,"SDL eSports",8958.9,3
+151,"starComa",8950.92,2
+24992,"Exeed Esports",8900,5
+679,"Fusion Girls",8873.48,5
+24791,"Paradox Gaming",8860.97,9
+659,"Keep Gaming",8850.65,6
+24837,"GoSkilla",8796.69,2
+328,"The Steam Co",8660.75,59
+648,"Fly Society",8623.13,21
+25034,"Bren Esports",8500,2
+370,"Professional Skills",8424.84,5
+178,"Pulse Esports",8408.82,15
+703,"Indonesian National Team",8400,2
+25009,"Dynasty",8356.55,7
+725,"Red Bulls",8241.45,1
+692,"Malay National Team",8200,2
+24954,"dizLown",8043.58,4
+618,"Colombian National Team",7958.56,2
+24960,"GameWard",7711.11,6
+566,"Trail Gaming League",7640.33,22
+815,"Mirage",7532.38,4
+697,"Croatian National Team",7525,3
+25075,"INDIAN CLASHERS",7500,1
+461,"Rio Sinistro",7500,1
+463,"Seoul Jinhwa",7500,1
+924,"Crack Clan",7486.92,3
+629,"Team Viral",7456.46,28
+24984,"Grizi Esport",7400,8
+24892,"Trident Esports",7389.19,8
+722,"Serenity Sports",7336.61,14
+353,"Heimerdinger's Colossi",7285.84,6
+647,"V8 eSports",7250,3
+24779,"Malvinas Gaming",7164.3,7
+24762,"Team Komatsu Forest",7069.67,4
+25046,"Plot Twist",7000,1
+160,"Virus Gaming",6998.62,28
+751,"Balance Gaming",6800.12,24
+25058,"lvlUP",6517.36,4
+538,"Polarity",6500,3
+25026,"JAESA Team Suzuki",6450,1
+25025,"Team Fordzilla",6450,1
+25024,"YAS HEAT",6450,1
+24987,"Granit Gaming",6375,13
+428,"MKZ",6345.52,2
+346,"Assassin Sniper",6308.4,2
+724,"Rhinos Gaming",6289.76,3
+549,"Team Heir",6274.61,38
+24710,"Icelandic National Team",6157.85,2
+960,"Saudi National Team",6100,2
+25063,"Resistance",6000,2
+24798,"Team Mantra",6000,1
+961,"South African National Team",5800,2
+25021,"REJECT",5796.06,3
+24846,"RÄHINÄ eGameStars",5774.13,2
+24941,"Big Frames",5750,8
+25022,"Sengoku Gaming",5701.68,1
+24880,"Team Parallel",5625.8,3
+752,"Team YP",5605.2,11
+24956,"GameHome Esports",5536,3
+24751,"Landwirtschaft3.0",5446.99,3
+24764,"Team CLAAS",5433.53,4
+25076,"DARK TANGENT",5000,1
+950,"Haas F1 Esports Team",5000,1
+24767,"Indian National Team",5000,1
+24766,"Irish National Team",5000,1
+24768,"Latvian National Team",5000,1
+24769,"Paraguayan National Team",5000,1
+25044,"Warriors International",5000,1
+738,"INSHOCK",4979.07,7
+24973,"Suomi",4925,2
+391,"Team Lucky Draw",4888.34,10
+490,"True AmBition",4866.01,35
+166,"RattleSnake",4761.1,3
+487,"Redbloods",4672.8,19
+24727,"Dark Origin",4663.01,3
+282,"Templars of Twilight",4519.27,6
+24994,"Cosa Nostra Games",4500,3
+24978,"Kansas City Pioneers",4500,3
+24838,"BOX Gaming",4350,3
+25008,"Brussels Guardians",4326.44,5
+758,"RELAPSE Gaming",4324.41,6
+710,"Laser Kittenz",4300,2
+170,"Clarity Gaming",4295.38,7
+576,"Team Phoenix",4250,3
+484,"I Will Kill You Gaming",4184.62,3
+378,"Awsomniac",4174.28,2
+377,"Benched Gaming",4054.84,5
+554,"Mortality",3975.3,29
+379,"DragonBorns",3965.4,1
+24983,"Enterprise Gaming",3850,6
+24916,"Salamander Gaming",3825,3
+754,"FStep",3773.8,10
+25070,"Activit-E",3750,1
+25074,"Goethe",3750,1
+25072,"Hagure MetaL",3750,1
+25062,"Hama",3750,1
+25064,"Kapinalliset",3750,1
+25068,"RTK",3750,1
+25067,"TownHall.Legend",3750,1
+25083,"B7 Warriors",3705,2
+836,"Zerator",3697.09,6
+276,"Five Crowns",3502.85,2
+547,"qwerty",3500,2
+936,"Monolith Gaming",3474,3
+24807,"Aera Esport",3391.94,1
+436,"El NeXo",3307.48,9
+932,"Fursan Esports",3300,4
+303,"Pandora's Mighty Soldiers",3250,5
+24896,"Game Fist",3155.69,2
+813,"Team Invited",3153.43,1
+782,"Red Coin",3028.8,5
+24757,"Team AMAZONE",3000.72,3
+798,"Dynamo Kyiv Esports",3000,2
+25030,"OPAA Gaming",3000,1
+838,"Team Requiem",2922.34,3
+24887,"Team LEISURE",2869.44,2
+552,"Team Prismatic",2856.99,21
+488,"Glacial Gaming",2852.25,15
+25011,"⁠Team THRLL",2848.88,2
+24863,"Team SiNister",2847.34,2
+24895,"Team of elite guys",2807.92,2
+24675,"Augury Gaming",2801.6,6
+570,"Lets Play",2787.47,22
+24699,"orKs Grand Poitiers",2672.46,13
+24691,"Thunder Gaming",2550.05,7
+122,"Praetoriani",2544.48,11
+809,"4 Asians Plus 1",2500,1
+590,"Kyrgyzsian National Team",2500,1
+603,"Tunesian National Team",2500,1
+25020,"BlackBird Ignis",2450.6,2
+24758,"BEDNAR Team",2441.01,2
+25053,"Team Toxic",2340,1
+640,"Team Oxy",2314,18
+24964,"Signature Gaming",2305.48,2
+493,"Haven Esports",2265.43,22
+24976,"Se7en eSports",2250,2
+498,"Great British Pounding",2213.61,2
+532,"Kingsmen",2207.82,7
+24935,"HONORIS",2172.12,1
+25004,"KV Mechelen",2142.65,2
+837,"War Legend",2128.81,3
+24685,"Supersonic Avengers",2115.1,9
+564,"Olympus Esports",2106.65,20
+146,"Salade Tomate Oignon",2061.31,1
+24799,"Nfinite",2000,1
+24951,"Oryx Esports",2000,1
+624,"Sporting CP eSports",2000,1
+24802,"Team Chaotic",2000,1
+24730,"Team Razer",2000,1
+24995,"vsBANDITS",2000,1
+491,"Amino",1987.35,17
+360,"Grow uP Gaming",1971.37,2
+128,"WeRRa",1969.74,2
+25038,"Revolution",1968.89,3
+24681,"Kings of Urban",1950,11
+729,"Myth Gaming",1900,3
+154,"LighT eSports",1870.48,3
+24925,"ACE1",1700,4
+24962,"Gaming Privé",1652.16,12
+25019,"KPI Gaming",1594.94,1
+376,"GSI Gaming",1509.61,1
+24952,"1NE eSports",1500,1
+24966,"ASMR eSports",1500,1
+24770,"c0ntact Gaming",1500,1
+24980,"Morning Light",1500,2
+244,"Team Saw",1500,1
+25005,"Aethra Esports",1467.63,1
+24977,"Big Time Regal Gaming",1447,1
+25082,"Team Valtra",1435.63,1
+390,"Team Innovation",1433.17,4
+182,"Vile Gaming",1350,2
+685,"BOT Empire",1322.8,5
+535,"Synthetik",1303.03,7
+292,"Rock Solid",1300,2
+232,"Fuse",1250,1
+394,"XDG Gaming",1250,1
+492,"Frequency",1220,7
+24997,"Rams",1200,1
+25006,"Team 7AM",1174.1,1
+619,"SilentSquad",1141.88,9
+556,"AntiBeat Multigaming",1107.97,2
+24920,"Team XENEX",1106.45,3
+24889,"AVENUE eSports",1052.33,2
+24988,"Team Vikings",1050,2
+186,"Team Menace.fi",1014.09,8
+25037,"Paper Rex",1000,1
+449,"Team Symthic",1000,1
+202,"Unitary Guerilla Platoon",1000,1
+25033,"YaLLa Esports",1000,1
+24701,"eMonkeyz",997.99,3
+24763,"Alki-Agrar",984.64,1
+24930,"Honig Gäng",973.94,1
+749,"EMP",959.3,3
+784,"UX Gaming",950.94,6
+24986,"OtterWorld eSport",950,3
+563,"MisaiFix",906.51,8
+24688,"BOT",898.32,24
+24873,"Refund Gaming",894.75,3
+25003,"B4 eSports",886.29,1
+25007,"RSC Anderlecht Esports",880.58,1
+25055,"euphoria",877,1
+24972,"SalzZ",874,2
+812,"ePunks",800,1
+662,"Lone Ranger",735.7,6
+24928,"Triple A Esports",708,1
+24999,"Athletix eSport",700,2
+24852,"Inside Games",694.8,2
+750,"Good Game Labs",694.62,4
+553,"Team Ascension",659.2,3
+24915,"Horus Esports",642.51,1
+757,"Eraiize",621.34,8
+670,"Black Craft Spirits",600.6,3
+24805,"Golden Modem Squad",600,2
+25035,"orKs Grand Poitiers",590,1
+438,"Team Xcution",586.4,3
+25054,"MUTED",585,1
+796,"squad",570.56,3
+511,"West Ham United",567.55,1
+24808,"Yunktis",565.32,1
+804,"For Glory",500,2
+569,"GamersLeague eSport",487.51,6
+25073,"Aphelion Esports",471,1
+567,"U4X eSports",469.68,6
+620,"Degasa",435.73,7
+555,"Team Tower",400,1
+568,"Permafrost Gaming",399.62,4
+381,"SUPA HOT CREW XD",350,1
+24697,"Hound Esports",337.51,2
+24936,"Cocktails Dannati",331.06,14
+24897,"Centaury Event",328.35,11
+25059,"Good Game",292,1
+25056,"Kum Gaming",292,1
+25057,"Marten Gaming",292,1
+785,"Team EGO",278.07,6
+681,"GameTyrant",272.2,6
+24809,"Exillium Esports",258.97,1
+24728,"Fudoh",250,1
+25040,"TopHard Esports",250,1
+631,"Rabbit Deaf e-Sports",223.42,8
+25000,"Technocracy",217.33,7
+497,"Ionic.gg",211.96,1
+24804,"Sage eSports",200,1
+24982,"Sunflower Gaming",200,1
+467,"Apocalypse eSports",169.25,4
+24694,"Joe Gibbs Racing",155,1
+632,"Defenses Geniuses",151.45,2
+24940,"Team Immunity",150,1
+173,"Team Legion",150,1
+686,"G-Force",145,1
+617,"Kids Next Door",136,2
+641,"Geeky Goon Squad",128.13,8
+24924,"Vikingekrig Esports",125,1
+578,"KATT5",114.8,2
+24693,"JR Motorsports",108,1
+25048,"Arrowgant Combottants",70.2,1
+573,"BOXR",48.37,1
+634,"Aptitude E-Sports",28.05,1
+633,"GuildWars",21.92,1
+258,"aDversity",0,NA
+964,"Astral Gaming",0,NA
+24989,"B4stardos",0,NA
+24922,"Borowiki",0,NA
+24927,"BS COMPEITION",0,NA
+24765,"CCyber Giants",0,NA
+858,"Chengdu Hunters",0,NA
+672,"Cocodrilos eSports",0,NA
+24990,"DC Team",0,NA
+25081,"Death Dealers",0,NA
+562,"Degasa",0,NA
+747,"Edax Pro",0,NA
+332,"Elements",0,NA
+24910,"eRow Team",0,NA
+24726,"eXo eSports",0,NA
+24665,"ExoTique eSPORT",0,NA
+24666,"ExoTique eSPORT",0,NA
+680,"Extreme Dive Gaming",0,1
+855,"FATEH",0,NA
+245,"Fearless Under Fire",0,NA
+161,"Fightline",0,NA
+25028,"Floodebollerogkokus",0,NA
+917,"Galatasaray Esports",0,NA
+25061,"Good Game Gaming",0,NA
+336,"Gravity",0,NA
+25088,"Guild Esports",0,NA
+25052,"Impave Gaming",0,NA
+522,"KingSurf",0,NA
+24931,"KurdGamers",0,NA
+959,"LANGUDAR",0,NA
+854,"Legion",0,NA
+534,"Liquid Gaming",0,NA
+25050,"Los Angeles Thieves",0,NA
+25080,"M.K.M.A",0,NA
+25029,"MASONIC",0,NA
+171,"My Intent",0,NA
+325,"NECKBREAK",0,NA
+24721,"Nemesis Esports",0,NA
+778,"NeST Gaming",0,NA
+25078,"Nolex",0,NA
+24686,"Oasis eSports",0,NA
+24711,"ObnoxiousGaming",0,NA
+25001,"Old Man Rock",0,NA
+25051,"OpTic Chicago",0,NA
+24937,"PNG Clan",0,NA
+669,"Potassium eSports",0,NA
+628,"Primal",0,NA
+905,"Project Eversio.BO4",0,NA
+906,"Project Eversio.BO4",0,NA
+907,"Project Eversio.BO4",0,NA
+908,"Project Eversio.BO4",0,NA
+24840,"Purple Moods Esport",0,NA
+310,"Revenge Gaming",0,NA
+755,"RockPaperSmashville",0,NA
+560,"Royalty",0,NA
+515,"Saint Club",0,NA
+939,"Sandbox",0,NA
+828,"SCHWACHKOPF",0,NA
+280,"se mi puta",0,NA
+25077,"Silent Snipers",0,NA
+24998,"Spectrum ESC",0,NA
+25013,"Speed eSports",0,NA
+741,"Steel Wolf",0,NA
+952,"Syntic eSports",0,NA
+324,"Team Elunes",0,NA
+279,"Team Karma",0,NA
+327,"Team MxB",0,NA
+756,"Team Solstice",0,NA
+25017,"Team TapOnce",0,NA
+307,"UnWanted",0,NA
+294,"WARMAKER",0,NA
+25047,"William Byron Esports",0,NA
+24692,"Wood Brothers Racing",0,NA
+24862,"YMCA Esports",0,NA
+446,"ZTR Gaming",0,NA

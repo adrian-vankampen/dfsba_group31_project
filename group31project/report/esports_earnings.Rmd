@@ -1,0 +1,298 @@
+---
+title: "Your Document Title"
+author: "Document Author"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    theme: readable
+    toc: true
+    toc_float: true
+    number_sections: true
+    runtime: shiny
+---
+
+```{r, echo = FALSE, message = FALSE, include=FALSE}
+source(here::here("scripts/setup.R"))
+```
+
+# Earnings from Esports tournaments
+
+Although not a direct proxy for overall earnings in esports, tournaments' prize money are often a good indication of how successful and popular a particular game, team or player is to the esports' public. As such, betting on esports that give out large cash pools to tournaments' winners can be profitable.
+
+## Data gathering {.tabset .tabset-fade}
+
+We accessed data about Esports Earnings through tournaments on the website [EsportsEarnings.com](http://www.esportsearnings.com) (hereafter abbreviated as  `EE`).
+
+This website provides a rather complete API to gather data in convenient format, through multiple *methods*. Due to website limitations (and to prevent excessive traffic on their side), we are only able to get a dataset (max. 100 rows) every second at most.
+
+Therefore, we wrote a function `build_df()` that automates the process of making API requests and builds complete datasets, 100 rows at a time, for several different methods. This function can be found in the `scripts/Functions.R` script.
+
+Using this, we gathered several data-sets (see `scripts/EE_Data_Gathering-01.R` for details):
+
+### Tournaments
+
+```{r}
+tournaments <- read_csv(file = here::here("data/EsportsEarnings.com/EE_tournaments.csv"))
+
+tournaments %>% kable_head(caption = "Registered e-sports tournaments since 1996")
+```
+
+<p>&nbsp;</p>
+
+`EE_tournaments.csv` contains most registered esports tournaments across various computer games. The dataset contains 41,472 observations. It was compiled on Thursday, December 10th 2020. For the not so self-explanatory variables:
+
+- `TournamentId` (num) - Unique identifier of that tournament.
+- `GameId` (num) - Game ID of the game being played (same ID as in the `games` data-set).
+- `TournamentName` (chr) - Name of that tournament.
+- `StartDate` (Date) - Date at which the tournament started.
+- `EndDate` (Date) - Date at which the tournament ended.
+- `Location` (chr) - location where the tournament was held (`Online` meaning it was held remotely)
+- `Teamplay` (num) - Indicates if entities competing in that tournament are teams (1) or individuals (0)
+- `TotalUSDPrize` (num) - Amount given out for that tournament in USD.
+
+This data-set contains missing location for 12 tournaments, and a missing tournament name for 1 of them (all of which have pool prizes of less than 20k USD).
+
+### Games
+
+```{r}
+games <- read_csv(file = here::here("data/EsportsEarnings.com/EE_games_earnings.csv")) %>%
+  rename(GameId = id) # We add this to harmonize variables name across datasets
+
+games %>% kable_head(caption = "Prize money gained in each game.")
+```
+
+<p>&nbsp;</p>
+
+`EE_games_earnings.csv` contains all the prize money won across most registered tournaments throughout each game's history. The dataset contains observations about 481 different games. It was compiled on Thursday, December 10th 2020, by gathering individual game data based on the game ID's present in the `tournaments` data-set.
+
+- `GameId` (num) - Unique identifier for each game (same ID as in the `tournaments` data-set)
+- `GameName` (chr) - Name of the game which corresponds to the game's Id
+- `TotalUSDPrize` (num) - Total prize money for the game in USD
+- `TotalTournaments` (num) - Number of recorded tournaments for the game
+- `TotalPlayers` (num) - Number of players with records in the game
+
+This data-set contains missing values for the games "NBA 2K Online" and "Trackmania United Forever".
+
+### Teams
+
+```{r}
+teams <- read_csv(file = here::here("data/EsportsEarnings.com/EE_teams_earnings.csv"))
+
+teams %>% kable_head(caption = "Teams' total earnings")
+```
+
+<p>&nbsp;</p>
+
+`EE_teams_earnings.csv` contains most registered teams' earnings throughout their history. It contains observations about 1,249 teams. It was compiled on Thursday, December 10th 2020.
+
+- `TeamId` (num) - Unique identifier for each team recorded.
+- `TeamName` (chr) - Name of team corresponding to the team ID.
+- `TotalUSDPrize` (num) - Total prize money won by that team in USD.
+- `TotalTournaments` (num) - Number of tournaments recorded by that team (played, not only won).
+
+This data set only contains missing values in `TotalTournaments` (74 i.e 6%). All of these teams are recorded as having won no prize cash.
+
+
+## Exploratory Data Analysis
+
+Not all games in our data-sets have equal potential to attract masses. To explore which games are the most popular, we analysed them on different metrics:
+
+### Ranking games {.tabset .tabset-fade}
+
+#### Number of tournaments
+
+```{r}
+o_tourn <- games %>%
+  select(GameId, GameName, TotalTournaments) %>%
+  arrange(desc(TotalTournaments)) %>%
+  filter(TotalTournaments > quantile(TotalTournaments, p=0.95, na.rm=TRUE))
+
+rankg_by_tournnb <- o_tourn %>%
+  ggplot(aes(x=(GameName %>% 
+                  reorder(TotalTournaments)), 
+             y=TotalTournaments, 
+             fill = TotalTournaments)) +
+  geom_bar(stat="sum", show.legend = FALSE) +
+  xlab("") +
+  ylab("Number of tournaments") +
+  coord_flip()
+
+ggplotly(rankg_by_tournnb,
+         height = 600,
+         tooltip = "y")
+```
+
+From this visualization, we see that `StarCraft II` and `Counter-Strike: Global Offensive` (aka **CS:GO**) have had by far the most tournaments, followed by `Super Smash Bros. Melee` and `League of Legends` (aka **LoL**).
+
+
+#### Total USD Prizes
+
+```{r}
+o_prizes <- games %>%
+  select(GameId, GameName, TotalUSDPrize) %>%
+  filter(TotalUSDPrize > quantile(TotalUSDPrize, p=0.95, na.rm=TRUE)) %>%
+  arrange(desc(TotalUSDPrize))
+
+rankg_by_prizes <- o_prizes %>%
+  ggplot(aes(x=reorder(GameName, TotalUSDPrize), y=TotalUSDPrize, fill = TotalUSDPrize)) +
+  geom_bar(stat="sum", show.legend = FALSE) +
+  ylab("Total Prizes (in USD)") +
+  xlab("") +
+  scale_y_continuous(labels = unit_format(unit = "M", scale = 1e-6)) +
+  coord_flip()
+
+ggplotly(rankg_by_prizes,
+         height = 600,
+         tooltip = "y")
+```
+
+`Dota 2` massively dominates this section, with over 228M USD payed out in cash prizes. Far behind, but still noteworthy, are `CS:GO`, `Fortnite` and `LoL` with around 80M-100M USD paid out each. Surprisingly, `StarCraft II` is way behind these 4, although having the highest number of tournaments.
+
+#### Number of competing players
+
+```{r}
+o_players <- games %>%
+  select(GameId, GameName, TotalPlayers) %>%
+  arrange(desc(TotalPlayers)) %>%
+  filter(TotalPlayers > quantile(TotalPlayers, p=0.95, na.rm=TRUE))
+
+rankg_by_playernb <- o_players %>%
+  ggplot(aes(x=reorder(GameName, TotalPlayers), y=TotalPlayers, fill = TotalPlayers)) +
+  geom_bar(stat="sum", show.legend = FALSE) +
+  xlab("") +
+  ylab("Number of competing players") +
+  coord_flip()
+
+ggplotly(rankg_by_playernb,
+         height = 600,
+         tooltip = "y")
+
+```
+
+Again, we see a clear domination of one game over the others in terms of competing players' count. `CS:GO` has nearly twice the number of players as the next in line, `LoL`, which in turn is massively in front of the next one. Looking at trailers, the **FPS** (First Person Shooter) is by far the most popular, with games such as `Couter-Strike`, `Overwatch`, `VALORANT`, `Rainbow Six Siege`, `Counter-Strike: Source` and others in this top 5%. A possible explanation would be that some players that play one of these games can transition, or even play simultaneously, other games of the same genre, which is much more difficult between different genre.
+
+
+<hr/>
+
+### {-}
+
+From these observations, we can identify 5 particularly interesting games:
+
+- **StarCraft II**: With the most number of tournaments, but low prize pools and players count, this is a game with a highly active and passionate community which seem to not care about money that much.
+- **CS:GO**: With many tournaments, high prize pools and many players, this is probably the most active game of this list.
+- **Dota 2**: Despite relatively low popularity and tournaments count, the gigantic prize pools may be explained by high levels of investment from game developers and sponsors.
+- **League of Legends**: Relatively average among all metrics, this seems like a solid all rounder with a pretty active community.
+- **Fortnite**: Similarly to `LoL`, this is a solid all rounder, with low numbers of tournaments that can be explained by the relative youth of this game (July 2017) and its genre. Thus, the audience may also be less mature.
+- **Super Smash Bros. Melee**: Finally, with many tournaments played, but not appearing in the top 5% of other metrics, this is the underdog, with a niche but dedicated community that, similarly to `StarCraft II`, seem to not care about money that much.
+
+For the rest of this analysis, let's keep an eye out on these games.
+
+### Games Evolution {.tabset .tabset-fade}
+
+Although these data are interesting, they do not mention anything about time. A game can gain popularity, but also lose it very fast for many reasons.
+
+Using our `tournaments` data-set, we can see how tournament counts and prize-pools have evolved through time for each games.
+
+```{r}
+
+# Prepare data to display temporal stats by game
+
+tourn_bygame2 <- tournaments %>%
+  left_join(games, by = "GameId") %>%
+  rename(TotalUSDPrize = TotalUSDPrize.x) %>% # We only want Total Prize by tournament, not by game
+  select(TournamentId:GameId,
+         GameName,
+         TournamentName:TotalUSDPrize) %>%
+  group_by(Month_Yr = floor_date(EndDate, "month"), GameId, GameName) %>%
+  summarize(prize = sum(TotalUSDPrize),
+            tournb = n())
+
+```
+
+#### Prize cash
+
+```{r}
+inputPanel(
+  selectInput(
+    "gameNamePrize",
+    label = "Game:",
+    choices = o_prizes$GameName,
+    selected = o_prizes$GameName[1]
+  ),
+  
+  sliderInput(
+    "dateRangePrize",
+    label = "Date range of observations:",
+    min = min(tourn_bygame2$Month_Yr),
+    max = max(tourn_bygame2$Month_Yr),
+    value = c(min(tourn_bygame2$Month_Yr),
+              max(tourn_bygame2$Month_Yr)),
+    timeFormat = "%Y-%m-%d"
+  )
+)
+
+renderPlotly({
+  mainplot <- tourn_bygame2 %>%
+    filter(GameId == o_prizes$GameId[o_prizes$GameName == input$gameNamePrize]) %>%
+    filter(Month_Yr >= input$dateRangePrize[1]) %>%
+    filter(Month_Yr <= input$dateRangePrize[2]) %>%
+    ggplot(aes(x = Month_Yr, y = prize)) +
+    geom_line() +
+    ggtitle(paste("Total prize cash won: ",
+                  paste(
+                    format(
+                      round(o_prizes$TotalUSDPrize[o_prizes$GameName == input$gameNamePrize] / 1e6, 1),
+                      trim = TRUE,
+                      digits = 6
+                    ), "M"
+                  ),
+                  sep = "")) +
+    xlab("") +
+    ylab("") +
+    scale_y_continuous(labels = unit_format(unit = "M", scale = 1e-6)) +
+    xlim(input$dateRangePrize[1], input$dateRangePrize[2])
+  
+  ggplotly(mainplot)
+})
+```
+
+
+#### Tournaments count
+
+```{r}
+inputPanel(
+  selectInput(
+    "gameNameTourn",
+    label = "Game:",
+    choices = o_tourn$GameName,
+    selected = o_tourn$GameName[1]
+  ),
+  
+  sliderInput(
+    "dateRangeTourn",
+    label = "Date range of observations:",
+    min = min(tourn_bygame2$Month_Yr),
+    max = max(tourn_bygame2$Month_Yr),
+    value = c(min(tourn_bygame2$Month_Yr),
+              max(tourn_bygame2$Month_Yr)),
+    timeFormat = "%Y-%m-%d"
+  )
+)
+
+renderPlotly({
+  mainplot <- tourn_bygame2 %>%
+    filter(GameId == o_tourn$GameId[o_tourn$GameName == input$gameNameTourn]) %>%
+    filter(Month_Yr >= input$dateRangeTourn[1]) %>%
+    filter(Month_Yr <= input$dateRangeTourn[2]) %>%
+    ggplot(aes(x = Month_Yr, y = tournb)) +
+    geom_line() +
+    ggtitle(paste("Total tournaments organized: ",
+                  o_tourn$TotalTournaments[o_tourn$GameName == input$gameNameTourn],
+                  sep = "")) +
+    xlab("") +
+    ylab("") +
+    xlim(input$dateRangeTourn[1], input$dateRangeTourn[2])
+  
+  ggplotly(mainplot)
+})
+```
