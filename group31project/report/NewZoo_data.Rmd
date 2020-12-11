@@ -32,7 +32,7 @@ CompaniesPublicRevenues <- data1 %>%
          Q1_2020 = ifelse(Q1_2020 < 10 , Q1_2020*1000, Q1_2020),
          Q2_2020 = ifelse(Q2_2020 < 10 , Q2_2020*1000, Q2_2020)) %>%
   # compute total and growth
-  mutate(Total_2019 = Q1 + Q2 + Q3 + Q4, .after = Q4) %>%
+  mutate(Total_2019 = (Q1 + Q2 + Q3 + Q4)*1000000, .after = Q4) %>%
   mutate(Total_2020 = Q1_2020 + Q2_2020, .after = Q2_2020) %>%
   mutate(Q1_grate = 100*(Q1_2020 - Q1)/Q1, .after = Q1_2020) %>% 
   mutate(Q2_grate = 100*(Q2_2020 - Q2)/Q2, .after = Q2_2020)
@@ -62,6 +62,24 @@ o_total_in_2019 <- CompaniesPublicRevenues %>%
    ylab("Total game revenue in 2019") +
    coord_flip()
 o_total_in_2019
+
+plot_CompRev <- CompaniesPublicRevenues %>%
+  mutate(Company_name = factor(CompaniesPublicRevenues$Company_name, 
+                               levels = unique(CompaniesPublicRevenues$Company_name)[order(CompaniesPublicRevenues$Total_2019, decreasing = FALSE)]))
+
+library(RColorBrewer)
+
+plot_ly(data = plot_CompRev,
+        x = plot_CompRev$Total_2019,
+        y = ~plot_CompRev$Company_name,
+        color = ~plot_CompRev$Company_name,
+        colors = brewer.pal(length(names(table(plot_CompRev$Company_name))),
+                                "Paired"),
+        type = "bar",
+        height = 400) %>% 
+  layout(title = "Sales per city",
+         xaxis = list(title = "City"),
+         showlegend = FALSE)
 ```
 
 ### Here an other dataset about the amount of different investment
