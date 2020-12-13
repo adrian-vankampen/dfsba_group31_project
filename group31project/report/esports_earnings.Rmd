@@ -117,6 +117,8 @@ rankg_by_tournnb <- o_tourn %>%
   ylab("Number of tournaments") +
   coord_flip()
 
+  # Wrap with ggplotly to make tooltips on hover
+  
 ggplotly(rankg_by_tournnb,
          height = 600,
          tooltip = "y")
@@ -141,6 +143,8 @@ rankg_by_prizes <- o_prizes %>%
   scale_y_continuous(labels = unit_format(unit = "M", scale = 1e-6)) +
   coord_flip()
 
+  # Wrap with ggplotly to make tooltips on hover
+  
 ggplotly(rankg_by_prizes,
          height = 600,
          tooltip = "y")
@@ -163,6 +167,8 @@ rankg_by_playernb <- o_players %>%
   ylab("Number of competing players") +
   coord_flip()
 
+  # Wrap with ggplotly to make tooltips on hover
+  
 ggplotly(rankg_by_playernb,
          height = 600,
          tooltip = "y")
@@ -187,7 +193,7 @@ From these observations, we can identify 5 particularly interesting games:
 
 For the rest of this analysis, let's keep an eye out on these games.
 
-### Games Evolution {.tabset .tabset-fade}
+### Games Evolution
 
 Although these data are interesting, they do not mention anything about time. A game can gain popularity, but also lose it very fast for many reasons.
 
@@ -209,67 +215,19 @@ tourn_bygame2 <- tournaments %>%
 
 ```
 
-#### Prize cash
+#### Temporal analysis
 
 ```{r}
 inputPanel(
   selectInput(
-    "gameNamePrize",
+    "GameNameBoth",
     label = "Game:",
-    choices = o_prizes$GameName,
-    selected = o_prizes$GameName[1]
-  ),
-  
-  sliderInput(
-    "dateRangePrize",
-    label = "Date range of observations:",
-    min = min(tourn_bygame2$Month_Yr),
-    max = max(tourn_bygame2$Month_Yr),
-    value = c(min(tourn_bygame2$Month_Yr),
-              max(tourn_bygame2$Month_Yr)),
-    timeFormat = "%Y-%m-%d"
-  )
-)
-
-renderPlotly({
-  mainplot <- tourn_bygame2 %>%
-    filter(GameId == o_prizes$GameId[o_prizes$GameName == input$gameNamePrize]) %>%
-    filter(Month_Yr >= input$dateRangePrize[1]) %>%
-    filter(Month_Yr <= input$dateRangePrize[2]) %>%
-    ggplot(aes(x = Month_Yr, y = prize)) +
-    geom_line() +
-    ggtitle(paste("Total prize cash won: ",
-                  paste(
-                    format(
-                      round(o_prizes$TotalUSDPrize[o_prizes$GameName == input$gameNamePrize] / 1e6, 1),
-                      trim = TRUE,
-                      digits = 6
-                    ), "M"
-                  ),
-                  sep = "")) +
-    xlab("") +
-    ylab("") +
-    scale_y_continuous(labels = unit_format(unit = "M", scale = 1e-6)) +
-    xlim(input$dateRangePrize[1], input$dateRangePrize[2])
-  
-  ggplotly(mainplot)
-})
-```
-
-
-#### Tournaments count
-
-```{r}
-inputPanel(
-  selectInput(
-    "gameNameTourn",
-    label = "Game:",
-    choices = o_tourn$GameName,
+    choices = o_tourn$GameName, # N.B. I chose the list with top games in terms of tournament numbers, because it is the only one that contains all 5 games mentioned above. However, this is an arbitrary choice.
     selected = o_tourn$GameName[1]
   ),
   
   sliderInput(
-    "dateRangeTourn",
+    "DateRangeBoth",
     label = "Date range of observations:",
     min = min(tourn_bygame2$Month_Yr),
     max = max(tourn_bygame2$Month_Yr),
@@ -280,19 +238,87 @@ inputPanel(
 )
 
 renderPlotly({
-  mainplot <- tourn_bygame2 %>%
-    filter(GameId == o_tourn$GameId[o_tourn$GameName == input$gameNameTourn]) %>%
-    filter(Month_Yr >= input$dateRangeTourn[1]) %>%
-    filter(Month_Yr <= input$dateRangeTourn[2]) %>%
-    ggplot(aes(x = Month_Yr, y = tournb)) +
-    geom_line() +
-    ggtitle(paste("Total tournaments organized: ",
-                  o_tourn$TotalTournaments[o_tourn$GameName == input$gameNameTourn],
-                  sep = "")) +
-    xlab("") +
-    ylab("") +
-    xlim(input$dateRangeTourn[1], input$dateRangeTourn[2])
   
-  ggplotly(mainplot)
+  # Filter selected data for plots
+  
+  tourn_bygame3 <- tourn_bygame2 %>%
+    filter(GameId == o_tourn$GameId[o_tourn$GameName == input$GameNameBoth]) %>%
+    filter(Month_Yr >= input$DateRangeBoth[1]) %>%
+    filter(Month_Yr <= input$DateRangeBoth[2])
+  
+  plot_title1 <- paste("Total prize cash won: ",
+                  paste(
+                    format(
+                      round(o_prizes$TotalUSDPrize[o_prizes$GameName == input$GameNameBoth] / 1e6, 1),
+                      trim = TRUE,
+                      digits = 6
+                    ), "M"
+                  ),
+                  sep = "")
+  
+  
+  plot_title2 <- paste("Total tournaments organized: ",
+                  o_tourn$TotalTournaments[o_tourn$GameName == input$GameNameBoth],
+                  sep = "")
+  
+  # Make first plot (prize cash won)
+  
+  prize_cash_time_plot2 <- tourn_bygame3 %>%
+    ggplot(aes(x = Month_Yr, y = prize)) +
+    geom_line(color = "blue", show.legend = FALSE) +
+    xlab("") +
+    ylab("Prize cash (in USD)") +
+    scale_y_continuous(labels = unit_format(unit = "M", scale = 1e-6)) +
+    xlim(input$DateRangeBoth[1], input$DateRangeBoth[2])
+  
+  
+  # Make second plot (number of tournaments)
+  
+  tourn_count_time_plot2 <- tourn_bygame3 %>%
+    ggplot(aes(x = Month_Yr, y = tournb)) +
+    geom_line(color = "red", show.legend = FALSE) +
+    xlab("") +
+    ylab("Tournaments") +
+    xlim(input$DateRangeBoth[1], input$DateRangeBoth[2])
+  
+  # Combine both plots
+  
+  plot <- subplot(prize_cash_time_plot2, tourn_count_time_plot2, nrows = 2, shareX = TRUE, titleY = TRUE)
+  
+  # Wrap with ggplotly to make tooltips on hover
+  
+  final_plot <- ggplotly(plot) %>%
+    layout(hovermode = "x unified")
 })
 ```
+
+By exploring these graph, we see several interesting things about tournaments between games.
+
+- First, different games follow widely different life cycles. For instance, Counter Strike (2001) tournaments were pretty consistent with a peak around 2006, until it was replaced with its successor (CS:GO) in 2015. Indeed, we see that both the Prize cash and Tournament count graphs for these two games follow similar patterns. On the other hand, some other games have very steady, albeit quite low, numbers of tournaments and prizes, such as the *StarCraft* series and *Warcraft III*. Some games look like "one-hit wonders" like `FIFA 15` or `Call of Duty: Advanced Warfare`, while others enjoy long-lasting success like `Dota 2` or `League of Legends`.
+- Second, some particular games have regular peaks in prize pools that do not match the peaks of number of tournaments. Those are usually major international events, such as `League of Legends: World Championship`. Here are a few (same game as selected above):
+
+```{r}
+
+renderPlotly({
+  
+  top_tourn <- tournaments %>%
+    filter(GameId == o_tourn$GameId[o_tourn$GameName == input$GameNameBoth]) %>%
+    select(TournamentName, TotalUSDPrize, StartDate, EndDate, Location, Teamplay) %>%
+    arrange(desc(TotalUSDPrize)) %>%
+    head(n = 8) %>%
+    # Make histogram of top tournaments
+    ggplot(aes(x = reorder(TournamentName, TotalUSDPrize), y = TotalUSDPrize, fill = TotalUSDPrize)) +
+    geom_col(show.legend = FALSE) +
+    ggtitle(paste(input$GameNameBoth, "top tournament", sep = "'s ")) +
+    xlab("") +
+    ylab("Prize pool (in USD)") +
+    scale_y_continuous(labels = unit_format(unit = "M", scale = 1e-6)) +
+    coord_flip()
+  
+  # Wrap with ggplotly to make tooltips on hover
+  
+  ggplotly(top_tourn, tooltip = "y")
+  
+})
+```
+
