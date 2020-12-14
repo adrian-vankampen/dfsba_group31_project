@@ -15,6 +15,7 @@ output:
 source(here::here("scripts/setup.R"))
 ```
 
+
 # Earnings from Esports tournaments
 
 Although not a direct proxy for overall earnings in esports, tournaments' prize money are often a good indication of how successful and popular a particular game, team or player is to the esports' public. As such, betting on esports that give out large cash pools to tournaments' winners can be profitable.
@@ -217,6 +218,7 @@ Using our `tournaments` data-set, we can see how tournament counts and prize-poo
 
 #### Temporal analysis
 
+
 ```{r}
 inputPanel(
   selectInput(
@@ -243,7 +245,6 @@ renderDygraph({
   both <- cbind(prize_cash_xts, tourn_nb_xts)
   dygraph(both) %>%
     dyRangeSelector() %>%
-    dyAxis("y", label = "Prize Cash (in USD)") %>%
     dyAxis("y2", label = "Number of tournaments", independentTicks = TRUE) %>%
     dySeries("prize_cash_xts", label = "Prize Cash (in USD)") %>%
     dySeries("tourn_nb_xts", label = "Number of tournaments", axis = "y2") %>%
