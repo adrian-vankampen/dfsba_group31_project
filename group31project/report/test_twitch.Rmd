@@ -17,17 +17,13 @@ source(here::here("scripts/setup.R"))
 
 # General Twitch Statistic 
 
-Created in 2011, Twitch has become the number 1 platform for live-streaming. It is a social network that allows people to stream almost whatever they want. 
+Created in 2011, Twitch has become the number 1 platform for live-streaming. It is a social network that allows people to stream almost whatever they want. The main use on the platform is for gaming, it will therefore give us a strong indicator about the popularity of video games and the e-sport engagement.
 
 ## Data sources and description {.tabset .tabset-fade}
 
-We accessed data about Esports Earnings through tournaments on the website [EsportsEarnings.com](http://www.esportsearnings.com) (hereafter abbreviated as  `EE`).
+We accessed data about Twitch statistics on the website [twitchtracker.com](https://twitchtracker.com/statistics).
 
-This website provides a rather complete API to gather data in convenient format, through multiple *methods*. Due to website limitations (and to prevent excessive traffic on their side), we are only able to get a dataset (max. 100 rows) every second at most.
-
-Therefore, we wrote a function `build_df()` that automates the process of making API requests and builds complete datasets, 100 rows at a time, for several different methods. This function can be found in the `scripts/Functions.R` script.
-
-Using this, we gathered several data-sets (see `scripts/EE_Data_Gathering-01.R` for details):
+This website provides some general statistics about the use of Twitch, such as the time spend on watching/streaming videos for example. We will use this data to see the trends over time, and try to correlate them with the e-sport industry.
 
 ### Data overview
 
@@ -44,20 +40,44 @@ TwitchData <- data1 %>%
          Active_streamers = X5, Hours_streamed = X6) %>%
   # modify the format of certain variable
   mutate(Date = mdy(Date), 
-         Hours_watched = parse_number(Hours_watched)*1000000,
-         Hours_streamed = Hours_streamed) %>%
+         Hours_watched = parse_number(Hours_watched)*1000000) %>%
   # Replace value with NA (in our dataframe, n/a are considered as character)
   replace_with_na(replace = list(Active_streamers = "n/a")) %>%
-  mutate(Viewers_per_streamer = Hours_watched*100000000/Hours_streamed) %>%
+  mutate(Viewers_per_streamer = Hours_watched/Hours_streamed) %>%
   # Convert the column from character to double
   mutate(Active_streamers = parse_number(Active_streamers))
 
 # Data overview
 
-TwitchData %>% 
-   kbl(caption = "Twitch statistics") %>%  
-   kable_paper(full_width = F) %>% 
-   scroll_box(width = "100%", height = "300px")
+TwitchData %>%
+  # shows values in a more aesthetic way
+  mutate(Date = data1$X1,
+         Avg_concur_viewers = case_when(Avg_concur_viewers >= 1000000000 ~ f_bills(Avg_concur_viewers, digits = 12),
+                                                     Avg_concur_viewers >= 1000000 & Avg_concur_viewers < 1000000000 ~ f_mills(Avg_concur_viewers, digits = -4),
+                                                     Avg_concur_viewers < 1000000 & Avg_concur_viewers >= 1000 ~ f_thous(Avg_concur_viewers, digits = 6)),
+         Avg_concur_channels = case_when(Avg_concur_channels >= 1000000000 ~ f_bills(Avg_concur_channels, digits = 12),
+                                         Avg_concur_channels >= 1000000 & Avg_concur_channels < 1000000000 ~ f_mills(Avg_concur_channels, digits = 9),
+                                         Avg_concur_channels < 1000000 & Avg_concur_channels >= 1000 ~ f_thous(Avg_concur_channels, digits = -2)),
+         Hours_watched = case_when(Hours_watched >= 1000000000 ~ f_bills(Hours_watched, digits = -7),
+                                   Hours_watched >= 1000000 & Hours_watched < 1000000000 ~ f_mills(Hours_watched, digits = -3),
+                                   Hours_watched < 1000000 & Hours_watched >= 1000 ~ f_thous(Hours_watched, digits = 6)),
+         Active_streamers = case_when(Active_streamers >= 1000000000 ~ f_bills(Active_streamers, digits = 12),
+                                      Active_streamers >= 1000000 & Active_streamers < 1000000000 ~ f_mills(Active_streamers, digits = -4),
+                                      Active_streamers < 1000000 & Active_streamers >= 1000 ~ f_thous(Active_streamers, digits = 6)),
+         Hours_streamed = case_when(Hours_streamed >= 1000000000 ~ f_bills(Hours_streamed, digits = 12),
+                                    Hours_streamed >= 1000000 & Hours_streamed < 1000000000 ~ f_mills(Hours_streamed, digits = -4),
+                                    Hours_streamed < 1000000 & Hours_streamed >= 1000 ~ f_thous(Hours_streamed, digits = 6)),
+         Viewers_per_streamer = round(Viewers_per_streamer, digits = 1)) %>%
+  rename("Concurrent viewers" = Avg_concur_viewers,
+         "Concurrent channels" = Avg_concur_channels,
+         "Active channels" = Active_streamers,
+         "Hours watched" = Hours_watched,
+         "Hours streamed" = Hours_streamed,
+         "Viewers per streamer" = Viewers_per_streamer) %>%
+  kbl(caption = "Twitch statistics") %>%  
+  kable_paper(full_width = F) %>%
+  kable_styling(bootstrap_options  = c("striped", "hover")) %>%
+  scroll_box(width = "100%", height = "300px")
 ```
 
 <p>&nbsp;</p>
@@ -67,15 +87,21 @@ We can see that these data consist of 99 observations of 7 attributes.
 Here is a description of each attribute :
    
 - `Date` : month in which the data apply
-- `Avg_concur_viewers` : Number of viewers connected in the same time in average 
-- `Avg_concur_channels` : Number of channels connected in the same time in average 
-- `Hours_watched` (in million) : Total number of hours watched per month
-- `Active_streamers` : Total number of active channels
-- `Hours_streamed` : Total number of hours streamed per month
-- `Viewers_per_streamer` : Average number of viewers per streamer per month
+- `Concurrent viewers` : Number of viewers connected at the same time on average 
+- `Concurrent channels` : Number of channels connected at the same time on average 
+- `Hours watched` : Total number of hours watched
+- `Active channels` : Total number of active channels
+- `Hours streamed` : Total number of hours streamed
+- `Viewers per streamer` : Average number of viewers per streamer
 
-This data-set contains missing location for 12 tournaments, and a missing tournament name for 1 of them (all of which have pool prizes of less than 20k USD).
+### Summary 
 
+```{r}
+# Summary
+
+summary(TwitchData[, -1])
+```
+We can see here the basic statistics for every variable. They show a big gap between the min and the max, as well as between the mean and the median. We will try to determine the factors that influence these gaps. Finally, with the exception of `Active_streamers`, we have no issue with NA. (see 1.1.3 Missing value for more information)
 
 ### Missing value
 
@@ -84,9 +110,9 @@ showna <- freq.na(TwitchData)
 showna
 ```
 
-<p>&nbsp;</p>
+This table gives the number of NA for each variable with its proportion. The amount of NA for the `Active_streamers` mostly come from missing value before 2015. Thus, we are still able to use this variable, we will just reduce the time period to analyze.  
 
-Except for active streamer we are good.
+<p>&nbsp;</p>
 
 ## Exploratory Data Analysis
 

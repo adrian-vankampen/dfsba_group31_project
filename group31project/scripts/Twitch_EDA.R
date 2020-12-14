@@ -10,7 +10,7 @@ library(readr)
 library(kableExtra)
 library(naniar)
 library(questionr)
-library(quantmod)
+library(quantmod) # dont
 library(plotly)
 library(numform)
 
