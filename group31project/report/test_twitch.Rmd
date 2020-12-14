@@ -17,9 +17,9 @@ source(here::here("scripts/setup.R"))
 
 # General Twitch Statistic 
 
-Although not a direct proxy for overall earnings in esports, tournaments' prize money are often a good indication of how successful and popular a particular game, team or player is to the esports' public. As such, betting on esports that give out large cash pools to tournaments' winners can be profitable.
+Created in 2011, Twitch has become the number 1 platform for live-streaming. It is a social network that allows people to stream almost whatever they want. 
 
-## Data gathering {.tabset .tabset-fade}
+## Data sources and description {.tabset .tabset-fade}
 
 We accessed data about Esports Earnings through tournaments on the website [EsportsEarnings.com](http://www.esportsearnings.com) (hereafter abbreviated as  `EE`).
 

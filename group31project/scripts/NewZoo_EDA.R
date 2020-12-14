@@ -83,7 +83,8 @@ CompRev2 <- CompRev %>%
          Half_2020 = ifelse(Half_2020 >= 1000000000, 
                             f_bills(Half_2020, prefix = "$", digits = 12), 
                             f_mills(Half_2020, prefix = "$", digits = 9)),
-         Q1_grate = paste0(round(Q1_grate, digits = 2), "%"), Q2_grate = paste0(round(Q2_grate, digits = 2), "%"))
+         Q1_grate = paste0(round(Q1_grate, digits = 2), "%"), 
+         Q2_grate = paste0(round(Q2_grate, digits = 2), "%"))
 
 # ------------------------------------------------------------------------------
 
