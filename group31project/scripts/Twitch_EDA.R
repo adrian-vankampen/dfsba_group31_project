@@ -64,6 +64,9 @@ TwitchData %>%
   kable_paper(full_width = F) %>% 
   scroll_box(width = "100%", height = "300px")
 
+# Summary
+
+summary(TwitchData)
 
 # NA's overview
 freq.na(TwitchData)
