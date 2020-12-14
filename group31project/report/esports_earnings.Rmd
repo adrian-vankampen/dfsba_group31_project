@@ -220,6 +220,7 @@ Using our `tournaments` data-set, we can see how tournament counts and prize-poo
 
 
 ```{r}
+
 inputPanel(
   selectInput(
     "GameNameBoth",
