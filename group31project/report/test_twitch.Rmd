@@ -15,7 +15,7 @@ output:
 source(here::here("scripts/setup.R"))
 ```
 
-# General Twitch Statistic 
+# Twitch Statistic 
 
 Created in 2011, Twitch has become the number 1 platform for live-streaming. It is a social network that allows people to stream almost whatever they want. The main use on the platform is for gaming, it will therefore give us a strong indicator about the popularity of video games and the e-sport engagement.
 
@@ -99,16 +99,25 @@ Here is a description of each attribute :
 ```{r}
 # Summary
 
-summary(TwitchData[, -1])
+summary(TwitchData[, -1] %>% rename("Concurrent viewers" = Avg_concur_viewers,
+         "Concurrent channels" = Avg_concur_channels,
+         "Active channels" = Active_streamers,
+         "Hours watched" = Hours_watched,
+         "Hours streamed" = Hours_streamed,
+         "Viewers per streamer" = Viewers_per_streamer))
 ```
+
+<p>&nbsp;</p>
+
 We can see here the basic statistics for every variable. They show a big gap between the min and the max, as well as between the mean and the median. We will try to determine the factors that influence these gaps. Finally, with the exception of `Active_streamers`, we have no issue with NA. (see 1.1.3 Missing value for more information)
 
 ### Missing value
 
 ```{r}
-showna <- freq.na(TwitchData)
-showna
+freq.na(TwitchData)
 ```
+
+<p>&nbsp;</p>
 
 This table gives the number of NA for each variable with its proportion. The amount of NA for the `Active_streamers` mostly come from missing value before 2015. Thus, we are still able to use this variable, we will just reduce the time period to analyze.  
 
@@ -116,9 +125,9 @@ This table gives the number of NA for each variable with its proportion. The amo
 
 ## Exploratory Data Analysis
 
-Not all games in our data-sets have equal potential to attract masses. To explore which games are the most popular, we analysed them on different metrics:
+We can see from the table that our data are growing over time. To have a better view on the evolution, let's have a look at each variable separately. 
 
-### Ranking games {.tabset .tabset-fade}
+### Variable over time {.tabset .tabset-fade}
 
 #### Average concurent viewers
 
@@ -307,4 +316,10 @@ ggplotly(ggplot(bf, aes(ID, Hours_streamed, frame = frame)) +
       prefix = "Month "
   )
 )
+
+
 ```
+
+# Prediction
+
+We predict blablabla
