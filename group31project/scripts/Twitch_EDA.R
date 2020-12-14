@@ -12,6 +12,7 @@ library(naniar)
 library(questionr)
 library(quantmod)
 library(plotly)
+library(numform)
 
 
 # General Statistics of the Twitch platform
@@ -41,10 +42,28 @@ TwitchData <- data1 %>%
 
 # Data overview
 
-TwitchData %>% 
+TwitchData %>%
+  # shows values in a more aesthetic way
+  mutate(Avg_concur_viewers = case_when(Avg_concur_viewers >= 1000000000 ~ f_bills(Avg_concur_viewers, prefix = "$", digits = 12),
+                                                     Avg_concur_viewers >= 1000000 & Avg_concur_viewers < 1000000000 ~ f_mills(Avg_concur_viewers, prefix = "$", digits = -4),
+                                                     Avg_concur_viewers < 1000000 & Avg_concur_viewers >= 1000 ~ f_thous(Avg_concur_viewers, prefix = "$", digits = 6)),
+         Avg_concur_channels = case_when(Avg_concur_channels >= 1000000000 ~ f_bills(Avg_concur_channels, prefix = "$", digits = 12),
+                                         Avg_concur_channels >= 1000000 & Avg_concur_channels < 1000000000 ~ f_mills(Avg_concur_channels, prefix = "$", digits = 9),
+                                         Avg_concur_channels < 1000000 & Avg_concur_channels >= 1000 ~ f_thous(Avg_concur_channels, prefix = "$", digits = -2)),
+         Hours_watched = case_when(Hours_watched >= 1000000000 ~ f_bills(Hours_watched, prefix = "$", digits = -7),
+                                   Hours_watched >= 1000000 & Hours_watched < 1000000000 ~ f_mills(Hours_watched, prefix = "$", digits = -3),
+                                   Hours_watched < 1000000 & Hours_watched >= 1000 ~ f_thous(Hours_watched, prefix = "$", digits = 6)),
+         Active_streamers = case_when(Active_streamers >= 1000000000 ~ f_bills(Active_streamers, prefix = "$", digits = 12),
+                                      Active_streamers >= 1000000 & Active_streamers < 1000000000 ~ f_mills(Active_streamers, prefix = "$", digits = -4),
+                                      Active_streamers < 1000000 & Active_streamers >= 1000 ~ f_thous(Active_streamers, prefix = "$", digits = 6)),
+         Hours_streamed = case_when(Hours_streamed >= 1000000000 ~ f_bills(Hours_streamed, prefix = "$", digits = 12),
+                                    Hours_streamed >= 1000000 & Hours_streamed < 1000000000 ~ f_mills(Hours_streamed, prefix = "$", digits = -4),
+                                    Hours_streamed < 1000000 & Hours_streamed >= 1000 ~ f_thous(Hours_streamed, prefix = "$", digits = 6)),
+         Viewers_per_streamer = round(Viewers_per_streamer, digits = 1)) %>%
   kbl(caption = "Twitch statistics") %>%  
   kable_paper(full_width = F) %>% 
   scroll_box(width = "100%", height = "300px")
+
 
 # NA's overview
 freq.na(TwitchData)
