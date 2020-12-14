@@ -132,6 +132,51 @@ We can see from the table that our data are growing over time. To have a better 
 #### Average concurent viewers
 
 ```{r}
+
+library(shiny)
+
+shiny_twitch <- TwitchData %>%
+  pivot_longer(c(Avg_concur_viewers, Avg_concur_channels, Hours_watched, Active_streamers, Hours_streamed, Viewers_per_streamer),
+               names_to = "Variable",
+               values_to = "Value")
+
+ui<- fluidPage(
+  titlePanel("Interactive plot for the Twitch statistics"),
+  selectInput(inputId = "Variable",
+              label="Choose a Variable",
+             choices = c("Avg_concur_viewers", "Avg_concur_viewers","Hours_watched", "Active_streamers", "Hours_streamed", "Viewers_per_streamer")),
+  mainPanel(
+    h1("Statistics over time"),
+    textOutput("Selected_variable"),
+    plotlyOutput(outputId ="PlotlyVariable")
+))
+
+
+
+server <- function(input,output)
+  {
+  data <- reactive({
+    shiny_twitch %>% filter(Variable == input$Variable)})
+
+   output$Selected_variable <- renderUI({
+    paste("You have selected", input$Variable)
+  })
+   output$PlotlyVariable <- renderPlotly({
+       plot_ly(data(), x = ~Date, y = ~Value ,type = "bar", width = 600
+               ,name = "Number", height = 400) %>% 
+      layout(
+         yaxis = list(showline = FALSE, side = "right" ,title = "", color = "blue")
+         ,xaxis = list( showline = FALSE, zeroline = FALSE, dtick = 0, title = "Date")
+         ,showlegend = TRUE ,margin = list(pad = 30, b = 30, l = 150, r = 30)
+         ,legend = list(orientation = "bottomright"))
+     
+})
+}
+
+shinyApp(ui, server)
+```
+
+```{r}
 plot_ly(type = "bar",
         x = TwitchData$Date, 
         y = TwitchData$Avg_concur_viewers,
@@ -213,7 +258,7 @@ Now some dynamic plot to display our idea.
 
 ### Dynamic graph {.tabset .tabset-fade}
 
-Here are some dynamic plot. Although they do not add any value, it is nice to look at them. 
+Here are some dynamic plots. Although they do not add any value, it is nice to look at them. 
 
 #### Comparaison
 
@@ -254,7 +299,7 @@ plot_ly(data = TwitchData, x = ~TwitchData$Date, y = ~TwitchData$Hours_watched
     , title = "Comparaison between watched and streamed"
   )
 ```
-
+Here, we have gathered the statistics for `Hours watched`, `Hours streamed` and `Viewers per streamer`. It allows you to see  in a single graph the general trends between the people who create content and those who watch it.
 
 #### Step by step
 
@@ -309,6 +354,12 @@ ggplotly(ggplot(bf, aes(ID, Hours_streamed, frame = frame)) +
 
 ```
 
-# Prediction
+This interactive plot does not display all the value from the beginning. In this way, one can really feel the evolution over time, the effect is even more striking.
 
-We predict blablabla
+## Prediction
+
+We can draw the following based on these observations :
+
+- More and more people are attracted by video games, this industry is on a perpetual growth since the beginning of 2000 and it is not about to stop. Twitch certainly has a bright future.
+- Beware, however, of the March 2020 jump : it mostly comes from the corona-virus and people stuck at home, we do not expect the audience to grow at a significant rate in the coming months, since a lot of people have already arrived at this time. Although we believe that the data will continue to increase in the long term, it is very likely that it will flatten for a period of time, or even decrease.
+- As we have seen, the number of viewers per streamer is decreasing, indicating that for each new channel, there is not enough new viewers to keep the same ratio : it became harder to find new member, maybe the network is a bit saturated. 
