@@ -30,11 +30,11 @@ Since finding data about private investments are hardly possible to get for free
 - Determine the factors that influence the amount of money invested.
 - Put all this information together to see the long term orientation of the industry.
 
-```{r child = 'Twitch_data.Rmd'}
+```{r child = 'test_twitch.Rmd'}
 ```
 
 ```{r child = 'NewZoo_data.Rmd'}
 ```
 
-```{r child = 'esports_earnings_data1.Rmd'}
+```{r child = 'esports_earnings.Rmd'}
 ```
