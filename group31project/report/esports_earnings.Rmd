@@ -250,10 +250,10 @@ renderDygraph({
     dySeries("prize_cash_xts", label = "Prize Cash (in USD)") %>%
     dySeries("tourn_nb_xts", label = "Number of tournaments", axis = "y2") %>%
     dyHighlight(highlightCircleSize = 5, 
-              highlightSeriesBackgroundAlpha = 0.2,
-              hideOnMouseOut = FALSE) %>%
-    dyLegend(width = 500)
-  
+                highlightSeriesBackgroundAlpha = 0.2,
+                hideOnMouseOut = FALSE) %>%
+    dyLegend(width = 500) %>%
+    dyOptions(labelsKMB = TRUE)
 })
 ```
 
