@@ -475,7 +475,7 @@ plot_ly(data = Monthly_investment,
 
 ### {-}
 
-With the exception of the number of investments made, time does not influence its amount, we can only say that there are more and more of them. Again, this is probably due to the lack of data contained in this data-set.
+With the exception of the number of investments made, time does not influence its amount, we can only say that there are more and more of them. Again, this is probably due to the lack of data contained in this data-set. Let's now have a look on how the investment type can influence the investment. 
 
 ### The influence from the investment type {.tabset .tabset-fade}
 
@@ -559,7 +559,7 @@ plot_ly(data = plot_invest_type,
 
 ### {-}
 
-Regarding the total amount invested, `Acquisition`, `Corporate`, `IPO` and `Venture` are largely those that generate the most money (about 82% of the total). However, we can observe that is not correlated with the mean amount invested, which can differ a lot among the type, independently of the ranking. The difference is mainly due to the number of investments made per type, not from the amount.
+Regarding the total amount invested, `Acquisition`, `Corporate`, `IPO` and `Venture` are largely those that generate the most money (about 82% of the total). However, we can observe that is not correlated with the mean amount invested, which can differ a lot among the type, independently of the ranking.  The difference is mainly due to the number of investments made per type, not from the amount. Let's now have a look on how the sector can influence the investment.
 
 
 ### The influence from the sector {.tabset .tabset-fade}
@@ -631,6 +631,10 @@ plot_ly(data = plot_sector_influence,
          yaxis = list(title = ""),
          showlegend = FALSE)
 ```
+
+### {-}
+
+Here again, we see can that the number of investments in each sector does not influence the average amount of these investments. However, it is interesting to note that the mean is significantly above the median, meaning than most investments are small, while others are very large, pushing to average up.
 
 ## Prediction
 
