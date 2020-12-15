@@ -117,6 +117,71 @@ server <- function(input,output)
 
 shinyApp(ui, server)
 
+
+# Adrian
+
+library(shiny)
+
+shiny_twitch <- TwitchData %>%
+  pivot_longer(c(Avg_concur_viewers, Avg_concur_channels, Hours_watched, Active_streamers, Hours_streamed, Viewers_per_streamer),
+               names_to = "Variable",
+               values_to = "Value")
+
+inputPanel(
+  selectInput(
+    "Variable",
+    label = "Choose a Variable :",
+    choices = unique(shiny_twitch$Variable),
+    selected = shiny_twitch$Variable[1]
+  )
+)
+
+renderDygraph({
+  
+  plot_data <- shiny_twitch %>%
+    filter(Variable == shiny_twitch$Variable[siny_twitch$Variable == input$GameNameBoth]) %>%
+    group_by(Month_Yr = floor_date(EndDate, "month")) %>%
+    summarize(prize = sum(TotalUSDPrize),
+              tournb = n())
+  
+  prize_cash_xts <- xts(plot_data$prize, 
+                        order.by = plot_data$Month_Yr)
+  tourn_nb_xts <- xts(plot_data$tournb, 
+                      order.by = plot_data$Month_Yr)
+  
+  both <- cbind(prize_cash_xts, tourn_nb_xts)
+  dygraph(both) %>%
+    dyRangeSelector() %>%
+    dyAxis("y2", label = "Number of tournaments", independentTicks = TRUE) %>%
+    dySeries("prize_cash_xts", label = "Prize Cash (in USD)") %>%
+    dySeries("tourn_nb_xts", label = "Number of tournaments", axis = "y2") %>%
+    dyHighlight(highlightCircleSize = 5, 
+                highlightSeriesBackgroundAlpha = 0.2,
+                hideOnMouseOut = FALSE) %>%
+    dyLegend(width = 500) %>%
+    dyOptions(labelsKMB = TRUE)
+})
+
+server <- function(input,output)
+{
+  data <- reactive({
+    shiny_twitch %>% filter(Variable == input$Variable)})
+  
+  output$Selected_variable <- renderUI({
+    paste("You have selected", input$Variable)
+  })
+  output$PlotlyVariable <- renderPlotly({
+    plot_ly(data(), x = ~Date, y = ~Value ,type = "bar", width = 600
+            ,name = "Number", height = 400) %>% 
+      layout(
+        yaxis = list(showline = FALSE, side = "right" ,title = "", color = "blue")
+        ,xaxis = list( showline = FALSE, zeroline = FALSE, dtick = 0, title = "Date")
+        ,showlegend = TRUE ,margin = list(pad = 30, b = 30, l = 150, r = 30)
+        ,legend = list(orientation = "bottomright"))
+    
+  })
+}
+
 # ------------------------------------------------------------------------------
 # AVERAGE CONCURENT VIEWERS
 # ------------------------------------------------------------------------------

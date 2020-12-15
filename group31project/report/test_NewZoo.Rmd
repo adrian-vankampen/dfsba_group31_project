@@ -155,7 +155,7 @@ plot_ly(data = plot_CompRev,
         color = ~plot_CompRev$Company_name,
         colors = "Dark2",
         type = "bar",
-        height = 400) %>% 
+        height = 600) %>% 
   layout(title = "Income per company",
          xaxis = list(title = "Revenue"),
          yaxis = list(title = ""),
@@ -179,7 +179,7 @@ plot_ly(data = plot_CompRev_2020,
         color = ~plot_CompRev_2020$Company_name,
         colors = "Dark2",
         type = "bar",
-        height = 400) %>% 
+        height = 600) %>% 
   layout(title = "Income per company",
          xaxis = list(title = "Revenue"),
          yaxis = list(title = ""),
@@ -220,6 +220,76 @@ plot
 <p>&nbsp;</p>
 
 We can see from this plot blablabla
+
+#### Income per Region 2019
+
+```{r}
+CompRev_HQ2019 <- CompRev %>% 
+  mutate(Region_of_HQ = factor(CompRev$Region_of_HQ, 
+                               levels = unique(CompRev$Region_of_HQ)[order(CompRev$Total_2019, decreasing = FALSE)])) 
+
+plot_CompRev_HQ2019 <- CompRev_HQ2019 %>%
+  group_by(Region_of_HQ) %>% 
+  summarize(total = sum(Total_2019), 
+            number = sum(Total_2019 > 0), 
+            mean = mean(Total_2019),
+            median = median(Total_2019))
+
+plot_ly(data = plot_CompRev_HQ2019,
+        x = plot_CompRev_HQ2019$Region_of_HQ,
+        y = ~plot_CompRev_HQ2019$mean,
+        color = ~plot_CompRev_HQ2019$Region_of_HQ,
+        colors = "Dark2",
+        type = "bar",
+        name = "Total income",
+        height = 400) %>% 
+  add_trace(y = ~plot_CompRev_HQ2019$total, name = 'Mean') %>%
+  layout(title = "Income per Region",
+         xaxis = list(title = "Revenue"),
+         yaxis = list(title = ""),
+         margin = list(b = 0),
+         barmode = "group",
+         showlegend = FALSE)
+```
+
+<p>&nbsp;</p>
+
+We can see from this plot blablabla
+
+#### Same plot
+
+```{r}
+CompRev_HQ2019 <- CompRev %>% 
+  mutate(Region_of_HQ = factor(CompRev$Region_of_HQ, 
+                               levels = unique(CompRev$Region_of_HQ)[order(CompRev$Total_2019, decreasing = FALSE)])) 
+
+plot_CompRev_HQ2019 <- CompRev_HQ2019 %>%
+  group_by(Region_of_HQ) %>% 
+  summarize(total = sum(Total_2019), 
+            number = sum(Total_2019 > 0), 
+            mean = mean(Total_2019),
+            median = median(Total_2019))
+
+plot_ly(data = plot_CompRev_HQ2019,
+        x = plot_CompRev_HQ2019$Region_of_HQ,
+        y = ~plot_CompRev_HQ2019$mean,
+        color = ~plot_CompRev_HQ2019$Region_of_HQ,
+        colors = "Dark2",
+        type = "bar",
+        name = "Total income",
+        height = 400) %>% 
+  add_trace(y = ~plot_CompRev_HQ2019$total, name = 'Mean') %>%
+  layout(title = "Income per Region",
+         xaxis = list(title = "Revenue"),
+         yaxis = list(title = ""),
+         margin = list(b = 0),
+         barmode = "group",
+         showlegend = FALSE)
+```
+
+<p>&nbsp;</p>
+
+We can see from this plot blablabli
 
 # NewZoo Campanies Investments {.tabset .tabset-fade} 
 

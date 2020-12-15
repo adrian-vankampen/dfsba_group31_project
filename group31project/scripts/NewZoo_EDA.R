@@ -166,6 +166,68 @@ plot_ly(data = plot_CompRev_2020,
          showlegend = FALSE)
 
 # ------------------------------------------------------------------------------
+# Total income in 2019 per Region
+# ------------------------------------------------------------------------------
+
+CompRev_HQ2019 <- CompRev %>% 
+  mutate(Region_of_HQ = factor(CompRev$Region_of_HQ, 
+                               levels = unique(CompRev$Region_of_HQ)[order(CompRev$Total_2019, decreasing = FALSE)])) 
+
+plot_CompRev_HQ2019 <- CompRev_HQ2019 %>%
+  group_by(Region_of_HQ) %>% 
+  summarize(total = sum(Total_2019), 
+            number = sum(Total_2019 > 0), 
+            mean = mean(Total_2019),
+            median = median(Total_2019))
+
+plot_ly(data = plot_CompRev_HQ2019,
+        x = plot_CompRev_HQ2019$Region_of_HQ,
+        y = ~plot_CompRev_HQ2019$mean,
+        color = ~plot_CompRev_HQ2019$Region_of_HQ,
+        colors = "Dark2",
+        type = "bar",
+        name = "Total income",
+        height = 400) %>% 
+  add_trace(y = ~plot_CompRev_HQ2019$total, name = 'Mean') %>%
+  layout(title = "Income per Region",
+         xaxis = list(title = "Revenue"),
+         yaxis = list(title = ""),
+         margin = list(b = 0),
+         barmode = "group",
+         showlegend = FALSE)
+
+# ------------------------------------------------------------------------------
+# Total income in 2020 per Region
+# ------------------------------------------------------------------------------
+
+CompRev_HQ2020 <- CompRev %>% 
+  mutate(Region_of_HQ = factor(CompRev$Region_of_HQ, 
+                               levels = unique(CompRev$Region_of_HQ)[order(CompRev$Total_2019, decreasing = FALSE)])) 
+
+plot_CompRev_HQ2020 <- CompRev_HQ2020 %>%
+  group_by(Region_of_HQ) %>% 
+  summarize(total = sum(Half_2020),
+            number = sum(Half_2020 > 0), 
+            mean = mean(Half_2020),
+            median = median(Half_2020))
+
+plot_ly(data = plot_CompRev_HQ2020,
+        x = plot_CompRev_HQ2020$Region_of_HQ,
+        y = ~plot_CompRev_HQ2020$mean,
+        color = ~plot_CompRev_HQ2020$Region_of_HQ,
+        colors = "Dark2",
+        type = "bar",
+        name = "Total income",
+        height = 400) %>% 
+  add_trace(y = ~plot_CompRev_HQ2020$total, name = 'Mean') %>%
+  layout(title = "Income per Region",
+         xaxis = list(title = "Revenue"),
+         yaxis = list(title = ""),
+         margin = list(b = 0),
+         barmode = "group",
+         showlegend = FALSE)
+
+# ------------------------------------------------------------------------------
 # YoY Revenue growth per company
 # ------------------------------------------------------------------------------
 
@@ -178,7 +240,7 @@ YoY <- CompRev %>%
 plot1 <- plot_ly(YoY, x = ~Company_name, y = ~Q1_grate, type = "bar", name = 'YoY growth for Q1 (%)')
 
 # Q1 growth rate
-plot2 <- plot_ly(Yoy, x = ~Company_name, y = ~Q2_grate, type = "bar", name = 'Yoy growth for Q2 (%)')
+plot2 <- plot_ly(YoY, x = ~Company_name, y = ~Q2_grate, type = "bar", name = 'Yoy growth for Q2 (%)')
 
 plot <- subplot(plot1, plot2)
 
