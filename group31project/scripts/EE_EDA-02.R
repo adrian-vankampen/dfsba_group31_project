@@ -112,8 +112,3 @@ fig_ev_prize <- plot_ly(
 fig_ev_prize
 
 # ==============================================================================
-#
-# We would like to see the evolution of players' participation in tournaments.
-# This information is trickier to find though. For that, we could lookup a selection of tournaments and count the number of players
-
-print(games$GameName[games$GameId %in% tourn_bygame2$GameId])
