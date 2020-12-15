@@ -100,47 +100,6 @@ df.games_earnings %>%
 
 # From here, we can do Exploratory Data Analysis on these few data-sets to determine which additional data would be of interest.
 # ==============================================================================
-# 
-# 
-# ------------------------------------------------------------------------------
-# EARNINGS FOR LEAGUE OF LEGENDS
-# ------------------------------------------------------------------------------
-# 
-# CAUTION: will take more than 3 seconds to compute
-df.teams <- read.csv("data/EsportsEarnings.com/EE_games_earnings.csv")
-lolid <- df.teams[df.teams$GameName=="League of Legends", "id"]
-
-lolIDpar <- paste(c("&gameid=", lolid), collapse="")
-df.lol_team_earnings <- build_df(method = methods_list$topteamsearn_bygame,
-                                         offset = 1000,
-                                         parameters = lolIDpar)
-
-# # Save the resulting data-frame in a csv file to access it later in other parts of the project.
-
-write.csv(df.lol_team_earnings, "data/EsportsEarnings/EE_lol_teams_earnings.csv")
-
-# 
-# ------------------------------------------------------------------------------
-# EARNINGS FOR DOTA 2
-# ------------------------------------------------------------------------------
-# 
-# Gets Dota 2's id
-
-df.teams <- read.csv("data/EsportsEarnings.com/EE_games_earnings.csv")
-dota2id <- df.teams[df.teams$GameName=="Dota 2", "id"]
-
-dota2IDpar <- paste(c("&gameid=", dota2id), collapse="")
-
-# CAUTION: will take more than 3 seconds to compute
-
-df.dota2_team_earnings <- build_df(method = methods_list$topteamsearn_bygame,
-                                             offset = 1000,
-                                             parameters = dota2IDpar)
-
-# Save the resulting data-frame in a csv file to access it later in other parts of the project.
-
-write.csv(df.dota2_team_earnings, "data/EsportsEarnings/EE_dota2_teams_earnings.csv")
-
 
 #############################################
 ########### TEST AREA #######################
