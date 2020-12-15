@@ -15,14 +15,14 @@ output:
 source(here::here("scripts/setup.R"))
 ```
 
-# EDA for Company public revenue
+# Company public revenue
 
-Created in 2011, Twitch has become the number 1 platform for live-streaming. It is a social network that allows people to stream almost whatever they want. The main use on the platform is for gaming, it will therefore give us a strong indicator about the popularity of video games and the e-sport engagement.
+NewZoo is *"the world's go-to destination for accurate and actionable games data"*. It gives insight about several aspects in the video games industry. As part of our project, we will use it to collect data on the income and investments of certain companies. 
 
 ## Data sources and description {.tabset .tabset-fade}
 
 These data comes from the website : [Newzoo.com](https://platform.newzoo.com/explorer)
-This website provides some general statistics about the use of Twitch, such as the time spend on watching/streaming videos for example. We will use this data to see the trends over time, and try to correlate them with the e-sport industry.
+We will start our analysis by regarding the revenue of the top 25 video company in the world. We will use this data to figure out which company generate most income and how it has evolved over the last 2 years.
 
 ### Data overview
 
@@ -67,6 +67,8 @@ for(i in seq_along(data1$X8)){
   numeric_Q2_2020 <- c(numeric_Q2_2020, x)
 }
 
+# Data for computation
+
 CompRev <- data1 %>%
   # set a name for each variable
   rename(Company_name = X1, Region_of_HQ = X2, Q1 = X3, 
@@ -81,6 +83,8 @@ CompRev <- data1 %>%
   mutate(Half_2020 = Q1_2020 + Q2_2020, .after = Q2_2020) %>%
   mutate(Q1_grate = 100*(Q1_2020 - Q1)/Q1, .after = Q1_2020) %>% 
   mutate(Q2_grate = 100*(Q2_2020 - Q2)/Q2, .after = Q2_2020)
+
+# Data for visualization
 
 CompRev2 <- CompRev %>%
   mutate(Q1 = data1$X3, Q2 = data1$X4, Q3 = data1$X5,
@@ -110,7 +114,20 @@ CompRev2 %>%
 ```
 
 <p>&nbsp;</p>
-`CompaniesPublicRevenues.csv` contains the revenue of the top 25 game companies for several period, where `Q1`, `Q2`, `Q3` and `Q4` correspond to every quarter of the year. For example, we can see which company generated most income in 2019.
+
+We can see that these data consist of 25 observations of 12 attributes. 
+
+Here is a description of each attribute :
+   
+- `Company name` : the name of the company
+- `Region of HQ` : where the company is based
+- `Q1` (2019 and 2020) : January to March income 
+- `Q2` (2019 and 2020) : April to June income
+- `Q3` : July to September income
+- `Q4` : October to December income
+- `YoY` (Q1 and Q1) : give the growth for a period after 1 year
+- `Full year` : give the total income in 2019
+- `Half year` : give to total income for the first six months in 2020
 
 ### Summary
 
@@ -132,13 +149,11 @@ summary(CompRev[, -c(1,2)] %>% rename("Income in 2019 (Q1)" = Q1,
 
 <p>&nbsp;</p>
 
-We can see here the basic statistics for every variable. They show a big gap between the min and the max, as well as between the mean and the median. We will try to determine the factors that influence these gaps. Finally, with the exception of `Active_streamers`, we have no issue with NA. (see 1.1.3 Missing value for more information)
-
-<p>&nbsp;</p>
+We can see here the basic statistics for every variable. They show a big gap between the min and the max, as well as between the mean and the median. We will try to determine the factors that influence these gaps.
 
 ## Exploratory Data Analysis
 
-We can see from the table that our data are growing over time. To have a better view on the evolution, let's have a look at each variable separately. The following plots display the statistics for every variable per month.
+We can see from the table that revenues vary greatly from one business to another. To have a better view on the difference, let's represent these values on a graph.
 
 ### Income per company {.tabset .tabset-fade}
 
@@ -162,6 +177,10 @@ plot_ly(data = plot_CompRev,
          showlegend = FALSE)
 ```
 
+<p>&nbsp;</p>
+
+Here, we can clearly see the gap between companies, it also explains the difference between the mean and median : the first five companies generate more than all the other together. Although the market is very competitive, it is still dominated by only a few companies. Let's have a look now on the 2020 income, to see of we have the same ranking.
+
 #### Total income in 2020
 
 ```{r}
@@ -182,13 +201,17 @@ plot_ly(data = plot_CompRev_2020,
          showlegend = FALSE)
 ```
 
+<p>&nbsp;</p>
+
+In order to see to evolution after 1 year, we have decided to keep the same order as in 2019. It is noticeable that although there is almost no change between the largest companies, for medium and small companies the competition is much tougher, with many changes in the ranking. Let's see if the YoY growth rate can explain it !
+
 #### YoY growth rate
 
 ```{r}
 YoY <- CompRev %>%
   mutate(Q1_grate = (round(Q1_grate, digits = 2)),
          Company_name = factor(CompRev$Company_name, 
-                               levels = unique(CompRev$Company_name)[order(CompRev$Q1_grate, decreasing = FALSE)]))
+                               levels = unique(CompRev$Company_name)[order(CompRev$Total_2019, decreasing = FALSE)]))
 
 # Q1 growth rate
 plot1 <- plot_ly(YoY, x = ~Q1_grate, y = ~Company_name, type = "bar", name = 'YoY growth for Q1 (%)', height = 500, width = 800) %>% 
@@ -208,6 +231,16 @@ plot <- subplot(plot1, plot2, margin = 0, shareY = TRUE, titleX = T)
 
 plot
 ```
+
+<p>&nbsp;</p>
+
+Keeping the same ranking (by total income in 2019), we can see that having a high income does not necessarily imply a high growth rate. It is even clearer for Q1, where we can see a negative correlation. (the less revenue you have, the higher the growth rate will be)
+
+<hr/>
+
+### {-}
+
+Now that we have seen the revenues of several companies, let's see if the region of the HQ can influence them.
 
 ### Mean and total income per region {.tabset .tabset-fade}
 
@@ -273,14 +306,37 @@ plot_ly(data = plot_CompRev_HQ2020,
          showlegend = FALSE)
 ```
 
+#### Number of company
+
+```{r}
+plot_ly(data = plot_CompRev_HQ2020,
+        x = plot_CompRev_HQ2020$Region_of_HQ,
+        y = ~plot_CompRev_HQ2020$number,
+        color = ~plot_CompRev_HQ2020$Region_of_HQ,
+        colors = "Dark2",
+        type = "bar",
+        name = "Total income",
+        height = 400
+        ) %>%
+  layout(title = "Number of company per region",
+         xaxis = list(title = "Region"),
+         yaxis = list(title = ""),
+         showlegend = FALSE
+         )
+```
+
+### {-}
+
+We can see that income generated by region does not fluctuate from one year to the next, the proportions remain the same. However, we can notice that the average income does not differ much among regions, the gap is mainly created by the difference in the number of companies present in each region.
 
 # NewZoo Campanies Investments 
 
-dasnfjknsdkjfndsfasf
+We will now have a look on investment made by company. 
 
 ## Data sources and description {.tabset .tabset-fade}
 
-These data comes from the website : Newzoo.com This website provides some general statistics about the use of Twitch, such as the time spend on watching/streaming videos for example. We will use this data to see the trends over time, and try to correlate them with the e-sport industry.
+These data also comes from the website : [Newzoo.com](https://platform.newzoo.com/explorer).
+We will use them to see if the amount of the investment is growing over the years and if certain factors can influence it. 
 
 ### Data overview
 
@@ -352,7 +408,8 @@ Monthly_investment <- numeric_CompInvest %>%
   group_by(Date) %>% 
   summarize(total = sum(Amount), 
             number = sum(Amount > 0), 
-            mean = mean(Amount))
+            mean = mean(Amount),
+            median = median(Amount))
 
 plot_ly(data = Monthly_investment,
         x = Monthly_investment$Date,
@@ -393,6 +450,20 @@ plot_ly(data = Monthly_investment,
          showlegend = FALSE)
 ```
 
+#### Median
+
+```{r}
+plot_ly(data = Monthly_investment,
+        x = Monthly_investment$Date,
+        y = ~Monthly_investment$median,
+        type = "bar",
+        height = 400) %>% 
+  layout(title = "Monthly average investment",
+         xaxis = list(title = "Date"),
+         yaxis = list(title = "Amount"),
+         showlegend = FALSE)
+```
+
 ### The influence from the sector {.tabset .tabset-fade}
 
 #### Total
@@ -414,9 +485,11 @@ plot_invest_type <- investment_type %>%
 plot_ly(data = plot_invest_type,
         x = plot_invest_type$total,
         y = ~plot_invest_type$type,
+        color = ~plot_invest_type$type,
+        colors = "Dark2",
         type = "bar",
         height = 400) %>% 
-  layout(title = "Monthly average investment",
+  layout(title = "Total investment for each type if investment",
          xaxis = list(title = "Amount"),
          yaxis = list(title = "Type of investment"),
          showlegend = FALSE)
@@ -428,10 +501,12 @@ plot_ly(data = plot_invest_type,
 plot_ly(data = plot_invest_type,
         x = plot_invest_type$number,
         y = ~plot_invest_type$type,
+        color = ~plot_invest_type$type,
+        colors = "Dark2",
         type = "bar",
         height = 400) %>% 
-  layout(title = "Monthly average investment",
-         xaxis = list(title = "Amount"),
+  layout(title = "Number of investment for each type",
+         xaxis = list(title = "Number"),
          yaxis = list(title = "Type of investment"),
          showlegend = FALSE)
 ```
@@ -442,9 +517,11 @@ plot_ly(data = plot_invest_type,
 plot_ly(data = plot_invest_type,
         x = plot_invest_type$mean,
         y = ~plot_invest_type$type,
+        color = ~plot_invest_type$type,
+        colors = "Dark2",
         type = "bar",
         height = 400) %>% 
-  layout(title = "Monthly average investment",
+  layout(title = "Average investment by type",
          xaxis = list(title = "Amount"),
          yaxis = list(title = "Type of investment"),
          showlegend = FALSE)
@@ -513,3 +590,7 @@ plot_ly(data = plot_sector_influence,
          yaxis = list(title = "Type of investment"),
          showlegend = FALSE)
 ```
+
+## Prediction
+
+From these observations we can see that ...
