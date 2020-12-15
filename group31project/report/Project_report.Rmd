@@ -28,7 +28,7 @@ In this projects, we want to give some insights about the major trends in the e-
 Since finding data about private investments are hardly possible to get for free (even following our numerous direct inquiries to parties of interest), we are limiting our analysis to freely available data.
 
 ## Initial Questions
-- Showing the growing popularity of the platform [Twitch.tv](tps://www.twitch.tv).
+- Showing the growing popularity of the platform [Twitch.tv](https://www.twitch.tv).
 - Identify rising games/teams for potential marketing visibility.
 - Compare the income of top companies in a period to see the potential of the industry.
 - Determine the factors that influence the amount of money invested.

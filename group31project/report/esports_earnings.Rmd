@@ -1,3 +1,7 @@
+---
+output: html_document
+runtime: shiny
+---
 
 
 ```{r, echo = FALSE, message = FALSE, include=FALSE}
@@ -83,7 +87,7 @@ teams %>% kable_head(caption = "Teams' total earnings")
 This data set only contains missing values in `TotalTournaments` (74 i.e 6%). All of these teams are recorded as having won no prize cash.
 
 
-## Exploratory Data Analysis
+## Analysis
 
 Not all games in our data-sets have equal potential to attract masses. To explore which games are the most popular, we analysed them on different metrics:
 
@@ -258,6 +262,8 @@ renderPlotly({
   As we can see for games like *Dota 2*, *StarCraft II* or *League of Legends*, the highest paying tournaments are the World Championships (*The International* for Dota 2, *World Championship* for LoL, *WCS* for StarCraft II).
 - Finally, although the average prize pools excepting these tournaments seem pretty steady across tournaments, the major events' prizes seem to grow regularly. This hints at the fact that the popularity of these events grows every year. Developers have to ensure that the stakes are always higher in order to retain the attractiveness of their games, especially given the very dynamic landscape of e-sports, with new, potentially industry disruptive games entering the scene nearly every month, such as *Fortnite* or *VALORANT*.
 
-## Prediction
+## Summary
 
-Based on these observations, we could try to build a model to predict the evolution of e-sports' earnings in the future. Indeed, excepting 2020, which saw the COVID-19 pandemic put a halt to most physical events, we can see that prize pools increase steadily for some games.
+Based on these observations, we see that not all games in e-sports are equal. Only a few of them have a large competitive scene, and those vary between those top games. Some may be more interesting for niche segments, while others appeal to a large variety of audience. Most of the money given out in major tournaments come from developers' revenues (including specially-made in-game items' sales for instance) and sponsors.
+
+However, this is only part of the picture, as a large portion of the players' and teams' revenues come from private investments. Furthermore, tournaments are only a part of the job for most professional players. Another frequent revenue stream come from streaming live gaming sessions through platforms such as [Twitch.tv](https://www.twitch.tv). This is also another potential option for companies willing to invest into e-sports, as those offer direct visibility.
