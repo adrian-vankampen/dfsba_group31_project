@@ -162,10 +162,6 @@ plot_ly(data = plot_CompRev,
          showlegend = FALSE)
 ```
 
-<p>&nbsp;</p>
-
-We can see from this plot blablabla
-
 #### Total income in 2020
 
 ```{r}
@@ -185,10 +181,6 @@ plot_ly(data = plot_CompRev_2020,
          yaxis = list(title = ""),
          showlegend = FALSE)
 ```
-
-<p>&nbsp;</p>
-
-We can see from this plot blablabla
 
 #### YoY growth rate
 
@@ -217,11 +209,9 @@ plot <- subplot(plot1, plot2, margin = 0, shareY = TRUE, titleX = T)
 plot
 ```
 
-<p>&nbsp;</p>
+### Mean and total income per region {.tabset .tabset-fade}
 
-We can see from this plot blablabla
-
-#### Income per Region 2019
+#### 2019 full year
 
 ```{r}
 CompRev_HQ2019 <- CompRev %>% 
@@ -252,33 +242,29 @@ plot_ly(data = plot_CompRev_HQ2019,
          showlegend = FALSE)
 ```
 
-<p>&nbsp;</p>
-
-We can see from this plot blablabla
-
-#### Same plot
+#### 2020 half year
 
 ```{r}
-CompRev_HQ2019 <- CompRev %>% 
+CompRev_HQ2020 <- CompRev %>% 
   mutate(Region_of_HQ = factor(CompRev$Region_of_HQ, 
                                levels = unique(CompRev$Region_of_HQ)[order(CompRev$Total_2019, decreasing = FALSE)])) 
 
-plot_CompRev_HQ2019 <- CompRev_HQ2019 %>%
+plot_CompRev_HQ2020 <- CompRev_HQ2020 %>%
   group_by(Region_of_HQ) %>% 
-  summarize(total = sum(Total_2019), 
-            number = sum(Total_2019 > 0), 
-            mean = mean(Total_2019),
-            median = median(Total_2019))
+  summarize(total = sum(Half_2020),
+            number = sum(Half_2020 > 0), 
+            mean = mean(Half_2020),
+            median = median(Half_2020))
 
-plot_ly(data = plot_CompRev_HQ2019,
-        x = plot_CompRev_HQ2019$Region_of_HQ,
-        y = ~plot_CompRev_HQ2019$mean,
-        color = ~plot_CompRev_HQ2019$Region_of_HQ,
+plot_ly(data = plot_CompRev_HQ2020,
+        x = plot_CompRev_HQ2020$Region_of_HQ,
+        y = ~plot_CompRev_HQ2020$mean,
+        color = ~plot_CompRev_HQ2020$Region_of_HQ,
         colors = "Dark2",
         type = "bar",
         name = "Total income",
         height = 400) %>% 
-  add_trace(y = ~plot_CompRev_HQ2019$total, name = 'Mean') %>%
+  add_trace(y = ~plot_CompRev_HQ2020$total, name = 'Mean') %>%
   layout(title = "Income per Region",
          xaxis = list(title = "Revenue"),
          yaxis = list(title = ""),
@@ -287,13 +273,10 @@ plot_ly(data = plot_CompRev_HQ2019,
          showlegend = FALSE)
 ```
 
-<p>&nbsp;</p>
-
-We can see from this plot blablabli
 
 # NewZoo Campanies Investments {.tabset .tabset-fade} 
 
-<p>&nbsp;</p>
+## Data sources and description {.tabset .tabset-fade}
 
 ```{r}
 # Load the data
