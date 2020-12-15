@@ -43,5 +43,14 @@ Since finding data about private investments are hardly possible to get for free
 ```{r child = 'test_NewZoo.Rmd'}
 ```
 
-
 # Conclusion
+
+As we have seen throughout this project, the e-sports and gaming market seems to be a growing one. Tournaments are being organized with ever-growing prize pools that reflect the active communities and developers. As well as a growing market, it is a diversified one also, with many potential segments in which to enter that can reach many different niches.
+
+Although often seen as a *teenage boys'* interest, the people that grew up playing and watching games are getting older, and more wealthy while the younger audience builds its identities around newer games. Indeed, despite the growing number of streaming platforms that compete with Twitch.tv - the first popular streaming platform - the latter still shows impressive growth rates, and gives no signs of losing momentum. It is also important to note that behind every streamer is not a single, but multiple sponsors and marketing opportunities. Unfortunately, the data to find exactly who to sponsor is hard to come by, and such decision must rely on viewers' experience and inside knowledge of the market.
+
+It is also interesting to note that most investments in this market are concentrated mostly in Eastern Asia, and for a part in Northern America. Young generations in these countries are growing up more and more with e-sports as a primary source of entertainment, and with major computer games companies located in these areas (South Korea and Japan mostly), it is not that surprising.
+
+Finally, although our data from investment types is not sufficient to give meaningful insights, it does show that the amount of money involved in this market are not trivial, and that it is growing.
+
+In summary, our project aimed at giving insights into the world of gaming and e-sports, as it can often seem eclectic and uninteresting to outsiders. Despite aspects often amusing and cartoonesque of computer games, e-sports and the industry that surrounds it is becoming a major source of entertainment for ever more diverse communities, and can be taken seriously as a business opportunity, just as conventional sports have long been seen as massive goldmines for companies to advertize themselves through events such as the SuperBowl or the Soccer World Cup.
