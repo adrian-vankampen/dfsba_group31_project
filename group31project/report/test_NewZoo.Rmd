@@ -1,31 +1,35 @@
-# ==============================================================================
-# EDA for platform.newzoo.com (NZ) data-sets
-# ==============================================================================
-#
-# This script aims to clean the NZ data-set and give an overview of it.
-# It is composed of two data-sets : one regarding the income and the other about investment.
+---
+title: "An overview of the NewZoo statistics"
+author: "Mivelaz Allan"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    theme: readable
+    toc: true
+    toc_float: true
+    number_sections: true
+    runtime: shiny
+---
 
-library(tidyverse)
-library(lubridate)
-library(readr)
-library(kableExtra)
-library(plotly)
-library(numform)
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+source(here::here("scripts/setup.R"))
+```
 
+# EDA for Company public revenue
 
-# Income of the 25 largest video game companies
+Created in 2011, Twitch has become the number 1 platform for live-streaming. It is a social network that allows people to stream almost whatever they want. The main use on the platform is for gaming, it will therefore give us a strong indicator about the popularity of video games and the e-sport engagement.
+
+## Data sources and description {.tabset .tabset-fade}
+
+These data comes from the website : [Newzoo.com](https://platform.newzoo.com/explorer)
+This website provides some general statistics about the use of Twitch, such as the time spend on watching/streaming videos for example. We will use this data to see the trends over time, and try to correlate them with the e-sport industry.
+
+### Data overview
+
+```{r}
+# Load the data
 
 data1 <- read_delim(file = here::here("data/NZ_CompaniesPublicRevenues2.csv"), ";", escape_double = FALSE, col_names = FALSE, trim_ws = TRUE)
-
-# ------------------------------------------------------------------------------
-
-# Data cleaning
-
-options(scipen = 999)
-
-# Creating a numeric vector for X3 to X8 in data1
-
-# X3 as numeric
 
 numeric_Q1 <- c()
 for(i in seq_along(data1$X3)){
@@ -33,15 +37,11 @@ for(i in seq_along(data1$X3)){
   numeric_Q1 <- c(numeric_Q1, x)
 }
 
-# X4 as numeric
-
 numeric_Q2 <- c()
 for(i in seq_along(data1$X4)){
   x <- parse_number(data1$X4[i])*(10 ** (3*as.integer(regexpr(str_sub(data1$X4[i], -1 , -1), 'KMB'))))
   numeric_Q2 <- c(numeric_Q2, x)
 }
-
-# X5 as numeric
 
 numeric_Q3 <- c()
 for(i in seq_along(data1$X5)){
@@ -49,15 +49,11 @@ for(i in seq_along(data1$X5)){
   numeric_Q3 <- c(numeric_Q3, x)
 }
 
-# X6 as numeric
-
 numeric_Q4 <- c()
 for(i in seq_along(data1$X6)){
   x <- parse_number(data1$X6[i])*(10 ** (3*as.integer(regexpr(str_sub(data1$X6[i], -1 , -1), 'KMB'))))
   numeric_Q4 <- c(numeric_Q4, x)
 }
-
-# X7 as numeric
 
 numeric_Q1_2020 <- c()
 for(i in seq_along(data1$X7)){
@@ -65,22 +61,18 @@ for(i in seq_along(data1$X7)){
   numeric_Q1_2020 <- c(numeric_Q1_2020, x)
 }
 
-# X8 as numeric
-
 numeric_Q2_2020 <- c()
 for(i in seq_along(data1$X8)){
   x <- parse_number(data1$X8[i])*(10 ** (3*as.integer(regexpr(str_sub(data1$X8[i], -1 , -1), 'KMB'))))
   numeric_Q2_2020 <- c(numeric_Q2_2020, x)
 }
 
-# Data-set for computation 
-
 CompRev <- data1 %>%
   # set a name for each variable
   rename(Company_name = X1, Region_of_HQ = X2, Q1 = X3, 
          Q2 = X4, Q3 = X5, Q4 = X6, 
          Q1_2020 = X7, Q2_2020 = X8) %>%
-  # Replacing the data by its numeric value
+  # modify the format of certain variable   
   mutate(Q1 = numeric_Q1, Q2 = numeric_Q2,
          Q3 = numeric_Q3, Q4 = numeric_Q4,
          Q1_2020 = numeric_Q1_2020, Q2_2020 = numeric_Q2_2020) %>%
@@ -89,8 +81,6 @@ CompRev <- data1 %>%
   mutate(Half_2020 = Q1_2020 + Q2_2020, .after = Q2_2020) %>%
   mutate(Q1_grate = 100*(Q1_2020 - Q1)/Q1, .after = Q1_2020) %>% 
   mutate(Q2_grate = 100*(Q2_2020 - Q2)/Q2, .after = Q2_2020)
-
-# Data-set to display (more aesthetic)
 
 CompRev2 <- CompRev %>%
   mutate(Q1 = data1$X3, Q2 = data1$X4, Q3 = data1$X5,
@@ -106,29 +96,55 @@ CompRev2 <- CompRev %>%
 
 # ------------------------------------------------------------------------------
 
-# Data overview
+# Data overview 
 
 CompRev2 %>%
-  rename("Q1 " = Q1_2020, "Q2 " = Q2_2020, "Full year" = Total_2019, 
+  rename("Company name" = Company_name, "Region of HQ" = Region_of_HQ,
+         "Q1 " = Q1_2020, "Q2 " = Q2_2020, "Full year" = Total_2019, 
          "YoY growth" = Q1_grate,"Half year " = Half_2020, 
          "YoY growth " = Q2_grate) %>%
   kbl(caption = "Game revenu per company") %>%
   kable_paper(full_width = F) %>% 
   add_header_above(c(" " = 2, "2019" = 5, "2020" = 5)) %>%
   scroll_box(width = "100%", height = "300px")
+```
 
-# ------------------------------------------------------------------------------
+<p>&nbsp;</p>
+`CompaniesPublicRevenues.csv` contains the revenue of the top 25 game companies for several period, where `Q1`, `Q2`, `Q3` and `Q4` correspond to every quarter of the year. For example, we can see which company generated most income in 2019.
 
-# Visualization
+### Summary
 
-# ------------------------------------------------------------------------------
-# Total income in 2019 per company
-# ------------------------------------------------------------------------------
+```{r}
+# General statistics for the numeric variable
 
-# With different colors
+summary(CompRev[, -c(1,2)] %>% rename("Income in 2019 (Q1)" = Q1,
+         "Income in 2019 (Q2)" = Q2,
+         "Income in 2019 (Q3)" = Q3,
+         "Income in 2019 (Q4)" = Q4,
+         "Total income in 2019" = Total_2019,
+         "Income in 2020 (Q1)" = Q1_2020,
+         "YoY growth rate in Q1" = Q1_grate,
+         "Income in 2020 (Q2)" = Q2_2020,
+         "YoY growth rate in Q2" = Q2_grate,
+         "Income for the first half of 2020" = Half_2020
+         ))
+```
 
-# Set the factor to display the values sorted 
+<p>&nbsp;</p>
 
+We can see here the basic statistics for every variable. They show a big gap between the min and the max, as well as between the mean and the median. We will try to determine the factors that influence these gaps. Finally, with the exception of `Active_streamers`, we have no issue with NA. (see 1.1.3 Missing value for more information)
+
+<p>&nbsp;</p>
+
+## Exploratory Data Analysis
+
+We can see from the table that our data are growing over time. To have a better view on the evolution, let's have a look at each variable separately. The following plots display the statistics for every variable per month.
+
+### Income per company {.tabset .tabset-fade}
+
+#### Total income in 2019
+
+```{r}
 plot_CompRev <- CompRev %>%
   mutate(Company_name = factor(CompRev$Company_name, 
                                levels = unique(CompRev$Company_name)[order(CompRev$Total_2019, decreasing = FALSE)]))
@@ -144,14 +160,18 @@ plot_ly(data = plot_CompRev,
          xaxis = list(title = "Revenue"),
          yaxis = list(title = ""),
          showlegend = FALSE)
+```
 
-# ------------------------------------------------------------------------------
-# Total income in 2020 per company
-# ------------------------------------------------------------------------------
+<p>&nbsp;</p>
 
+We can see from this plot blablabla
+
+#### Total income in 2020
+
+```{r}
 plot_CompRev_2020 <- CompRev %>%
   mutate(Company_name = factor(CompRev$Company_name, 
-                               levels = unique(CompRev$Company_name)[order(CompRev$Half_2020, decreasing = FALSE)]))
+                               levels = unique(CompRev$Company_name)[order(CompRev$Total_2019, decreasing = FALSE)]))
 
 plot_ly(data = plot_CompRev_2020,
         x = plot_CompRev_2020$Half_2020,
@@ -164,112 +184,75 @@ plot_ly(data = plot_CompRev_2020,
          xaxis = list(title = "Revenue"),
          yaxis = list(title = ""),
          showlegend = FALSE)
+```
 
-# ------------------------------------------------------------------------------
-# YoY Revenue growth per company
-# ------------------------------------------------------------------------------
+<p>&nbsp;</p>
 
+We can see from this plot blablabla
+
+#### YoY growth rate
+
+```{r}
 YoY <- CompRev %>%
   mutate(Q1_grate = (round(Q1_grate, digits = 2)),
          Company_name = factor(CompRev$Company_name, 
-                               levels = unique(CompRev$Company_name)[order(CompRev$Q1_grate, decreasing = TRUE)]))
+                               levels = unique(CompRev$Company_name)[order(CompRev$Q1_grate, decreasing = FALSE)]))
 
 # Q1 growth rate
-plot1 <- plot_ly(YoY, x = ~Company_name, y = ~Q1_grate, type = "bar", name = 'YoY growth for Q1 (%)')
+plot1 <- plot_ly(YoY, x = ~Q1_grate, y = ~Company_name, type = "bar", name = 'YoY growth for Q1 (%)', height = 500, width = 800) %>% 
+  layout(title = "",
+         xaxis = list(title = "Growth rate (%)"),
+         yaxis = list(title = ""),
+         showlegend = FALSE)
 
 # Q1 growth rate
-plot2 <- plot_ly(Yoy, x = ~Company_name, y = ~Q2_grate, type = "bar", name = 'Yoy growth for Q2 (%)')
+plot2 <- plot_ly(YoY, x = ~Q2_grate, y = ~Company_name, type = "bar", name = 'Yoy growth for Q2 (%)', height = 500, width = 800) %>% 
+  layout(title = "",
+         xaxis = list(title = "Growth rate (%)"),
+         yaxis = list(title = ""),
+         showlegend = FALSE)
 
-plot <- subplot(plot1, plot2)
+plot <- subplot(plot1, plot2, margin = 0, shareY = TRUE, titleX = T)
 
 plot
+```
 
-# ------------------------------------------------------------------------------
+<p>&nbsp;</p>
 
-# Different investment between 2018 and 2020
+We can see from this plot blablabla
 
+# NewZoo Campanies Investments {.tabset .tabset-fade} 
+
+<p>&nbsp;</p>
+
+```{r}
+# Load the data
 
 data3 <- read_delim(file = here::here("data/NZ_CompaniesInvestmentscsv1.csv"), 
                     ";", escape_double = FALSE, col_names = FALSE, trim_ws = TRUE)
 
 data4 <- read_delim(file = here::here("data/NZ_CompaniesInvestmentscsv2.csv"), 
                     ";", escape_double = FALSE, col_names = FALSE, trim_ws = TRUE)
+```
 
-# ------------------------------------------------------------------------------
-
+```{r}
 # Data cleaning
 
 CompaniesInvestments <- data3 %>%
   # combine the 2 data-sets
   full_join(data4) %>%
   # set a name for each variable
-  rename(Date = X1, "Investment type" = X2, Sectors = X3, 
-         Emptycolumn = X4, Investee = X5, Amount = X6) %>%
+  rename(Date = X1, "Investment type" = X2, Sectors = X3, Emptycolumn = X4, Investee = X5, Amount = X6) %>%
   # modify the format of certain variable
   mutate(Date = dmy(Date), Emptycolumn = NULL, Sectors = str_replace_all(Sectors, ",.", ", "))
-
-# ------------------------------------------------------------------------------
 
 # Data overview
 
 CompaniesInvestments %>% 
-  kbl(caption = "Ammount of different investmen") %>%
+  kbl(caption = "Ammount of different investment") %>%
   kable_paper(full_width = F) %>% 
   scroll_box(width = "100%", height = "300px")
+```
 
-# ------------------------------------------------------------------------------
-
-# Visualization
-
-options(scipen = 999)
-
-numeric_amount <- c()
-for(i in seq_along(CompaniesInvestments$Amount)){
-  x <- parse_number(CompaniesInvestments$Amount[i])*(10 ** (3*as.integer(regexpr(str_sub(CompaniesInvestments$Amount[i], -1 , -1), 'KMB'))))
-  numeric_amount <- c(numeric_amount, x)
-}
-
-
-
-Monthly_investment <- CompaniesInvestments %>% 
-  mutate(Amount = numeric_amount, Date = floor_date(Date, "month")) %>% 
-  group_by(Date) %>% 
-  summarize(total = sum(Amount), 
-            number = sum(Amount > 0), 
-            mean = mean(Amount))
-
-o_Monthly_investment <- Monthly_investment %>% 
-  ggplot(aes(x = Date, y = total)) +
-  geom_col()+
-  ylab("Monthly investment")
-
-ggplotly(o_Monthly_investment, height = 400)
-
-
-investment_type <- CompaniesInvestments %>%
-  rename(type = "Investment type") %>%
-  mutate(Amount = numeric_amount) %>%
-  group_by(type) %>%
-  summarize(total = sum(Amount), 
-            number = sum(Amount > 0), 
-            mean = mean(Amount)) %>%
-  arrange(desc(number))
-
-# add median, remove total and use mean
-sector_influence <- CompaniesInvestments %>%
-  mutate(Amount = numeric_amount) %>%
-  separate(Sectors, into = c("s1", "s2", "s3", "s4", "s5"), sep = ",") %>%
-  mutate(s2 = str_replace(s2, " ", ""),
-         s3 = str_replace(s3, " ", ""),
-         s4 = str_replace(s4, " ", ""),
-         s5 = str_replace(s5, " ", "")) %>%
-  pivot_longer(c(s1, s2, s3, s4, s5), names_to = "var", values_to = "Sectors") %>%
-  drop_na(Sectors) %>%
-  group_by(Sectors) %>%
-  summarize(number = sum(Amount > 0),
-            total = sum(Amount), 
-            mean = mean(Amount),
-            median = median(Amount)) %>%
-  arrange(desc(total))
-
-
+<p>&nbsp;</p>
+`CompaniesInvestment.csv` contains the amount of several investment. It will be usefull to see if the amount is growing over the years and if depends on several factor such as the `Sectors` or the `Investment type`.

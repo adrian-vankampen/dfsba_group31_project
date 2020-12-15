@@ -97,7 +97,7 @@ Here is a description of each attribute :
 ### Summary 
 
 ```{r}
-# Summary
+# General statistics for the numeric variable
 
 summary(TwitchData[, -1] %>% rename("Concurrent viewers" = Avg_concur_viewers,
          "Concurrent channels" = Avg_concur_channels,
