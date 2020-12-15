@@ -75,13 +75,56 @@ freq.na(TwitchData)
 
 # Visualization
 
+# Select bottom with shiny
+
+library(shiny)
+
+shiny_twitch <- TwitchData %>%
+  pivot_longer(c(Avg_concur_viewers, Avg_concur_channels, Hours_watched, Active_streamers, Hours_streamed, Viewers_per_streamer),
+               names_to = "Variable",
+               values_to = "Value")
+
+ui<- fluidPage(
+  titlePanel("Interactive plot for the Twitch statistics"),
+  selectInput(inputId = "Variable",
+              label="Choose a Variable",
+              choices = c("Avg_concur_viewers", "Avg_concur_viewers","Hours_watched", "Active_streamers", "Hours_streamed", "Viewers_per_streamer")),
+  mainPanel(
+    h1("Statistics over time"),
+    textOutput("Selected_variable"),
+    plotlyOutput(outputId ="PlotlyVariable")
+  ))
+
+server <- function(input,output)
+{
+  data <- reactive({
+    shiny_twitch %>% filter(Variable == input$Variable)})
+  
+  output$Selected_variable <- renderUI({
+    paste("You have selected", input$Variable)
+  })
+  output$PlotlyVariable <- renderPlotly({
+    plot_ly(data(), x = ~Date, y = ~Value ,type = "bar", width = 600
+            ,name = "Number", height = 400) %>% 
+      layout(
+        yaxis = list(showline = FALSE, side = "right" ,title = "", color = "blue")
+        ,xaxis = list( showline = FALSE, zeroline = FALSE, dtick = 0, title = "Date")
+        ,showlegend = TRUE ,margin = list(pad = 30, b = 30, l = 150, r = 30)
+        ,legend = list(orientation = "bottomright"))
+    
+  })
+}
+
+shinyApp(ui, server)
+
 # ------------------------------------------------------------------------------
 # AVERAGE CONCURENT VIEWERS
 # ------------------------------------------------------------------------------
 
 plot_ly(type = "bar",
         x = TwitchData$Date, 
-        y = TwitchData$Avg_concur_viewers) %>%
+        y = TwitchData$Avg_concur_viewers,
+        height = 400) %>%
   layout(xaxis = list(title="Date"),
          title = "Average concurent viewers")
 
@@ -102,7 +145,8 @@ plot_ly(type = "bar",
 
 plot_ly(type = "bar",
         x = TwitchData$Date, 
-        y = TwitchData$Hours_watched) %>%
+        y = TwitchData$Hours_watched,
+        height = 400) %>%
   layout(xaxis = list(title="Date"),
          title = "Total Hours watched")
 
@@ -112,7 +156,8 @@ plot_ly(type = "bar",
 
 plot_ly(type = "bar",
         x = TwitchData$Date, 
-        y = TwitchData$Active_streamers) %>%
+        y = TwitchData$Active_streamers,
+        height = 400) %>%
   layout(xaxis = list(title="Date"),
          title = "Total number of active streamers")
 
@@ -122,7 +167,8 @@ plot_ly(type = "bar",
 
 plot_ly(type = "bar",
         x = TwitchData$Date, 
-        y = TwitchData$Hours_streamed) %>%
+        y = TwitchData$Hours_streamed,
+        height = 400) %>%
   layout(xaxis = list(title="Date"),
          title = "Total number of hours streamers")
 
@@ -132,7 +178,8 @@ plot_ly(type = "bar",
 
 plot_ly(type = "bar",
         x = TwitchData$Date, 
-        y = TwitchData$Viewers_per_streamer) %>%
+        y = TwitchData$Viewers_per_streamer,
+        height = 400) %>%
   layout(xaxis = list(title="Date"),
          title = "Viewers per streamer on average")
 

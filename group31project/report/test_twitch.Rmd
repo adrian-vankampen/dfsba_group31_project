@@ -132,51 +132,6 @@ We can see from the table that our data are growing over time. To have a better 
 #### Average concurent viewers
 
 ```{r}
-
-library(shiny)
-
-shiny_twitch <- TwitchData %>%
-  pivot_longer(c(Avg_concur_viewers, Avg_concur_channels, Hours_watched, Active_streamers, Hours_streamed, Viewers_per_streamer),
-               names_to = "Variable",
-               values_to = "Value")
-
-ui<- fluidPage(
-  titlePanel("Interactive plot for the Twitch statistics"),
-  selectInput(inputId = "Variable",
-              label="Choose a Variable",
-             choices = c("Avg_concur_viewers", "Avg_concur_viewers","Hours_watched", "Active_streamers", "Hours_streamed", "Viewers_per_streamer")),
-  mainPanel(
-    h1("Statistics over time"),
-    textOutput("Selected_variable"),
-    plotlyOutput(outputId ="PlotlyVariable")
-))
-
-
-
-server <- function(input,output)
-  {
-  data <- reactive({
-    shiny_twitch %>% filter(Variable == input$Variable)})
-
-   output$Selected_variable <- renderUI({
-    paste("You have selected", input$Variable)
-  })
-   output$PlotlyVariable <- renderPlotly({
-       plot_ly(data(), x = ~Date, y = ~Value ,type = "bar", width = 600
-               ,name = "Number", height = 400) %>% 
-      layout(
-         yaxis = list(showline = FALSE, side = "right" ,title = "", color = "blue")
-         ,xaxis = list( showline = FALSE, zeroline = FALSE, dtick = 0, title = "Date")
-         ,showlegend = TRUE ,margin = list(pad = 30, b = 30, l = 150, r = 30)
-         ,legend = list(orientation = "bottomright"))
-     
-})
-}
-
-shinyApp(ui, server)
-```
-
-```{r}
 plot_ly(type = "bar",
         x = TwitchData$Date, 
         y = TwitchData$Avg_concur_viewers,
