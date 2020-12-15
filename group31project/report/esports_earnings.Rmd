@@ -1,7 +1,3 @@
----
-output: html_document
-runtime: shiny
----
 
 
 ```{r, echo = FALSE, message = FALSE, include=FALSE}

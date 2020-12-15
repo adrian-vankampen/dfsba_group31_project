@@ -1,15 +1,3 @@
----
-title: "An overview of the NewZoo statistics"
-author: "Mivelaz Allan"
-date: "`r Sys.Date()`"
-output:
-  html_document:
-    theme: readable
-    toc: true
-    toc_float: true
-    number_sections: true
-    runtime: shiny
----
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 source(here::here("scripts/setup.R"))
