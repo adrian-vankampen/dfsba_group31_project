@@ -274,9 +274,15 @@ plot_ly(data = plot_CompRev_HQ2020,
 ```
 
 
-# NewZoo Campanies Investments {.tabset .tabset-fade} 
+# NewZoo Campanies Investments 
+
+dasnfjknsdkjfndsfasf
 
 ## Data sources and description {.tabset .tabset-fade}
+
+These data comes from the website : Newzoo.com This website provides some general statistics about the use of Twitch, such as the time spend on watching/streaming videos for example. We will use this data to see the trends over time, and try to correlate them with the e-sport industry.
+
+### Data overview
 
 ```{r}
 # Load the data
@@ -286,10 +292,10 @@ data3 <- read_delim(file = here::here("data/NZ_CompaniesInvestmentscsv1.csv"),
 
 data4 <- read_delim(file = here::here("data/NZ_CompaniesInvestmentscsv2.csv"), 
                     ";", escape_double = FALSE, col_names = FALSE, trim_ws = TRUE)
-```
 
-```{r}
 # Data cleaning
+
+# Data-set for visualization
 
 CompaniesInvestments <- data3 %>%
   # combine the 2 data-sets
@@ -298,6 +304,18 @@ CompaniesInvestments <- data3 %>%
   rename(Date = X1, "Investment type" = X2, Sectors = X3, Emptycolumn = X4, Investee = X5, Amount = X6) %>%
   # modify the format of certain variable
   mutate(Date = dmy(Date), Emptycolumn = NULL, Sectors = str_replace_all(Sectors, ",.", ", "))
+
+# Data-set for computation
+
+numeric_amount <- c()
+for(i in seq_along(CompaniesInvestments$Amount)){
+  x <- parse_number(CompaniesInvestments$Amount[i])*(10 ** (3*as.integer(regexpr(str_sub(CompaniesInvestments$Amount[i], -1 , -1), 'KMB'))))
+  numeric_amount <- c(numeric_amount, x)
+}
+
+
+numeric_CompInvest <- CompaniesInvestments %>% 
+  mutate(Amount = numeric_amount, Date = floor_date(Date, "month"))
 
 # Data overview
 
@@ -309,3 +327,189 @@ CompaniesInvestments %>%
 
 <p>&nbsp;</p>
 `CompaniesInvestment.csv` contains the amount of several investment. It will be usefull to see if the amount is growing over the years and if depends on several factor such as the `Sectors` or the `Investment type`.
+
+### Summary
+
+```{r}
+summary(numeric_CompInvest[, -c(1:4)])
+```
+
+No pattern, let's try ot find one !
+
+<p>&nbsp;</p>
+
+## Exploratory Data Analysis
+
+We can see from the table that our data are growing over time. To have a better view on the evolution, let's have a look at each variable separately. The following plots display the statistics for every variable per month.
+
+### Monthly investment {.tabset .tabset-fade}
+
+#### Total
+
+```{r}
+Monthly_investment <- numeric_CompInvest %>% 
+  mutate(Amount = numeric_amount, Date = floor_date(Date, "month")) %>% 
+  group_by(Date) %>% 
+  summarize(total = sum(Amount), 
+            number = sum(Amount > 0), 
+            mean = mean(Amount))
+
+plot_ly(data = Monthly_investment,
+        x = Monthly_investment$Date,
+        y = ~Monthly_investment$total,
+        type = "bar",
+        height = 400) %>% 
+  layout(title = "Monthly investment",
+         xaxis = list(title = "Date"),
+         yaxis = list(title = "Amount"),
+         showlegend = FALSE)
+```
+
+#### Number
+
+```{r}
+plot_ly(data = Monthly_investment,
+        x = Monthly_investment$Date,
+        y = ~Monthly_investment$number,
+        type = "bar",
+        height = 400) %>% 
+  layout(title = "Number of investment",
+         xaxis = list(title = "Date"),
+         yaxis = list(title = "Number"),
+         showlegend = FALSE)
+```
+
+#### Mean
+
+```{r}
+plot_ly(data = Monthly_investment,
+        x = Monthly_investment$Date,
+        y = ~Monthly_investment$mean,
+        type = "bar",
+        height = 400) %>% 
+  layout(title = "Monthly average investment",
+         xaxis = list(title = "Date"),
+         yaxis = list(title = "Amount"),
+         showlegend = FALSE)
+```
+
+### The influence from the sector {.tabset .tabset-fade}
+
+#### Total
+
+```{r}
+investment_type <- CompaniesInvestments %>%
+  rename(type = "Investment type") %>%
+  mutate(Amount = numeric_amount) %>%
+  group_by(type) %>%
+  summarize(total = sum(Amount), 
+            number = sum(Amount > 0), 
+            mean = mean(Amount)) %>%
+  arrange(desc(number))
+
+plot_invest_type <- investment_type %>%
+  mutate(type = factor(investment_type$type, 
+                               levels = unique(investment_type$type)[order(investment_type$total, decreasing = FALSE)]))
+
+plot_ly(data = plot_invest_type,
+        x = plot_invest_type$total,
+        y = ~plot_invest_type$type,
+        type = "bar",
+        height = 400) %>% 
+  layout(title = "Monthly average investment",
+         xaxis = list(title = "Amount"),
+         yaxis = list(title = "Type of investment"),
+         showlegend = FALSE)
+```
+
+#### Number
+
+```{r}
+plot_ly(data = plot_invest_type,
+        x = plot_invest_type$number,
+        y = ~plot_invest_type$type,
+        type = "bar",
+        height = 400) %>% 
+  layout(title = "Monthly average investment",
+         xaxis = list(title = "Amount"),
+         yaxis = list(title = "Type of investment"),
+         showlegend = FALSE)
+```
+
+#### Mean
+
+```{r}
+plot_ly(data = plot_invest_type,
+        x = plot_invest_type$mean,
+        y = ~plot_invest_type$type,
+        type = "bar",
+        height = 400) %>% 
+  layout(title = "Monthly average investment",
+         xaxis = list(title = "Amount"),
+         yaxis = list(title = "Type of investment"),
+         showlegend = FALSE)
+```
+
+### The influence from the investment type {.tabset .tabset-fade}
+
+#### Investment type
+
+```{r}
+sector_influence <- CompaniesInvestments %>%
+  mutate(Amount = numeric_amount) %>%
+  separate(Sectors, into = c("s1", "s2", "s3", "s4", "s5"), sep = ",") %>%
+  mutate(s2 = str_replace(s2, " ", ""),
+         s3 = str_replace(s3, " ", ""),
+         s4 = str_replace(s4, " ", ""),
+         s5 = str_replace(s5, " ", "")) %>%
+  pivot_longer(c(s1, s2, s3, s4, s5), names_to = "var", values_to = "Sectors") %>%
+  drop_na(Sectors) %>%
+  group_by(Sectors) %>%
+  summarize(number = sum(Amount > 0),
+            total = sum(Amount), 
+            mean = mean(Amount),
+            median = median(Amount)) %>%
+  arrange(desc(total))
+
+plot_sector_influence <- sector_influence %>%
+  mutate(Sectors = factor(sector_influence$Sectors, 
+                               levels = unique(sector_influence$Sectors)[order(sector_influence$number, decreasing = FALSE)]))
+
+plot_ly(data = plot_sector_influence,
+        x = plot_sector_influence$number,
+        y = ~plot_sector_influence$Sectors,
+        type = "bar",
+        height = 400) %>% 
+  layout(title = "Monthly average investment",
+         xaxis = list(title = "Amount"),
+         yaxis = list(title = "Type of investment"),
+         showlegend = FALSE)
+```
+
+#### Mean
+
+```{r}
+plot_ly(data = plot_sector_influence,
+        x = plot_sector_influence$mean,
+        y = ~plot_sector_influence$Sectors,
+        type = "bar",
+        height = 400) %>% 
+  layout(title = "Monthly average investment",
+         xaxis = list(title = "Amount"),
+         yaxis = list(title = "Type of investment"),
+         showlegend = FALSE)
+```
+
+#### Median
+
+```{r}
+plot_ly(data = plot_sector_influence,
+        x = plot_sector_influence$median,
+        y = ~plot_sector_influence$Sectors,
+        type = "bar",
+        height = 400) %>% 
+  layout(title = "Monthly average investment",
+         xaxis = list(title = "Amount"),
+         yaxis = list(title = "Type of investment"),
+         showlegend = FALSE)
+```

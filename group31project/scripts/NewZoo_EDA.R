@@ -300,12 +300,15 @@ Monthly_investment <- CompaniesInvestments %>%
             number = sum(Amount > 0), 
             mean = mean(Amount))
 
-o_Monthly_investment <- Monthly_investment %>% 
-  ggplot(aes(x = Date, y = total)) +
-  geom_col()+
-  ylab("Monthly investment")
-
-ggplotly(o_Monthly_investment, height = 400)
+plot_ly(data = Monthly_investment,
+        x = Monthly_investment$Date,
+        y = ~Monthly_investment$total,
+        type = "bar",
+        height = 400) %>% 
+  layout(title = "Monthly investment",
+         xaxis = list(title = "Date"),
+         yaxix = list(title = "Amount"),
+         showlegend = FALSE)
 
 
 investment_type <- CompaniesInvestments %>%
