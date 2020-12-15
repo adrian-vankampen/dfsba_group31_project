@@ -635,7 +635,3 @@ plot_ly(data = plot_sector_influence,
 ### {-}
 
 Here again, we see can that the number of investments in each sector does not influence the average amount of these investments. However, it is interesting to note that the mean is significantly above the median, meaning than most investments are small, while others are very large, pushing to average up.
-
-## Prediction
-
-From these observations we can see that ...
