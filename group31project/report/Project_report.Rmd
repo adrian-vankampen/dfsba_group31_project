@@ -8,7 +8,7 @@ output:
     toc: true
     toc_float: true
     number_sections: true
-    runtime: shiny
+    runtime: shiny-prerendered
 ---
 
 # Introduction
@@ -40,7 +40,7 @@ Since finding data about private investments are hardly possible to get for free
 ```{r child = 'test_twitch.Rmd'}
 ```
 
-```{r child = 'NewZoo_data.Rmd'}
+```{r child = 'test_NewZoo.Rmd'}
 ```
 
 
