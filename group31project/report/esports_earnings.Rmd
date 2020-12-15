@@ -125,8 +125,7 @@ ggplotly(rankg_by_tournnb,
          tooltip = "y")
 ```
 
-From this visualization, we see that `StarCraft II` and `Counter-Strike: Global Offensive` (aka **CS:GO**) have had by far the most tournaments, followed by `Super Smash Bros. Melee` and `League of Legends` (aka **LoL**).
-
+From this visualization, we see that `StarCraft II` and `Counter-Strike: Global Offensive` (aka *CS:GO*) have had by far the most tournaments, followed by `Super Smash Bros. Melee` and `League of Legends` (aka *LoL*).
 
 #### Total USD Prizes
 
@@ -176,21 +175,20 @@ ggplotly(rankg_by_playernb,
 
 ```
 
-Again, we see a clear domination of one game over the others in terms of competing players' count. `CS:GO` has nearly twice the number of players as the next in line, `LoL`, which in turn is massively in front of the next one. Looking at trailers, the **FPS** (First Person Shooter) is by far the most popular, with games such as `Couter-Strike`, `Overwatch`, `VALORANT`, `Rainbow Six Siege`, `Counter-Strike: Source` and others in this top 5%. A possible explanation would be that some players that play one of these games can transition, or even play simultaneously, other games of the same genre, which is much more difficult between different genre.
-
-
-<hr/>
+Again, we see a clear domination of one game over the others in terms of competing players' count. *CS:GO* has nearly twice the number of players as the next in line, *LoL*, which in turn is massively in front of the next one. Looking at trailers, the **FPS** (First Person Shooter) is by far the most popular, with games such as *Counter-Strike*, *Overwatch*, *VALORANT*, *Rainbow Six Siege*, *Counter-Strike: Source* and others in this top 5%. A possible explanation would be that some players that play one of these games can transition, or even play simultaneously, other games of the same genre, which is much more difficult between different genre.
 
 ### {-}
 
-From these visualizations, we can identify 5 particularly interesting games:
+******
 
-- **StarCraft II**: With the most number of tournaments, but low prize pools and players count, this is a game with a highly active and passionate community which seem to not care about money that much.
+From these visualizations, we can identify 6 particularly interesting games:
+
+- **StarCraft II**: With the most number of tournaments, but low prize pools and players count, this is a game with a highly active and passionate community who seem to not care about money that much.
 - **CS:GO**: With many tournaments, high prize pools and many players, this is probably the most active game of this list.
 - **Dota 2**: Despite relatively low popularity and tournaments count, the gigantic prize pools may be explained by high levels of investment from game developers and sponsors.
 - **League of Legends**: Relatively average among all metrics, this seems like a solid all rounder with a pretty active community.
-- **Fortnite**: Similarly to `LoL`, this is a solid all rounder, with low numbers of tournaments that can be explained by the relative youth of this game (July 2017) and its genre. Thus, the audience may also be less mature.
-- **Super Smash Bros. Melee**: Finally, with many tournaments played, but not appearing in the top 5% of other metrics, this is the underdog, with a niche but dedicated community that, similarly to `StarCraft II`, seem to not care about money that much.
+- **Fortnite**: Similarly to *League of Legends*, this is a solid all rounder, with low numbers of tournaments that can be explained by the relative youth of this game (July 2017) and its genre. Thus, the audience may also be less mature.
+- **Super Smash Bros. Melee**: Finally, with many tournaments played, but not appearing in the top 5% of other metrics, this is the underdog, with a niche but dedicated community that, similarly to *StarCraft II*, seem to not care about money that much.
 
 For the rest of this analysis, let's keep an eye out on these games.
 
@@ -199,24 +197,6 @@ For the rest of this analysis, let's keep an eye out on these games.
 Although these data are interesting, they do not mention anything about time. A game can gain popularity, but also lose it very fast for many reasons.
 
 Using our `tournaments` data-set, we can see how tournament counts and prize-pools have evolved through time for each games.
-
-```{r}
-
-# Prepare data to display temporal stats by game
-# 
-# tourn_bygame2 <- tournaments %>%
-#   left_join(games, by = "GameId") %>%
-#   rename(TotalUSDPrize = TotalUSDPrize.x) %>% # We only want Total Prize by tournament, not by game
-#   select(TournamentId:GameId,
-#          GameName,
-#          TournamentName:TotalUSDPrize) %>%
-#   group_by(Month_Yr = floor_date(EndDate, "month"), GameId, GameName) %>%
-#   summarize(prize = sum(TotalUSDPrize),
-#             tournb = n())
-
-```
-
-#### Temporal analysis
 
 
 ```{r}
@@ -246,6 +226,7 @@ renderDygraph({
   both <- cbind(prize_cash_xts, tourn_nb_xts)
   dygraph(both) %>%
     dyRangeSelector() %>%
+    dyAxis("y", independentTicks = FALSE) %>%
     dyAxis("y2", label = "Number of tournaments", independentTicks = TRUE) %>%
     dySeries("prize_cash_xts", label = "Prize Cash (in USD)") %>%
     dySeries("tourn_nb_xts", label = "Number of tournaments", axis = "y2") %>%
@@ -259,8 +240,8 @@ renderDygraph({
 
 By exploring these graph, we see several interesting things about tournaments between games.
 
-- First, different games follow widely different life cycles. For instance, Counter Strike (2001) tournaments were pretty consistent with a peak around 2006, until it was replaced with its successor (CS:GO) in 2015. Indeed, we see that both the Prize cash and Tournament count graphs for these two games follow similar patterns. On the other hand, some other games have very steady, albeit quite low, numbers of tournaments and prizes, such as the *StarCraft* series and *Warcraft III*. Some games look like "one-hit wonders" like `FIFA 15` or `Call of Duty: Advanced Warfare`, while others enjoy long-lasting success like `Dota 2` or `League of Legends`.
-- Second, some games have regular peaks in prize pools that do not match the peaks of number of tournaments. Those are usually major international events, such as `League of Legends: World Championship`. Here are a few (same game as selected above):
+- First, different games follow widely different life cycles. For instance, Counter Strike (2001) tournaments were pretty consistent with a peak around 2006, until it was replaced with its successor (CS:GO) in 2015. Indeed, we see that both the Prize cash and Tournament count graphs for these two games follow similar patterns. On the other hand, some other games have very steady, albeit quite low, numbers of tournaments and prizes, such as the *StarCraft* series and *Warcraft III*. Some games look like "one-hit wonders" like *FIFA 15* or *Call of Duty: Advanced Warfare*, while others enjoy long-lasting success like *Dota 2* or *League of Legends*.
+- Second, some games have regular peaks in prize pools. Those are usually major international events, particularly interesting from an economic point of view as they gather the most amount of audience. Here are a few (same game as selected above):
 ```{r}
 
 renderPlotly({
@@ -285,8 +266,8 @@ renderPlotly({
   
 })
 ```
-  As we can see for games like Dota 2, Starcraft II or League of Legends, the highest paying tournaments are the World Championships (`The International` for Dota 2, `World Championship` for LoL, `WCS` for StarCraft II). The story is a bit more complicated for other genre games such as Counter Strike.
-- Finally, 
+  As we can see for games like *Dota 2*, *StarCraft II* or *League of Legends*, the highest paying tournaments are the World Championships (*The International* for Dota 2, *World Championship* for LoL, *WCS* for StarCraft II).
+- Finally, although the average prize pools excepting these tournaments seem pretty steady across tournaments, the major events' prizes seem to grow regularly. This hints at the fact that the popularity of these events grows every year. Developers have to ensure that the stakes are always higher in order to retain the attractiveness of their games, especially given the very dynamic landscape of e-sports, with new, potentially industry disruptive games entering the scene nearly every month, such as *Fortnite* or *VALORANT*.
 
 ## Prediction
 
