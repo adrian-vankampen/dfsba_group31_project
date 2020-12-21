@@ -1,13 +1,14 @@
 ---
 title: "The Evolution of the Esports Industry"
 author: "Mivelaz, Allan & van Kampen, Adrian"
-date: "`r format(Sys.time(), '%d %B, %Y')`"
-output: ioslides_presentation:
-  runtime: shiny
+date: ""
+runtime: shiny
+output: slidy_presentation
+css: style.css
 ---
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
+source(file = here::here("scripts/setup.R"))
 ```
 
 ## Our goals
@@ -23,3 +24,36 @@ knitr::opts_chunk$set(echo = FALSE)
 - [Newzoo.com](https://platform.newzoo.com/explorer)
 
 ## E-sports earnings
+
+```{r EE_data_import, include=FALSE}
+source(file = here::here("scripts/Esport_earnings.R"))
+
+top_plots <- list("NbTourn" = rankg_by_tournnb,
+                  "Prizes" = rankg_by_prizes,
+                  "PlayerNb" = rankg_by_playernb)
+
+```
+
+```{r}
+inputPanel(
+  radioButtons(
+    inputId = "EE_top_stats",
+    label = "Top 5%",
+    inline = TRUE,
+    choices = c("Number of Tournaments", "Prizes", "Player numbers"),
+    width = "100%"
+  )
+)
+
+
+renderPlotly({
+
+  if(input$EE_top_stats == "Number of Tournaments") {
+    rankg_by_tournnb
+  } else if(input$EE_top_stats == "Prizes") {
+    rankg_by_prizes
+  } else if(input$EE_top_stats == "Player numbers") {
+    rankg_by_playernb
+  }
+})
+```
