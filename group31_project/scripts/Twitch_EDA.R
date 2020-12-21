@@ -13,7 +13,7 @@ library(questionr)
 library(quantmod) # dont
 library(plotly)
 library(numform)
-
+library(dygraphs)
 
 # General Statistics of the Twitch platform
 
@@ -359,3 +359,20 @@ ggplotly(ggplot(bf, aes(ID, Hours_streamed, frame = frame)) +
       prefix = "Month "
   )
 )
+
+# shiny's substitute
+
+watched_xts <- xts(TwitchData$Hours_watched, order.by = TwitchData$Date)
+streamed_xts <- xts(TwitchData$Hours_streamed, order.by = TwitchData$Date)
+viewers_xts <- xts(TwitchData$Viewers_per_streamer, order.by = TwitchData$Date)
+
+all <- cbind(watched_xts, streamed_xts, viewers_xts)
+
+dygraph(all, height = 300) %>%
+  dyRangeSelector() %>%
+  dySeries("watched_xts", axis = "y") %>%
+  dySeries("streamed_xts", axis = "y") %>%
+  dySeries("viewers_xts", axis = "y2") %>%
+  dyAxis("y2", label = "Viewers per stream", independentTicks = TRUE) %>%
+  dyLegend(show = "follow") %>%
+  dyOptions(labelsKMB = TRUE, logscale = TRUE)
