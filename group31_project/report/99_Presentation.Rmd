@@ -1,0 +1,25 @@
+---
+title: "The Evolution of the Esports Industry"
+author: "Mivelaz, Allan & van Kampen, Adrian"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: ioslides_presentation:
+  runtime: shiny
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Our goals
+
+- Identify potentially interesting areas of the E-sports ecosystem (games, tournaments, etc.)
+- Show the popularity of streaming platforms
+- Determine factors that influence gaming's popularity
+
+## Data Sources
+
+- [EsportsEarnings.com](http://www.esportsearnings.com)
+- [TwitchTracker](https://www.twitchtracker.com)
+- [Newzoo.com](https://platform.newzoo.com/explorer)
+
+## E-sports earnings
