@@ -130,3 +130,156 @@ renderPlotly({
   
 })
 ```
+
+## Twitch overview
+
+```{r Twitch_data_import, include=FALSE}
+source(file = here::here("scripts/Twitch_EDA.R"))
+
+top_plots4 <- list("view" = aaaa,
+                  "channel" = b,
+                  "watched" = c,
+                  "active" = d,
+                  "streamed" = e,
+                  "ratio" = f)
+```
+
+```{r}
+inputPanel(
+  radioButtons(
+    inputId = "Statistics",
+    label = "Statistics over time",
+    inline = TRUE,
+    choices = c("view", "channel", "watched", "active", "streamed", "ratio"),
+    width = "100%"
+  )
+)
+
+
+renderPlotly({
+
+  if(input$Statistics == "view") {
+    aaaa
+  } else if(input$Statistics == "channel") {
+    b
+  } else if(input$Statistics == "watched") {
+    c
+  } else if(input$Statistics == "active") {
+    d
+  } else if(input$Statistics == "streamed") {
+    e
+  } else if(input$Statistics == "ratio") {
+    f
+  } 
+})
+```
+
+## Ratio between watched and streamed
+
+```{r}
+plot_ly(data = TwitchData, x = ~TwitchData$Date, y = ~TwitchData$Hours_watched
+        ,type = "scatter", mode = "lines", width = 800
+        ,name = "Hours watched", height = 600) %>%
+  add_trace(x = ~TwitchData$Date, y = ~TwitchData$Hours_streamed, yaxis = "y2", name = "Hours streamed") %>%
+  add_trace(x = ~TwitchData$Date, y = ~TwitchData$Viewers_per_streamer, yaxis = "y3", name = "Viewers per steamers")%>%
+  layout(
+    yaxis = list(
+      showline = FALSE, side = "left"
+      ,title = ""
+      , color = "blue"
+    )
+    ,yaxis2 = list(
+      showline = FALSE
+      ,overlaying = "y"
+      ,title = ""
+      , anchor = "free"
+      , color = "orange"
+    )
+    ,yaxis3 = list(
+      showline = FALSE,
+      side = "right",
+      overlaying = "y"
+      ,title = ""
+      , color = "green"
+    )
+    ,xaxis = list(
+      showline = FALSE, zeroline = FALSE, dtick = 0, title = "Date"
+    )
+    ,showlegend = TRUE
+    ,margin = list(
+      pad = 30, b = 90, l = 150, r = 90
+    )
+    ,legend = list(orientation = "v")
+    , title = "Comparaison between watched and streamed"
+  )
+```
+
+## Companies revenues
+
+```{r, include=FALSE}
+source(file = here::here("scripts/NewZoo_EDA.R"))
+
+top_plots2 <- list("2019" = aaa,
+                  "2020" = bbb,
+                  "YoY" = plot)
+
+top_plots3 <- list("number" = aa,
+                  "type" = bb,
+                  "sector" = cc,
+                  "mean" = dd)
+```
+
+```{r}
+inputPanel(
+  radioButtons(
+    inputId = "Revenue",
+    label = "Income per company",
+    inline = TRUE,
+    choices = c("2019", "2020", "YoY"),
+    width = "100%"
+  )
+)
+
+
+renderPlotly({
+
+  if(input$Revenue == "2019") {
+    aaa
+  } else if(input$Revenue == "2020") {
+    bbb
+  } else if(input$Revenue == "YoY") {
+    plot
+  }
+})
+```
+
+## Information about investment
+
+```{r}
+inputPanel(
+  radioButtons(
+    inputId = "Investment",
+    label = "Several investment",
+    inline = TRUE,
+    choices = c("number", "type", "sector", "mean"),
+    width = "100%"
+  )
+)
+
+
+renderPlotly({
+
+  if(input$Investment == "number") {
+    aa
+  } else if(input$Investment == "type") {
+    bb
+  } else if(input$Investment == "sector") {
+    cc
+  } else if(input$Investment == "mean") {
+    dd
+  }
+})
+```
+
+## Conclusion
+

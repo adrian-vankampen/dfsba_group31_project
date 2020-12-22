@@ -186,7 +186,7 @@ server <- function(input,output)
 # AVERAGE CONCURENT VIEWERS
 # ------------------------------------------------------------------------------
 
-plot_ly(type = "bar",
+aaaa <- plot_ly(type = "bar",
         x = TwitchData$Date, 
         y = TwitchData$Avg_concur_viewers,
         height = 400) %>%
@@ -197,7 +197,7 @@ plot_ly(type = "bar",
 # AVERAGE CONCURENT CHANNELS
 # ------------------------------------------------------------------------------
 
-plot_ly(type = "bar",
+b <- plot_ly(type = "bar",
         x = TwitchData$Date, 
         y = TwitchData$Avg_concur_channels,
         height = 400) %>%
@@ -208,7 +208,7 @@ plot_ly(type = "bar",
 # TOTAL NUMBER OF HOURS WATCHED
 # ------------------------------------------------------------------------------
 
-plot_ly(type = "bar",
+c <- plot_ly(type = "bar",
         x = TwitchData$Date, 
         y = TwitchData$Hours_watched,
         height = 400) %>%
@@ -219,7 +219,7 @@ plot_ly(type = "bar",
 # TOTAL NUMBER OF ACTIVE STREAMERS
 # ------------------------------------------------------------------------------
 
-plot_ly(type = "bar",
+d <- plot_ly(type = "bar",
         x = TwitchData$Date, 
         y = TwitchData$Active_streamers,
         height = 400) %>%
@@ -230,7 +230,7 @@ plot_ly(type = "bar",
 # TOTAL NUMBER OF HOURS STREAMED
 # ------------------------------------------------------------------------------
 
-plot_ly(type = "bar",
+e <- plot_ly(type = "bar",
         x = TwitchData$Date, 
         y = TwitchData$Hours_streamed,
         height = 400) %>%
@@ -241,7 +241,7 @@ plot_ly(type = "bar",
 # VIEWERS PER STREAMER ON AVERAGE
 # ------------------------------------------------------------------------------
 
-plot_ly(type = "bar",
+f <- plot_ly(type = "bar",
         x = TwitchData$Date, 
         y = TwitchData$Viewers_per_streamer,
         height = 400) %>%

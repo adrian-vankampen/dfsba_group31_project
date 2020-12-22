@@ -133,7 +133,7 @@ plot_CompRev <- CompRev %>%
   mutate(Company_name = factor(CompRev$Company_name, 
                                levels = unique(CompRev$Company_name)[order(CompRev$Total_2019, decreasing = FALSE)]))
 
-plot_ly(data = plot_CompRev,
+aaa <- plot_ly(data = plot_CompRev,
         x = plot_CompRev$Total_2019,
         y = ~plot_CompRev$Company_name,
         color = ~plot_CompRev$Company_name,
@@ -151,9 +151,9 @@ plot_ly(data = plot_CompRev,
 
 plot_CompRev_2020 <- CompRev %>%
   mutate(Company_name = factor(CompRev$Company_name, 
-                               levels = unique(CompRev$Company_name)[order(CompRev$Half_2020, decreasing = FALSE)]))
+                               levels = unique(CompRev$Company_name)[order(CompRev$Total_2019, decreasing = FALSE)]))
 
-plot_ly(data = plot_CompRev_2020,
+bbb <- plot_ly(data = plot_CompRev_2020,
         x = plot_CompRev_2020$Half_2020,
         y = ~plot_CompRev_2020$Company_name,
         color = ~plot_CompRev_2020$Company_name,
@@ -310,17 +310,43 @@ plot_ly(data = Monthly_investment,
          yaxix = list(title = "Amount"),
          showlegend = FALSE)
 
-
+aa <- plot_ly(data = Monthly_investment,
+              x = Monthly_investment$Date,
+              y = ~Monthly_investment$number,
+              type = "bar",
+              height = 400) %>% 
+  layout(title = "Number of investment",
+         xaxis = list(title = "Date"),
+         yaxis = list(title = "Number"),
+         showlegend = FALSE)
+  
+  
 investment_type <- CompaniesInvestments %>%
   rename(type = "Investment type") %>%
   mutate(Amount = numeric_amount) %>%
   group_by(type) %>%
   summarize(total = sum(Amount), 
             number = sum(Amount > 0), 
-            mean = mean(Amount)) %>%
+            mean = mean(Amount),
+            median = median(Amount)) %>%
   arrange(desc(number))
 
-# add median, remove total and use mean
+plot_invest_type <- investment_type %>%
+  mutate(type = factor(investment_type$type, 
+                       levels = unique(investment_type$type)[order(investment_type$total, decreasing = FALSE)]))
+
+bb <- plot_ly(data = plot_invest_type,
+        x = plot_invest_type$total,
+        y = ~plot_invest_type$type,
+        color = ~plot_invest_type$type,
+        colors = "Dark2",
+        type = "bar",
+        height = 400) %>% 
+  layout(title = "Total investment in each type of investment",
+         xaxis = list(title = "Amount"),
+         yaxis = list(title = "Type of investment"),
+         showlegend = FALSE)
+
 sector_influence <- CompaniesInvestments %>%
   mutate(Amount = numeric_amount) %>%
   separate(Sectors, into = c("s1", "s2", "s3", "s4", "s5"), sep = ",") %>%
@@ -337,4 +363,31 @@ sector_influence <- CompaniesInvestments %>%
             median = median(Amount)) %>%
   arrange(desc(total))
 
+plot_sector_influence <- sector_influence %>%
+  mutate(Sectors = factor(sector_influence$Sectors, 
+                          levels = unique(sector_influence$Sectors)[order(sector_influence$number, decreasing = FALSE)]))
 
+cc <- plot_ly(data = plot_sector_influence,
+        x = plot_sector_influence$number,
+        y = ~plot_sector_influence$Sectors,
+        type = "bar",
+        color = ~plot_sector_influence$Sectors,
+        colors = "Dark2",
+        height = 400) %>% 
+  layout(title = "Number of investment for each sectors",
+         xaxis = list(title = "Number"),
+         yaxis = list(title = ""),
+         showlegend = FALSE)
+
+
+dd <- plot_ly(data = plot_sector_influence,
+              x = plot_sector_influence$mean,
+              y = ~plot_sector_influence$Sectors,
+              type = "bar",
+              color = ~plot_sector_influence$Sectors,
+              colors = "Dark2",
+              height = 400) %>% 
+  layout(title = "Average investment per sector",
+         xaxis = list(title = "Amount"),
+         yaxis = list(title = ""),
+         showlegend = FALSE)
