@@ -150,7 +150,7 @@ inputPanel(
     inputId = "Statistics",
     label = "Statistics over time",
     inline = TRUE,
-    choices = c("view", "channel", "watched", "active", "streamed", "ratio"),
+    choices = c("view", "channel", "watched", "active", "streamed"),
     width = "100%"
   )
 )
@@ -168,9 +168,7 @@ renderPlotly({
     d
   } else if(input$Statistics == "streamed") {
     e
-  } else if(input$Statistics == "ratio") {
-    f
-  } 
+  }
 })
 ```
 
@@ -282,4 +280,28 @@ renderPlotly({
 ```
 
 ## Conclusion
+
+<div class='left' style='float:left;width:48%'>
+
+### **Most interesting games**
+
+- StarCraft II
+- League of Legends
+- Dota 2
+- Counter-Strike: Global Offensive
+- Fortnite
+- Super Smash Bros. Melee</div>
+<div class='right' style='float:right;width:48%'>
+
+### **Twitch**
+
+- popularity is growing
+- corona's impact
+
+### **NewZoo**
+
+- Money involved is growing
+- Concentrated industry</div>
+
+
 
