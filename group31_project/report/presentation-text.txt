@@ -1,0 +1,41 @@
+*** Presentation Data Science for Business Analytics ***
+
+** Title slide - Greeting words:
+
+Hello and welcome to our presentation. Let us introduce ourselves:
+I am Adrian van Kampen, and this is Allan Mivelaz.
+As a large portion of our generation, we both occasionnally play video games, and sometimes even watch online gaming tournaments and other types of gaming related entertainement.
+However, the industry of gaming is pretty new, and although investments are growing, we felt that it deserved a bit more attention than it currently has. Furthermore, the gaming sector is often seen as nerdy and unserious to people outside.
+
+** Slide 2 - Goals
+
+In this project, we wanted to show a few key figures of this gaming world.
+The industry is separated in several parts:
+- The most visible in the media may be the tournaments and the so-called "E-sports" scene.
+- But a large part of the industry also runs on web platforms that allow players (professionals and amateurs) to stream and get paid to do so.
+- Finally, we will end our presentation with a few key figures about investments that have already been made in this industry.
+
+** Slide 3 - Data
+
+Since the industry is relatively new, data is actually pretty hard to find.
+- For the first part, we could not find any data about the sources of the money that flows into the esports scene, but we did find a pretty extensive website that offered tournaments' information about nearly every game out there.
+- For the second part, we used raw data gathered from TwitchTracker.com, which also provides dashboards.
+- Finally, for the last part, we managed to find a few sources on NewZoo.com, a private website that gathers information about investments in esports. However, since its main intent is towards companies and doing B2B business, we only had access to its limited free access, and hence our data is incomplete.
+
+** Slide 4 - Games
+
+As we mentionned, the gaming world is pretty big and diverse. Here, we can see that different games have widely different communities and types of tournaments.
+From an investor point of view, a few key figures can be of interest.
+- First the number of tournaments, each tournament being an opportunity to advertize to the audience. We see that StarCraft II and CS:GO are two games with many such opportunities. The next two would be SuperSmash Bros. Melee and League of Legends.
+- However, when we look at the actual monetary amounts involved in these tournaments, those games are trumped by Dota 2, which is a relatively old game. Sometimes, hype on a single tournament can be more important than the sheer quantity of tournaments (as the saying goes: quality is better than quantity), so this is also an interesting game to potentially invest into.
+- Finally, if we look at the professionnal player base, we see that again CS:GO is the largest, followed by LoL and Fortnite, which is surprising for the last one since it is a relatively new game. This goes to show that not always the oldest games are the more popular, actually the opposite is sometimes true.
+
+** Slide 5 - Time series
+
+Indeed, if we look at the life cycle of these games of interest, we see that older titles tend to have a relatively stable growth. Popular games, on the other hand, seem to have a much shorter life cycle, with strong growth in the beginning, but quickly declining. That is, unless substantial effort is made by the developers to keep it popular, such as LoL.
+
+We also see, that for some games, only a few major tournaments are really popular, while the majority of the others are small tournaments with not a lot money at stake.
+
+** Slide 6 - ??
+
+??

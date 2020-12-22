@@ -34,7 +34,7 @@ top_plots <- list("NbTourn" = rankg_by_tournnb,
 
 ```
 
-```{r}
+```{r game_ranks}
 inputPanel(
   radioButtons(
     inputId = "EE_top_stats",
@@ -55,5 +55,78 @@ renderPlotly({
   } else if(input$EE_top_stats == "Player numbers") {
     rankg_by_playernb
   }
+})
+```
+
+## Tournaments through time
+
+
+```{r}
+
+tourn_selection <- o_tourn %>%
+  filter(GameName %in% c("StarCraft II",
+                         "League of Legends",
+                         "Dota 2",
+                         "Counter-Strike: Global Offensive",
+                         "Fortnite",
+                         "Super Smash Bros. Melee"))
+
+inputPanel(
+  selectInput(
+    "GameNameBoth",
+    label = "Game:",
+    choices = tourn_selection$GameName, # N.B. I chose the list with top games in terms of tournament numbers, because it is the only one that contains all 5 games mentioned above. However, this is an arbitrary choice.
+    selected = o_tourn$GameName[1]
+  )
+)
+
+renderDygraph({
+  
+  plot_data <- tournaments %>%
+    filter(GameId == o_tourn$GameId[o_tourn$GameName == input$GameNameBoth]) %>%
+    group_by(Month_Yr = floor_date(EndDate, "month")) %>%
+  summarize(prize = sum(TotalUSDPrize),
+            tournb = n())
+    
+  prize_cash_xts <- xts(plot_data$prize, 
+                        order.by = plot_data$Month_Yr)
+  tourn_nb_xts <- xts(plot_data$tournb, 
+                      order.by = plot_data$Month_Yr)
+  
+  both <- cbind(prize_cash_xts, tourn_nb_xts)
+  dygraph(both) %>%
+    dyRangeSelector() %>%
+    dyAxis("y", independentTicks = FALSE) %>%
+    dyAxis("y2", label = "Number of tournaments", independentTicks = TRUE) %>%
+    dySeries("prize_cash_xts", label = "Prize Cash (in USD)") %>%
+    dySeries("tourn_nb_xts", label = "Number of tournaments", axis = "y2") %>%
+    dyHighlight(highlightCircleSize = 5, 
+                highlightSeriesBackgroundAlpha = 0.2,
+                hideOnMouseOut = FALSE) %>%
+    dyLegend(width = 500) %>%
+    dyOptions(labelsKMB = TRUE)
+  
+})
+
+renderPlotly({
+  
+  top_tourn <- tournaments %>%
+    filter(GameId == o_tourn$GameId[o_tourn$GameName == input$GameNameBoth]) %>%
+    select(TournamentName, TotalUSDPrize, StartDate, EndDate, Location, Teamplay) %>%
+    arrange(desc(TotalUSDPrize)) %>%
+    head(n = 5) %>%
+    # Make histogram of top tournaments
+    ggplot(aes(x = reorder(TournamentName, TotalUSDPrize), y = TotalUSDPrize, fill = TotalUSDPrize)) +
+    geom_col(show.legend = FALSE) +
+    ggtitle(paste(input$GameNameBoth, "top tournament", sep = "'s ")) +
+    xlab("") +
+    ylab("Prize pool (in USD)") +
+    scale_y_continuous(labels = unit_format(unit = "M", scale = 1e-6)) +
+    coord_flip()
+  
+  # Wrap with ggplotly to make tooltips on hover
+  
+  ggplotly(top_tourn, tooltip = "y")
+  
 })
 ```
