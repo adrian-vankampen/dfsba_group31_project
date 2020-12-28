@@ -235,7 +235,7 @@ e <- plot_ly(type = "bar",
         y = TwitchData$Hours_streamed,
         height = 400) %>%
   layout(xaxis = list(title="Date"),
-         title = "Total number of hours streamers")
+         title = "Total number of hours streamed")
 
 # ------------------------------------------------------------------------------
 # VIEWERS PER STREAMER ON AVERAGE
